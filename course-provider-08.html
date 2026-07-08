@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentation, Consent &amp; the Clear-to-Treat Handoff — Provider Track</title>
+<script src="owh-config.js"></script><script src="owh-app.js"></script>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b;--gate:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.65}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.25;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:900px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 26px;gap:10px;flex-wrap:wrap}
+  .topin img{height:32px}
+  nav a{color:var(--muted);font-size:12.5px;font-weight:600;margin-left:13px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:12.5px;padding:8px 14px;border-radius:8px;margin-left:13px}
+  .hero{background:linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:38px 44px;border-bottom:5px solid var(--gold)}
+  .hero .kick{letter-spacing:.22em;text-transform:uppercase;font-size:11px;color:var(--gold-soft);font-weight:700}
+  .hero .mnum{display:inline-block;font-family:Georgia,serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-soft);margin:8px 0 2px}
+  .hero h1{color:#fff;font-size:29px;margin:.1em 0 .25em}.hero p{color:#cfe0ef;font-size:16.5px;max-width:68ch;margin:0}
+  .gatebar{background:#fdf3f0;border-bottom:1px solid #efc9c2;color:#7c2420;font-size:13px;padding:9px 44px}
+  .sec{padding:22px 44px;border-bottom:1px solid var(--line)}
+  .sec h3{font-size:19px;margin:.2em 0 .3em}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:13px 16px;font-size:14.5px;margin:12px 0}
+  .box p{margin:0}
+  ul.key{padding-left:20px}ul.key li{margin:7px 0}
+  .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;vertical-align:middle}
+  .t-est{background:var(--est)}.t-plaus{background:var(--plaus)}.t-hyp{background:var(--hyp)}.t-gate{background:var(--gate)}
+  .navbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 44px;border-bottom:1px solid var(--line)}
+  .foot{background:var(--navy);color:#cdddec;padding:22px 44px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:820px){.hero{padding:26px 20px}.sec,.navbar,.foot,.gatebar{padding-left:20px;padding-right:20px}.hero h1{font-size:23px}}</style></head>
+<body><div class="wrap">
+<div class="protobar">PROTOTYPE / DRAFT v0.1 — provider continuing education</div>
+<div class="topbar"><div class="topin"><a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a><nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html" class="here">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav></div></div>
+<header class="hero"><div class="kick">Operation Whole Health · Provider Track</div><span class="mnum">Module P8</span><h1>Documentation, Consent &amp; the Clear-to-Treat Handoff</h1><p>The Readiness Standard never clears a patient — it only makes sure the clinician who does has complete, honest documentation to stand on.</p></header>
+<div class="gatebar"><b>⚑ Draft for review.</b> This safety-critical module carries a <span class="tag t-gate">Clinician sign-off</span> — a named licensed Medical Director must sign it before use in continuing education credit.</div>
+<section class="sec"><div class="box" style="border-left:4px solid #2e7d52;background:#eef6f0"><h3 style="margin:0 0 5px;font-size:15px">🎖️ Bottom line for a busy clinician</h3><p style="margin:0">The Readiness Standard and your certification never clear a patient — that call is always yours, and it always will be. Your job is to make sure the paperwork behind that call is complete: screening, medication reconciliation (especially CYP2D6 interactions for ibogaine and serotonergic/MAOI interactions for MDMA), contraindication review, consent, and the right modality annex, all signed and dated by you. Contributing de-identified outcomes to the registry is voluntary, separately consented, and never a condition of certification — and your certification can never be tied to buying Operation Whole Health products, full stop. If a no-go happens, document it as carefully as a yes — a declined treatment is still a clinical decision that needs a record.</p></div></section>
+<section class="sec">
+<h3>The one rule this whole module sits on</h3>
+<p>Everything else in Module P8 is downstream of a single sentence from Protocol v1: <b>"The go/no-go decision is the treating clinician's alone — this standard documents readiness; it does not clear anyone."</b> The Readiness Standard, the certification, and the registry all exist to make that decision better-informed and better-documented. None of them make it for you, and none of them substitute for your own program's screening and consent process.</p>
+<div class="box"><b>Why this framing matters for you personally:</b> OWH's certification model deliberately mirrors a diving-certification body, not a treatment provider — it certifies that a program screens, informs, and documents to a defined bar. It never certifies that a substance is safe or effective, and it never certifies a specific patient as medically cleared. That distinction is what lets a non-treatment standard carry real authority — and it's also your liability firewall: the paperwork you generate is what shows, after the fact, that the process behind your decision was sound.</p>
+</section>
+
+<section class="sec">
+<h3>The Clear-to-Treat packet: what has to be in it</h3>
+<p>Phase 3 of the Common Core defines the Clear-to-Treat handoff as a documentation packet the treating clinician personally reviews and signs before proceeding. It is not a form the patient fills out alone, and it is not complete just because every box has an entry — you are attesting that you reviewed it.</p>
+<ul class="key">
+<li><b>Screening results</b> — general medical history/exam/vitals/labs, cardiovascular baseline, psychiatric history and suicidality screen, pregnancy screen where applicable.</li>
+<li><b>Medication &amp; substance reconciliation</b> — the complete list (prescription, OTC, supplement, substance), explicitly screened for serotonergic agents, QT-prolonging agents, and relevant CYP interactions.</li>
+<li><b>Contraindication review</b> — an explicit statement that the universal stop-criteria domains (cardiovascular disease/arrhythmia, uncorrected electrolyte abnormality, hepatic/renal impairment, active psychosis or unmanaged bipolar disorder, acute suicidality, pregnancy, unmanageable drug interactions) were checked and either cleared or addressed.</li>
+<li><b>Consent completed</b> — documented informed consent, supported by (not replaced by) the patient/caregiver education modules.</li>
+<li><b>Education completed</b> — confirmation the patient and caregiver finished the honesty-graded education track.</li>
+<li><b>Modality annex applied</b> — the medicine-specific safety annex (cardiac workup for ibogaine, serotonergic taper documentation for MDMA, urinary/dependence screen for ketamine, etc.) was used, not just the universal core.</li>
+</ul>
+<div class="box"><b>Clinical pearl:</b> a Clear-to-Treat packet with every field populated but no clinician signature, date, and legible rationale for edge-case judgment calls is functionally incomplete. If a case is later reviewed — by a state board, a plaintiff's attorney, or your own quality-assurance process — the packet has to show your reasoning, not just your checkboxes.</div>
+</section>
+
+<section class="sec">
+<h3>A no-go is a valid, and fully documentable, outcome</h3>
+<p>The standard's contraindication framework flags the domains; you set the exact thresholds and make the call. When screening surfaces a stop criterion — an abnormal QTc, an active psychotic disorder, a dangerous drug interaction that can't be safely managed — declining to clear the patient is the correct use of the process, not a failure of it.</p>
+<ul class="key">
+<li>Document which specific criterion triggered the no-go, referencing the screening data point (e.g., "QTc 478 ms on repeat ECG, above program threshold").</li>
+<li>Document what remediation path, if any, was offered (referral, medication adjustment by the prescriber, re-screen timeline) — and if none, why not.</li>
+<li>Never leave a no-go undocumented because the session didn't happen. The absence of treatment is still a clinical decision that needs a record.</li>
+</ul>
+</section>
+
+<section class="sec">
+<h3>Where the pharmacology has to be airtight in your notes</h3>
+<p>Two interactions illustrate why "medication reconciliation" can't be a checkbox — it has to be a documented clinical judgment.</p>
+<div class="box">
+<p><b>Ibogaine + CYP2D6 status</b> <span class="tag t-est">Established</span> — Ibogaine is metabolized primarily by CYP2D6 to its active metabolite noribogaine. In a controlled pharmacokinetic study, pre-treatment with the CYP2D6 inhibitor paroxetine produced roughly double the active-moiety (ibogaine + noribogaine) exposure compared to placebo, leading the authors to recommend genotyping/phenotyping and at least halving the dose in poor metabolizers (Glue et al., <i>J Clin Pharmacol</i>, 2015). Ibogaine also directly blocks the cardiac hERG potassium channel, prolonging the QT interval; a toxicology review documented QT prolongation, ventricular arrhythmia, and 27 reported fatalities associated with ibogaine, including cases without pre-existing cardiac disease (Litjens &amp; Brunt, <i>Clin Toxicol</i>, 2016; mechanism detailed in Thurner et al., <i>J Pharmacol Exp Ther</i>, 2013). <b>What this means for your chart:</b> the Clear-to-Treat packet for ibogaine needs a legible statement of CYP2D6 status (or documented rationale for proceeding without it), a baseline and pre-dose ECG/QTc, corrected electrolytes, and an explicit note on any CYP2D6-interacting medication and how it was handled.</p>
+<p><b>MDMA + serotonergic/MAOI medications</b> <span class="tag t-est">Established</span> — MDMA is strongly serotonergic; combining it with SSRIs/SNRIs or especially MAOIs risks life-threatening serotonin toxicity (hyperthermia, rigidity, autonomic instability), a mechanism well described in the anesthesia and toxicology literature (Gillman, <i>Br J Anaesth</i>, 2005; Chiew et al., <i>Br J Clin Pharmacol</i>, 2024) and demonstrated as synergistic and highly lethal in preclinical MAO-A-inhibition models (Alves et al., <i>Addiction Biology</i>, 2009). <b>What this means for your chart:</b> any planned serotonergic-medication taper must be ordered and documented by the prescriber — never inferred from an education module or assumed complete because a date passed — and the reconciliation record must show the taper was verified, not just recommended, before the annex is marked satisfied.</p>
+</div>
+<p style="font-size:13px;color:#5c6b7a">Regulatory note for your documentation language: esketamine (Spravato) is FDA-approved for treatment-resistant depression; MDMA-assisted therapy is <b>not</b> FDA-approved (the agency declined Lykos Therapeutics' application in August 2024, citing safety and methodology concerns) — do not let a patient's chart or consent language imply otherwise. Ibogaine, psilocybin, LSD, and DMT remain Schedule I; ketamine is Schedule III.</p>
+</section>
+
+<section class="sec">
+<h3>Contributing to the registry: consent, not compliance</h3>
+<p>Registry participation sits on top of, not inside, your clinical documentation — and it has its own consent layer.</p>
+<ul class="key">
+<li><b>It is human-subjects research.</b> Collecting outcomes to learn what works requires its own IRB oversight and informed consent — separate from treatment consent — and, for any digital record, a HIPAA-compliant platform with a signed Business Associate Agreement.</li>
+<li><b>It is voluntary, de-identified, and portable.</b> A clinic or patient can decline, and a clinic that later leaves the registry takes its own data with it.</li>
+<li><b>Analyses are pre-registered and methods are open</b> — the governance point of a registry is that nobody can quietly reshape the question after seeing the answer.</li>
+<li><b>Contribution is a higher certification tier, not the floor.</b> Universal readiness screening and the Clear-to-Treat process are required for any certified program; registry participation is required for the higher tier and is where compliance documentation becomes shared evidence.</li>
+</ul>
+<div class="box"><b>Clinical pearl:</b> because the minimum dataset schedule (screening → baseline → day-of → weekly check-ins → follow-up out to 12 months) overlaps heavily with what you already collect for good clinical care, the marginal documentation burden of registry participation is mostly a matter of using the same validated instruments (PCL-5/PHQ-9/GAD-7, C-SSRS, WHODAS 2.0) your program should be using anyway — not a second, separate paperwork system.</p></div>
+</section>
+
+<section class="sec">
+<h3>Certification, the COI firewall, and what it does and doesn't say about you</h3>
+<p>As an individual, you are eligible for <b>Certified Provider</b> status — a portable, CE-style credential earned by completing this training and passing an assessment on readiness, screening, informed consent, and crisis response. Your program (if it is one) is eligible separately for <b>Certified Program</b> status, and family/support persons for <b>Certified Caregiver</b> status. None of these tiers, including your own, is medical clearance of any patient — that stays with the treating clinician of record, case by case.</p>
+<ul class="key">
+<li><b>The firewall is explicit:</b> certification — of a program, a provider, or anyone — is never contingent on purchasing Operation Whole Health products, and the certification/standards function is organizationally walled off from any commercial arm.</li>
+<li><b>Disclose the conflict, don't hide it.</b> OWH develops nutritional preparation protocols and products and also helped convene this standard; that dual role is disclosed rather than concealed, and it is exactly why the certification and registry functions are kept structurally separate.</li>
+<li><b>A named Medical Director owns the clinical content.</b> All thresholds and clinical language in the standard are signed by a licensed clinician-of-record and version-controlled with a public change log — if a threshold in your annex changes, you'll see it in that log, not hear about it informally.</li>
+</ul>
+</section>
+
+<section class="sec">
+<h3>Ongoing quality assurance: this is a living standard, not a plaque on the wall</h3>
+<ul class="key">
+<li><b>Annual renewal, not a one-time credential.</b> Program certification is renewed annually with review; spot review applies as the certifying body matures from attestation-based to audit-based.</li>
+<li><b>Version control is your responsibility to track.</b> Because thresholds and annexes are revised as evidence accrues, your documentation should reference which version of the standard a given Clear-to-Treat packet was completed under.</li>
+<li><b>The registry is itself a QA loop.</b> Any safety flag in the shared check-ins — a positive C-SSRS screen, a serious adverse event — triggers immediate escalation to the care team; it is never allowed to sit as a passive data point.</li>
+<li><b>Honest sequencing applies to you too.</b> The standard states plainly that its authority is earned, not declared, until it is clinician-authored, board-governed, and adopted with real outcomes data. Representing your certification to patients or referrers as more than a documented preparation-and-screening process — as if it were medical-board accreditation or a safety guarantee for any substance — misstates what you hold.</li>
+</ul>
+<div class="box"><b>Honest limit</b> <span class="tag t-hyp">Hypothesis</span>: whether standardized documentation and readiness certification actually improve patient outcomes is not yet proven — it is the open question this registry exists to test, not a claim this module is making about your own practice.</div>
+</section>
+<section class="sec"><div id="quiz"></div></section>
+<div class="navbar"><a href="course-provider.html">← All 8 modules</a><a href="certificate-provider.html" class="btn">Finish → Certificate</a></div>
+<div class="foot"><p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Provider Track — prototype, DRAFT v0.1. Continuing education content; not medical, legal, or regulatory advice. Content marked <span style="color:#fff">Clinician sign-off</span> is pending a named licensed physician / Medical Director’s review before use with patients. In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p></div>
+</div>
+<script>OWH.ready.then(function(){ OWH.mountQuiz("quiz",{course:"provider",moduleId:"08",passPct:75,questions:[{"q":"Who holds the final go/no-go authority to proceed with treatment under the Readiness Standard?","options":["The OWH Standards Council","The treating clinician of record","Operation Whole Health as the certifying body","The patient's caregiver, once the Caregiver Track is complete"],"answer":1,"explain":"Protocol v1 states this explicitly: the standard documents readiness, it never clears anyone — the go/no-go decision belongs solely to the treating clinician."},{"q":"A patient scheduled for ibogaine treatment is taking paroxetine, a CYP2D6 inhibitor. What must the Clear-to-Treat documentation reflect before proceeding?","options":["Nothing additional — paroxetine has no relevant interaction with ibogaine","That CYP2D6 status/interaction was identified, and dose and monitoring were adjusted by the prescriber accordingly","That the patient verbally acknowledged taking paroxetine","A repeat MEQ-30 mystical-experience questionnaire"],"answer":1,"explain":"CYP2D6 inhibition (as with paroxetine) roughly doubles active-moiety ibogaine/noribogaine exposure in controlled pharmacokinetic data (Glue et al., 2015), and ibogaine independently carries hERG/QT arrhythmia risk — this must be explicitly reconciled and documented, not inferred."},{"q":"Which statement correctly describes the certification's conflict-of-interest firewall?","options":["Certification can be expedited for programs that purchase OWH nutritional products","Certification is never contingent on purchasing OWH products, and the certification function is organizationally separate from any commercial arm","The Medical Director may also run commercial sales for the same certified product line","COI disclosure is optional and left to each certified program's discretion"],"answer":1,"explain":"The framework is explicit that a standard which profits from what it certifies is worthless — certification and commerce are walled apart and the conflict is disclosed, not hidden."},{"q":"A veteran has finished readiness education for MDMA-assisted therapy but medication reconciliation shows an MAOI with no documented, prescriber-directed taper. What is the correct next step?","options":["Proceed to treatment since education is complete","Clear to treat once the patient signs an additional waiver","Do not clear to treat until the prescriber documents the interaction review and any taper is verified complete — the MAOI/MDMA combination carries a documented risk of life-threatening serotonin toxicity","Substitute a lower MDMA dose without prescriber involvement"],"answer":2,"explain":"MDMA is strongly serotonergic; combined with an MAOI it risks severe, potentially fatal serotonin toxicity. This must be prescriber-managed and documented in the reconciliation record before the annex can be marked satisfied — education completion does not substitute for this."},{"q":"How is registry contribution under the Common Outcome Protocol correctly characterized?","options":["Mandatory for every certified provider as a condition of the credential","Voluntary, de-identified, and portable — a program can decline or later leave and take its own data with it","Permanently owned by Operation Whole Health once submitted","Required only for the Certified Caregiver tier"],"answer":1,"explain":"Registry participation requires its own IRB oversight and informed consent, is voluntary and de-identified, and data remains portable to the contributing clinic or study group — it sits above the certification floor, at the higher tier, not as a universal mandate."}]}); });</script>
+</body></html>

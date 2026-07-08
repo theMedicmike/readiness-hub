@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 01 — Welcome & The Honesty Compact · Patient Track</title>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.65}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.22;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:900px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 26px;gap:14px;flex-wrap:wrap}
+  .topin img{height:34px}
+  nav a{color:var(--muted);font-size:13px;font-weight:600;margin-left:14px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:8px 15px;border-radius:8px;margin-left:14px}
+  .subnav{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:11px 40px;background:#f6f2e8;border-bottom:1px solid var(--line);font-size:12.5px}
+  .crumb{color:var(--muted);font-weight:600}.crumb a{color:var(--navy2)}.crumb b{color:var(--navy)}
+  .prog{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+  .pnbar{display:flex;gap:8px}
+  .pn{display:inline-block;font-size:12.5px;font-weight:700;border:1px solid var(--line);border-radius:8px;padding:6px 12px;background:#fff;color:var(--navy2)}
+  .pn:hover{border-color:var(--gold-soft);color:var(--gold)}
+  .pn.primary{background:var(--gold);color:#241606;border-color:var(--gold)}
+  .pn.disabled{opacity:.4;pointer-events:none}
+  .gatebar{background:#fbeceb;border-left:4px solid var(--clin);color:#7c2420;padding:11px 16px;font-size:13.5px;margin:0;border-bottom:1px solid #efc9c2}
+  .hero{background:linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:34px 40px;border-bottom:5px solid var(--gold)}
+  .mnum{display:inline-block;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+  .hero h1{color:#fff;font-size:30px;margin:.25em 0 .3em}
+  .hero .sub{color:#cfe0ef;font-size:16.5px;max-width:64ch;margin:0}
+  .sec{padding:26px 40px;border-bottom:1px solid var(--line)}
+  .sec h2{font-size:21px;margin:.1em 0 .4em}.sec h3{font-size:16.5px;margin:1.1em 0 .3em}
+  .sec p{margin:.5em 0}
+  .lead{font-size:17px;color:#33424f}
+  .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;vertical-align:middle;margin-left:4px}
+  .t-est{background:var(--est)}.t-plaus{background:var(--plaus)}.t-hyp{background:var(--hyp)}.t-gate{background:var(--clin)}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:#3a4854;margin:8px 0 2px}
+  ul.key,ol.key{padding-left:20px}ul.key li,ol.key li{margin:6px 0}
+  .good{background:#eef6f0;border:1px solid #cfe6d8;border-left:4px solid var(--est);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px}
+  .warn{background:#fdf3f0;border:1px solid #efc9c2;border-left:4px solid var(--clin);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px;color:#7c2420}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:14px 16px;font-size:14.5px;margin:14px 0}
+  .takeaway{background:#fbf6ea;border:1px solid var(--gold-soft);border-left:4px solid var(--gold);border-radius:9px;padding:13px 16px;margin:16px 0}
+  .takeaway h3{margin:0 0 .3em;font-size:15px;color:var(--navy)}
+  .reflect{background:#eef4fa;border:1px solid #cfe0ef;border-radius:10px;padding:14px 16px;margin:16px 0;font-size:14.5px}
+  .reflect h3{margin:0 0 .3em;font-size:15px}
+  .carry{font-size:16px;color:var(--navy);font-style:italic;border-top:2px solid var(--gold-soft);padding-top:12px;margin-top:8px}
+  sup.cite a{color:var(--gold);font-weight:700;font-size:11px;text-decoration:none}
+  .refs{background:#faf8f1}
+  .refs ol{padding-left:22px;font-size:12.5px;color:#3a4854}.refs li{margin:6px 0}
+  .foot{background:var(--navy);color:#cdddec;padding:24px 40px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:720px){.hero h1{font-size:24px}.sec,.subnav,.hero,.foot{padding-left:18px;padding-right:18px}}
+</style></head>
+<body><div class="wrap">
+<div class="protobar">PROTOTYPE / DRAFT v0.1 — educational course, pending physician sign-off</div>
+<div class="topbar"><div class="topin"><a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a><nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html" class="here">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav></div></div>
+<div class="subnav"><span class="crumb"><a href="hub-learn.html">Learn</a> › <a href="course-patient.html">Patient Track</a> › <b>Module 01</b></span><span class="prog">Module 01 of 12</span><span class="pnbar"><a class="pn disabled">← Start</a><a class="pn primary" href="course-patient-02.html">Module 02 →</a></span></div>
+<header class="hero">
+  <div class="mnum">Module 01 · Patient Track</div>
+  <h1>Welcome &amp; The Honesty Compact</h1>
+  <p class="sub">Before anything else, the promise this course is built on: we will tell you the truth — what's known, what's only hoped, and what nobody can promise you yet.</p>
+</header>
+<section class="sec"><div class="box" style="border-left:4px solid #2e7d52;background:#eef6f0"><h3 style="margin:0 0 5px;font-size:15px">🎖️ In plain English</h3><p style="margin:0">This course will not lie to you. It tells you what is actually proven, what is only a hopeful maybe, and what nobody knows yet — and it never claims any of these drugs is safe or a sure thing. You can ask anything, slow down, or stop at any time. It helps you and your doctor decide together; it does not decide for you.</p></div></section>
+<section class="sec">
+  <p>You're standing at the edge of a serious decision, and you came looking for the truth instead of a sales pitch. Good — that instinct will keep you safe, and this whole course is built to honor it.</p>
+
+  <h3>The Honesty Compact</h3>
+  <p>Everything that follows rests on one promise. Read it slowly, and hold us to it.</p>
+  <p style="font-family:Georgia,serif;font-style:italic;font-size:17px;color:var(--navy)">"We will always tell you the truth about what we know, what we think, what is still being studied, and what nobody yet knows. We will never oversell a benefit or hide a risk. This education helps you make an informed decision with your medical team — it does not make the decision for you, and it is not a substitute for your clinician's care."</p>
+  <p>That's the deal. If any page in this course ever breaks it — hypes a cure, buries a danger, or pressures you toward a choice — you have our permission to close the tab and walk away. Honesty isn't a nice-to-have here. It's the whole product.</p>
+
+  <h3>The four labels we put on every claim</h3>
+  <p>Health information online usually arrives with total confidence and zero sourcing. We do the opposite. Every meaningful claim in this course wears one of four labels, so you always know how much weight it can bear:</p>
+  <ul class="key">
+    <li><span class="tag t-est">Established</span> — consistent human evidence. You can lean on it.</li>
+    <li><span class="tag t-plaus">Plausible</span> — biologically reasonable, but indirect or early. Promising, not proven.</li>
+    <li><span class="tag t-hyp">Hypothesis</span> — an idea still being studied. We're honest that it isn't settled.</li>
+    <li><span class="tag t-gate">Clinician sign-off</span> — anything that touches your specific medical care. It stays a draft until a named physician reviews and approves it, because that decision belongs to a doctor who knows you, not to a webpage.</li>
+  </ul>
+
+  <div class="good">A label isn't a verdict on whether something is worth doing — it's a measure of how sure anyone can honestly be. Seeing a <span class="tag t-hyp">Hypothesis</span> tag doesn't mean "ignore this." It means "stay curious, stay skeptical, and ask your clinician." That's exactly the posture we want you in.</div>
+
+  <p>Here's the compact working in real time. The core idea behind this course — that tending to your body and brain beforehand <em>might</em> improve how you come through treatment — is a <span class="tag t-hyp">Hypothesis</span>, not a fact. It's biologically reasonable, and it's why we built this. But the human evidence is thin: a 2024 pooled analysis of human trials did not find the blood-marker boost (a protein called BDNF) that some had hoped for. We could have hidden that from you. We won't. When a hope hasn't earned a stronger label yet, you'll see it labeled honestly — even when the hope is our own.</p>
+
+  <h3>Your rights in this process</h3>
+  <p>You are not a passenger here. From this moment through any treatment you may choose, you hold three rights that no good provider will ever take from you:</p>
+  <ul class="key">
+    <li><b>The right to ask any question</b> — including the uncomfortable ones, as many times as you need, until the answer actually makes sense to you.</li>
+    <li><b>The right to pause or stop</b> — at any point, without shame, penalty, or pressure. "Not yet" and "not ever" are both complete answers.</li>
+    <li><b>The right to true informed consent</b> — a plain-language account of the benefits, the risks, the unknowns, and the alternatives, given <em>before</em> you agree to anything.</li>
+  </ul>
+  <p>A provider who honors all three is showing you their character. A provider who rushes you, guilts you, or gets irritated when you ask hard questions is also showing you their character — believe them.</p>
+
+  <div class="warn">Be especially careful with anyone selling certainty or a shortcut. Most of the substances discussed later in this course — psilocybin, MDMA, LSD, DMT, and ibogaine — are Schedule I under federal law; ketamine is Schedule III, and only esketamine (Spravato) is FDA-approved (MDMA is not). This course never tells you to obtain or use anything illegally or outside qualified medical supervision, and it will never claim that "more detox" or a cleanse makes a risky drug safe. Aggressive cleansing or chelation right before a treatment that can stress the heart — as ibogaine can — may add risk, not remove it. Real preparation is test-first and physician-timed — never a product you buy to skip the caution.</div>
+
+  <h3>What this course is — and what it isn't</h3>
+  <p>This is a preparation and education course, built by people who care about veterans. It does not push you toward treatment or away from it, and it earns nothing from your choice. Its only job is to help you walk in clear-eyed: knowing the questions to ask, the risks to weigh, and the parts of your own health worth tending first.</p>
+  <p>What it is <em>not</em>: a diagnosis, a prescription, a treatment, or a substitute for your medical team. Think of it as the honest briefing before the mission — not the mission itself, and not your commanding officer.</p>
+
+  <h3>How to use it</h3>
+  <p>Go in order; the modules build on each other. Read at your own pace and revisit anything that matters — there's no clock and no grade. Keep a running list of questions as they surface, and carry that list into every conversation with your clinician. When you reach a <span class="tag t-gate">Clinician sign-off</span> section, treat it as a prompt to talk to a real doctor, not as a green light on its own.</p>
+
+  <div class="takeaway">
+    <h3>Key takeaways</h3>
+    <ul class="key">
+      <li>This course runs on one promise — the <b>Honesty Compact</b>: the full truth, benefits and risks, with nothing hyped and nothing hidden.</li>
+      <li>Every claim is labeled <span class="tag t-est">Established</span>, <span class="tag t-plaus">Plausible</span>, <span class="tag t-hyp">Hypothesis</span>, or <span class="tag t-gate">Clinician sign-off</span> — so you always know how much weight it can bear.</li>
+      <li>You have three rights that never expire: to <b>ask</b>, to <b>pause or stop</b>, and to give <b>true informed consent</b>.</li>
+      <li>The course informs your decision; it never makes it. The decision stays with you and your medical team.</li>
+    </ul>
+  </div>
+
+  <div class="reflect">
+    <h3>Reflect before you move on</h3>
+    <ol>
+      <li>What's the honest reason you're taking this course right now — and what would "the truth, even if it isn't what I hoped" mean to you?</li>
+      <li>Which of your three rights — to ask, to pause, or to consent fully — feels hardest for you to actually use, and why?</li>
+      <li>When someone hands you a health claim, what would help you tell the difference between <span class="tag t-est">Established</span> and <span class="tag t-hyp">Hypothesis</span>?</li>
+    </ol>
+  </div>
+
+  <p class="carry"><b>Carry this out of the lesson:</b> You served with honor — you deserve to make this decision with the full truth in front of you, nothing hidden and nothing hyped.</p>
+</section>
+<section class="sec"><div id="quiz"></div></section>
+<div class="sec" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><a class="pn" href="course-patient.html">↩ All 12 modules</a><span class="pnbar"><a class="pn disabled">← Start</a><a class="pn primary" href="course-patient-02.html">Module 02 →</a></span></div>
+<div class="foot"><p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Patient Track · Module 01 — DRAFT v0.1. Educational only; not medical advice, and not an endorsement of any substance. Clinical decisions belong to your treating clinician; content marked for clinician sign-off is not final until a named physician approves it.</p><p>In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p></div>
+</div>
+<script src="owh-config.js"></script><script src="owh-app.js"></script><script>OWH.ready.then(function(){ OWH.mountQuiz("quiz",{course:"patient",moduleId:"01",passPct:75,questions:[
+{q:"What is the one promise this whole course is built on?",options:["That the treatment will definitely cure your PTSD","That you will be told the full truth — benefits and risks, with nothing hyped and nothing hidden","That you should choose psychedelic therapy","That the course replaces your doctor"],answer:1,explain:"The Honesty Compact promises the full truth, with nothing oversold and nothing hidden."},
+{q:"A claim in this course is marked Hypothesis. What does that label mean?",options:["It is a proven fact you can fully rely on","It is a dangerous lie you should ignore","It is an idea still being studied — not settled, so stay curious and ask your clinician","It means the drug is safe"],answer:2,explain:"Hypothesis means the idea is still being studied and is not proven, so ask your clinician."},
+{q:"The idea that tending your body and brain beforehand improves how you come through treatment is labeled how?",options:["Established — proven in humans","Hypothesis — reasonable but unproven; a 2024 pooled analysis of human trials did not find the hoped-for BDNF boost","A guaranteed result you can count on","Not worth thinking about"],answer:1,explain:"It is biologically reasonable but unproven; a 2024 pooled analysis of human trials found no rise in the BDNF marker."},
+{q:"Which statement is both true and safe?",options:["A cleanse or extra detox makes a risky drug safe to take","Psilocybin, MDMA, LSD, DMT, and ibogaine are Schedule I; only esketamine (Spravato) is FDA-approved, and this course never tells you to use anything illegally","MDMA is FDA-approved for PTSD","Ibogaine is proven safe for your heart"],answer:1,explain:"Those substances are Schedule I, MDMA is not FDA-approved, and no cleanse makes a risky drug safe — ibogaine can stress the heart."},
+{q:"Which of these is one of your three rights in this process?",options:["The right to a guaranteed cure","The right to free medication","The right to pause or stop at any time, without shame or pressure","The right to skip your medical team entirely"],answer:2,explain:"Your three rights are to ask any question, to pause or stop, and to give true informed consent."}
+]}); });</script>
+</body></html>

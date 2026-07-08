@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 04 — Informed Consent I — The Benefits, Honestly · Patient Track</title>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.65}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.22;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:900px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 26px;gap:14px;flex-wrap:wrap}
+  .topin img{height:34px}
+  nav a{color:var(--muted);font-size:13px;font-weight:600;margin-left:14px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:8px 15px;border-radius:8px;margin-left:14px}
+  .subnav{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:11px 40px;background:#f6f2e8;border-bottom:1px solid var(--line);font-size:12.5px}
+  .crumb{color:var(--muted);font-weight:600}.crumb a{color:var(--navy2)}.crumb b{color:var(--navy)}
+  .prog{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+  .pnbar{display:flex;gap:8px}
+  .pn{display:inline-block;font-size:12.5px;font-weight:700;border:1px solid var(--line);border-radius:8px;padding:6px 12px;background:#fff;color:var(--navy2)}
+  .pn:hover{border-color:var(--gold-soft);color:var(--gold)}
+  .pn.primary{background:var(--gold);color:#241606;border-color:var(--gold)}
+  .pn.disabled{opacity:.4;pointer-events:none}
+  .gatebar{background:#fbeceb;border-left:4px solid var(--clin);color:#7c2420;padding:11px 16px;font-size:13.5px;margin:0;border-bottom:1px solid #efc9c2}
+  .hero{background:linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:34px 40px;border-bottom:5px solid var(--gold)}
+  .mnum{display:inline-block;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+  .hero h1{color:#fff;font-size:30px;margin:.25em 0 .3em}
+  .hero .sub{color:#cfe0ef;font-size:16.5px;max-width:64ch;margin:0}
+  .sec{padding:26px 40px;border-bottom:1px solid var(--line)}
+  .sec h2{font-size:21px;margin:.1em 0 .4em}.sec h3{font-size:16.5px;margin:1.1em 0 .3em}
+  .sec p{margin:.5em 0}
+  .lead{font-size:17px;color:#33424f}
+  .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;vertical-align:middle;margin-left:4px}
+  .t-est{background:var(--est)}.t-plaus{background:var(--plaus)}.t-hyp{background:var(--hyp)}.t-gate{background:var(--clin)}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:#3a4854;margin:8px 0 2px}
+  ul.key,ol.key{padding-left:20px}ul.key li,ol.key li{margin:6px 0}
+  .good{background:#eef6f0;border:1px solid #cfe6d8;border-left:4px solid var(--est);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px}
+  .warn{background:#fdf3f0;border:1px solid #efc9c2;border-left:4px solid var(--clin);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px;color:#7c2420}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:14px 16px;font-size:14.5px;margin:14px 0}
+  .takeaway{background:#fbf6ea;border:1px solid var(--gold-soft);border-left:4px solid var(--gold);border-radius:9px;padding:13px 16px;margin:16px 0}
+  .takeaway h3{margin:0 0 .3em;font-size:15px;color:var(--navy)}
+  .reflect{background:#eef4fa;border:1px solid #cfe0ef;border-radius:10px;padding:14px 16px;margin:16px 0;font-size:14.5px}
+  .reflect h3{margin:0 0 .3em;font-size:15px}
+  .carry{font-size:16px;color:var(--navy);font-style:italic;border-top:2px solid var(--gold-soft);padding-top:12px;margin-top:8px}
+  sup.cite a{color:var(--gold);font-weight:700;font-size:11px;text-decoration:none}
+  .refs{background:#faf8f1}
+  .refs ol{padding-left:22px;font-size:12.5px;color:#3a4854}.refs li{margin:6px 0}
+  .foot{background:var(--navy);color:#cdddec;padding:24px 40px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:720px){.hero h1{font-size:24px}.sec,.subnav,.hero,.foot{padding-left:18px;padding-right:18px}}
+</style></head>
+<body><div class="wrap">
+<div class="protobar">PROTOTYPE / DRAFT v0.1 — educational course, pending physician sign-off</div>
+<div class="topbar"><div class="topin"><a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a><nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html" class="here">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav></div></div>
+<div class="subnav"><span class="crumb"><a href="hub-learn.html">Learn</a> › <a href="course-patient.html">Patient Track</a> › <b>Module 04</b></span><span class="prog">Module 04 of 12</span><span class="pnbar"><a class="pn" href="course-patient-03.html">← Module 03</a><a class="pn primary" href="course-patient-05.html">Module 05 →</a></span></div>
+<div class="gatebar"><b>⚑ Clinician sign-off required.</b> This lesson covers medical-safety content that a named licensed physician must review and sign before it is used with any patient. Treat the specifics here as a draft to discuss with your care team — not medical advice.</div><header class="hero">
+  <div class="mnum">Module 04 · Patient Track</div>
+  <h1>Informed Consent I — The Benefits, Honestly <span class="tag t-plaus">Plausible</span> <span class="tag t-gate">Clinician sign-off</span></h1>
+  <p class="sub">An honest map of what these treatments have actually been shown to do — with the real confidence level attached to each claim — so you can hold hope without being sold a promise.</p>
+</header>
+<section class="sec"><div class="box" style="border-left:4px solid #2e7d52;background:#eef6f0"><h3 style="margin:0 0 5px;font-size:15px">🎖️ In plain English</h3><p style="margin:0">In careful studies, some of these treatments — MDMA with therapy for PTSD, or psilocybin for depression — really have helped a lot of people. But helping many people on average is not a promise it will fix you: the science here is promising, not proven. Right now only esketamine (Spravato), a cousin of ketamine, is FDA-approved — MDMA, psilocybin, LSD, DMT, and ibogaine are not. If anyone promises a cure, or says a "detox" or "cleanse" will make it work better or safer, they are selling you something the evidence does not back.</p></div></section>
+<section class="sec">
+  <p>Real informed consent isn't the best story someone can tell you about these treatments — it's the accurate one. This lesson lays out what has actually been measured, how large the effects were, and how sure the science really is. You deserve to walk in hopeful <i>and</i> clear-eyed at the same time.</p>
+
+  <h3>What "benefit" actually means here</h3>
+  <p>When researchers say a treatment "worked," they usually mean a group of people improved <i>on average</i> on a standardized scale — PTSD severity, depression scores, overall functioning. Averages are real, but they hide the spread: some people improve dramatically, some moderately, some barely, and a few not at all. A number like a large effect size tells you the <i>typical</i> result in a study — never a promise about your result. Keep that lens on every figure below.</p>
+
+  <div class="box"><b>A note on where this lesson stands:</b> This module states benefits that inform a real consent decision. It is a draft pending review and sign-off by your program's licensed physician, and it supports — never replaces — your clinic's own consent process.</div>
+</section>
+
+<section class="sec">
+  <h3>MDMA-assisted therapy for PTSD: the strongest signal we have <span class="tag t-plaus">Plausible</span></h3>
+  <p>The best-designed trial to date — a randomized, double-blind, placebo-controlled phase 3 study — paired MDMA with structured therapy (three preparatory and nine integrative sessions) and found a large reduction in PTSD severity versus placebo-with-therapy (Cohen's d ≈ 0.91). In that trial, investigators did not detect abuse, suicidality, or heart-rhythm (QT) signals<sup class="cite"><a href="https://consensus.app/papers/details/a4cf654871235898af1b0b5a733ef632/" target="_blank" rel="noopener">[1]</a></sup>. Read that last part carefully: "no QT signal in one trial" is not a clean bill of cardiac health. MDMA reliably raises heart rate and blood pressure during a session, and — because it floods the serotonin system — it can be dangerous when combined with SSRIs, MAOIs, or other serotonergic medications (serotonin syndrome). Those are exactly the risks that make medical screening and active monitoring non-negotiable, not optional. A systematic review of phase II/III trials found consistently greater PTSD improvement with MDMA-assisted therapy, and 41.7% to 83.3% of participants no longer met criteria for a PTSD diagnosis afterward<sup class="cite"><a href="https://consensus.app/papers/details/eb8ce159b15f5f2f8728f3a156c309a7/" target="_blank" rel="noopener">[2]</a></sup>. For a veteran carrying combat trauma, a loss of diagnosis is a genuinely meaningful outcome — but remember it is a group result, not a promise for any one person.</p>
+  <p>Here is the honesty that has to ride alongside that hope. A 2026 meta-analysis pooling these trials confirmed reduced PTSD severity (SMD −1.19) but rated the <i>overall certainty of the evidence as VERY LOW</i>, calling for larger, active-controlled trials before we treat this as settled<sup class="cite"><a href="https://consensus.app/papers/details/4d9eda262908557da19157a1d03c626a/" target="_blank" rel="noopener">[3]</a></sup>. Promising is not the same as proven.</p>
+  <div class="warn"><b>Legal reality:</b> MDMA is <b>not</b> FDA-approved and remains a Schedule I substance federally. There is no legal, at-home version of this. The results above come from tightly monitored research settings with trained therapists — not from sourcing it yourself.</div>
+</section>
+
+<section class="sec">
+  <h3>Psilocybin for depression: a real signal, not a cure <span class="tag t-plaus">Plausible</span></h3>
+  <p>A small randomized trial (24 evaluable participants) of psilocybin-assisted therapy for major depression found large antidepressant effects four weeks after treatment<sup class="cite"><a href="https://consensus.app/papers/details/3a85e27055975ebc89f7690840901f0a/" target="_blank" rel="noopener">[4]</a></sup>. A larger phase 2b trial (233 people) found a single 25&nbsp;mg dose reduced depression scores more than a 1&nbsp;mg comparison dose at three weeks<sup class="cite"><a href="https://consensus.app/papers/details/28ba51bc7d9f5cb586bd0b5856121c61/" target="_blank" rel="noopener">[5]</a></sup>. That is a genuine signal for treatment-resistant depression.</p>
+  <p>But the same larger trial is exactly why we don't oversell it: adverse events occurred in 77% of participants, and suicidal ideation or behavior showed up <i>across all dose groups</i><sup class="cite"><a href="https://consensus.app/papers/details/28ba51bc7d9f5cb586bd0b5856121c61/" target="_blank" rel="noopener">[5]</a></sup>. A benefit and a serious risk can live in the same study. Psilocybin is Schedule I federally — the outcomes above happened under clinical supervision, and that supervision is part of why they looked the way they did.</p>
+</section>
+
+<section class="sec">
+  <h3>Ketamine and esketamine: the one with an approved cousin <span class="tag t-plaus">Plausible</span></h3>
+  <p>An international expert synthesis found that ketamine and esketamine have genuine <i>rapid-onset</i> efficacy in treatment-resistant depression — but with real safety and tolerability concerns that require an appropriate setting and active monitoring<sup class="cite"><a href="https://consensus.app/papers/details/9008c0bd02fc5606bbdc72802c89be92/" target="_blank" rel="noopener">[6]</a></sup>. This is the corner of this field with the firmest regulatory footing: ketamine is a Schedule III medication, and esketamine (brand name Spravato) is FDA-approved for treatment-resistant depression under a restricted, monitored program. That approval covers esketamine specifically — it does not make psilocybin, MDMA, LSD, DMT, or ibogaine approved or legal.</p>
+  <div class="good"><b>Why this matters for you:</b> "FDA-approved" and "Schedule III" mean a treatment has cleared bars the others haven't yet. If you want the most-vetted option in this space, esketamine under a licensed provider is the one to ask your clinician about first — precisely because its benefits and risks are the best-characterized.</div>
+</section>
+
+<section class="sec">
+  <h3>How sure is "sure"? Reading the evidence grades</h3>
+  <p>Throughout this course you'll see a pill next to each claim. <span class="tag t-est">Established</span> means repeatedly confirmed in strong trials. <span class="tag t-plaus">Plausible</span> means real, encouraging evidence that isn't settled yet — where most of these psychedelic findings sit today. <span class="tag t-hyp">Hypothesis</span> means it's an idea being tested, not a finding you can lean on. Notice that even the MDMA and psilocybin results — the strongest in the field — are Plausible, not Established, because the trials are small, some were open-label (everyone knew what they got, which tends to inflate optimism), and the pooled certainty was rated very low<sup class="cite"><a href="https://consensus.app/papers/details/4d9eda262908557da19157a1d03c626a/" target="_blank" rel="noopener">[3]</a></sup>.</p>
+
+  <h3>What has NOT been shown — so no one oversells you</h3>
+  <p>Two claims you may hear elsewhere do <i>not</i> have the evidence to back them, and honesty means saying so plainly:</p>
+  <p><b>"Detox or terrain prep improves your outcome."</b> <span class="tag t-hyp">Hypothesis</span> This is untested. There is no trial showing that cleansing, chelation, or supplement protocols make a psychedelic session work better or last longer. Treat it as an unproven idea, not a step that earns you a better result.</p>
+  <p><b>"These drugs regrow your brain (neuroplasticity/BDNF)."</b> <span class="tag t-hyp">Hypothesis</span> The rodent and lab data are interesting, but a 2024 meta-analysis in humans found no peripheral (blood-measured) change in BDNF after psychedelics. In people, the "rewires your brain" story is not established — hold it as a hypothesis, not a benefit you're being given.</p>
+  <div class="warn"><b>More detox is not safer — it can be the opposite.</b> Aggressive cleanses or chelation right before a cardiotoxic drug like ibogaine can <i>add</i> cardiac risk, not reduce it. Never let anyone tell you that stacking detox makes a session safer or stronger. Real preparation is test-first and physician-timed: your treating clinician decides what happens and when. Those clinical decisions belong to them, not to a protocol you found online.</div>
+</section>
+
+<section class="sec">
+  <div class="good"><b>How to hold all this:</b> "Life-changing for some" is true. "Guaranteed for you" is not. Go in genuinely hopeful about a real, measured signal — and equally clear that this is a serious medical procedure with a range of outcomes, run by people whose job is your safety.</div>
+
+  <div class="takeaway">
+    <h3>Key takeaways</h3>
+    <ul class="key">
+      <li>MDMA-assisted therapy showed a large PTSD reduction and high rates of losing the diagnosis — but pooled certainty is rated <b>very low</b>, and MDMA still raises heart rate/blood pressure and carries serotonin-syndrome risk. <span class="tag t-plaus">Plausible</span></li>
+      <li>Psilocybin shows real antidepressant signals, alongside frequent adverse events and suicidal ideation across dose groups. <span class="tag t-plaus">Plausible</span></li>
+      <li>Ketamine works rapidly in resistant depression; esketamine (Spravato) is the only FDA-approved option here — MDMA and psilocybin are not, and remain Schedule I. <span class="tag t-plaus">Plausible</span></li>
+      <li>Detox "improving outcomes" and human BDNF/neuroplasticity benefits are <b>unproven</b> — and extra detox before a cardiotoxic drug can add risk. <span class="tag t-hyp">Hypothesis</span></li>
+      <li>Averages describe groups, never guarantee individuals; clinical timing and decisions belong to your treating physician.</li>
+    </ul>
+  </div>
+
+  <div class="reflect">
+    <h3>Reflect before you move on</h3>
+    <ol>
+      <li>If your personal result landed at the lower end of the range — modest, not dramatic — would this still be worth it to you, and why?</li>
+      <li>Which of these treatments has the firmest legal and regulatory footing, and what would you want to ask your clinician about it first?</li>
+      <li>Where have you already heard one of the unproven claims (detox, "rewires your brain") stated as fact — and how does knowing it's a hypothesis change how you weigh it?</li>
+    </ol>
+  </div>
+
+  <p class="carry"><b>Carry this out of the lesson:</b> Believe the signal, respect the uncertainty — hope and honesty are allowed to sit in the same chair.</p>
+</section>
+
+<section class="sec refs">
+  <h2 style="font-size:18px">Sources</h2>
+  <ol>
+    <li>Mitchell et al., 2021, Nature Medicine. <a href="https://consensus.app/papers/details/a4cf654871235898af1b0b5a733ef632/" target="_blank" rel="noopener">MDMA-assisted therapy for severe PTSD: a randomized, double-blind, placebo-controlled phase 3 study ↗</a></li>
+    <li>Stanicic et al., 2025, PLOS One. <a href="https://consensus.app/papers/details/eb8ce159b15f5f2f8728f3a156c309a7/" target="_blank" rel="noopener">MDMA-assisted therapy and current treatment options for chronic, treatment-resistant PTSD: Systematic literature review ↗</a></li>
+    <li>Fares-Otero et al., 2026, European Neuropsychopharmacology. <a href="https://consensus.app/papers/details/4d9eda262908557da19157a1d03c626a/" target="_blank" rel="noopener">Efficacy of MDMA-assisted therapy for PTSD: a systematic review and meta-analysis ↗</a></li>
+    <li>Davis et al., 2020, JAMA Psychiatry. <a href="https://consensus.app/papers/details/3a85e27055975ebc89f7690840901f0a/" target="_blank" rel="noopener">Effects of Psilocybin-Assisted Therapy on Major Depressive Disorder ↗</a></li>
+    <li>Goodwin et al., 2022, New England Journal of Medicine. <a href="https://consensus.app/papers/details/28ba51bc7d9f5cb586bd0b5856121c61/" target="_blank" rel="noopener">Single-Dose Psilocybin for a Treatment-Resistant Episode of Major Depression ↗</a></li>
+    <li>McIntyre et al., 2021, American Journal of Psychiatry. <a href="https://consensus.app/papers/details/9008c0bd02fc5606bbdc72802c89be92/" target="_blank" rel="noopener">Synthesizing the Evidence for Ketamine and Esketamine in Treatment-Resistant Depression ↗</a></li>
+  </ol>
+  <p style="font-size:11.5px;color:#8a8f98">Evidence surfaced via Consensus (consensus.app).</p>
+</section>
+<section class="sec"><div id="quiz"></div></section>
+<div class="sec" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><a class="pn" href="course-patient.html">↩ All 12 modules</a><span class="pnbar"><a class="pn" href="course-patient-03.html">← Module 03</a><a class="pn primary" href="course-patient-05.html">Module 05 →</a></span></div>
+<div class="foot"><p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Patient Track · Module 04 — DRAFT v0.1. Educational only; not medical advice, and not an endorsement of any substance. Clinical decisions belong to your treating clinician; content marked for clinician sign-off is not final until a named physician approves it.</p><p>In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p></div>
+</div><script src="owh-config.js"></script><script src="owh-app.js"></script><script>OWH.ready.then(function(){ OWH.mountQuiz("quiz",{course:"patient",moduleId:"04",passPct:75,questions:[
+{q:"Which treatment covered in this lesson is the only one that is FDA-approved?",options:["Psilocybin","MDMA","Esketamine (Spravato)","Ibogaine"],answer:2,explain:"Esketamine (Spravato) is FDA-approved for treatment-resistant depression; MDMA, psilocybin, and ibogaine are not."},
+{q:"MDMA floods the serotonin system, so combining it with SSRIs, MAOIs, or other serotonin drugs mainly risks what?",options:["Serotonin syndrome","Nothing — it is safe with any medication","An instant cure for depression","A dangerously slow heart rate"],answer:0,explain:"Mixing MDMA with serotonergic medications can trigger serotonin syndrome, which is why medical screening and active monitoring are required."},
+{q:"Even the strongest findings in this field (MDMA and psilocybin) are given which evidence grade in this lesson?",options:["Established — proven and settled","Plausible — promising but not settled","Hypothesis — just an untested idea","Guaranteed for everyone"],answer:1,explain:"They are graded Plausible: real, encouraging evidence that is not settled, because the trials are small and pooled certainty was rated very low."},
+{q:"What does the lesson say about doing a “detox” or “cleanse” before a session to get a better result?",options:["It is proven to make sessions work better","It is required before every session","It is unproven, and heavy detox before a cardiotoxic drug like ibogaine can add risk","It regrows your brain"],answer:2,explain:"No trial shows detox improves outcomes, and aggressive cleanses before a cardiotoxic drug can add cardiac risk rather than reduce it."},
+{q:"When a study says a treatment “worked” on average, what does that mean for you personally?",options:["You are guaranteed the same result","It is a group average — your own result could be larger, smaller, or none","It will definitely cure you","It means the drug is FDA-approved"],answer:1,explain:"Study results are group averages; individuals vary, so the number is never a promise about your own outcome."}
+]}); });</script></body></html>

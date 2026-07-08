@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 02 — Your Brain After Service · Patient Track</title>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.65}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.22;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:900px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 26px;gap:14px;flex-wrap:wrap}
+  .topin img{height:34px}
+  nav a{color:var(--muted);font-size:13px;font-weight:600;margin-left:14px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:8px 15px;border-radius:8px;margin-left:14px}
+  .subnav{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:11px 40px;background:#f6f2e8;border-bottom:1px solid var(--line);font-size:12.5px}
+  .crumb{color:var(--muted);font-weight:600}.crumb a{color:var(--navy2)}.crumb b{color:var(--navy)}
+  .prog{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+  .pnbar{display:flex;gap:8px}
+  .pn{display:inline-block;font-size:12.5px;font-weight:700;border:1px solid var(--line);border-radius:8px;padding:6px 12px;background:#fff;color:var(--navy2)}
+  .pn:hover{border-color:var(--gold-soft);color:var(--gold)}
+  .pn.primary{background:var(--gold);color:#241606;border-color:var(--gold)}
+  .pn.disabled{opacity:.4;pointer-events:none}
+  .gatebar{background:#fbeceb;border-left:4px solid var(--clin);color:#7c2420;padding:11px 16px;font-size:13.5px;margin:0;border-bottom:1px solid #efc9c2}
+  .hero{background:linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:34px 40px;border-bottom:5px solid var(--gold)}
+  .mnum{display:inline-block;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+  .hero h1{color:#fff;font-size:30px;margin:.25em 0 .3em}
+  .hero .sub{color:#cfe0ef;font-size:16.5px;max-width:64ch;margin:0}
+  .sec{padding:26px 40px;border-bottom:1px solid var(--line)}
+  .sec h2{font-size:21px;margin:.1em 0 .4em}.sec h3{font-size:16.5px;margin:1.1em 0 .3em}
+  .sec p{margin:.5em 0}
+  .lead{font-size:17px;color:#33424f}
+  .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;vertical-align:middle;margin-left:4px}
+  .t-est{background:var(--est)}.t-plaus{background:var(--plaus)}.t-hyp{background:var(--hyp)}.t-gate{background:var(--clin)}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:#3a4854;margin:8px 0 2px}
+  ul.key,ol.key{padding-left:20px}ul.key li,ol.key li{margin:6px 0}
+  .good{background:#eef6f0;border:1px solid #cfe6d8;border-left:4px solid var(--est);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px}
+  .warn{background:#fdf3f0;border:1px solid #efc9c2;border-left:4px solid var(--clin);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px;color:#7c2420}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:14px 16px;font-size:14.5px;margin:14px 0}
+  .takeaway{background:#fbf6ea;border:1px solid var(--gold-soft);border-left:4px solid var(--gold);border-radius:9px;padding:13px 16px;margin:16px 0}
+  .takeaway h3{margin:0 0 .3em;font-size:15px;color:var(--navy)}
+  .reflect{background:#eef4fa;border:1px solid #cfe0ef;border-radius:10px;padding:14px 16px;margin:16px 0;font-size:14.5px}
+  .reflect h3{margin:0 0 .3em;font-size:15px}
+  .carry{font-size:16px;color:var(--navy);font-style:italic;border-top:2px solid var(--gold-soft);padding-top:12px;margin-top:8px}
+  sup.cite a{color:var(--gold);font-weight:700;font-size:11px;text-decoration:none}
+  .refs{background:#faf8f1}
+  .refs ol{padding-left:22px;font-size:12.5px;color:#3a4854}.refs li{margin:6px 0}
+  .foot{background:var(--navy);color:#cdddec;padding:24px 40px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:720px){.hero h1{font-size:24px}.sec,.subnav,.hero,.foot{padding-left:18px;padding-right:18px}}
+</style></head>
+<body><div class="wrap">
+<div class="protobar">PROTOTYPE / DRAFT v0.1 — educational course, pending physician sign-off</div>
+<div class="topbar"><div class="topin"><a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a><nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html" class="here">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav></div></div>
+<div class="subnav"><span class="crumb"><a href="hub-learn.html">Learn</a> › <a href="course-patient.html">Patient Track</a> › <b>Module 02</b></span><span class="prog">Module 02 of 12</span><span class="pnbar"><a class="pn" href="course-patient-01.html">← Module 01</a><a class="pn primary" href="course-patient-03.html">Module 03 →</a></span></div>
+<header class="hero">
+  <div class="mnum">Module 02 · Patient Track</div>
+  <h1>Your Brain After Service <span class="tag t-plaus">Plausible</span></h1>
+  <p class="sub">An honest look at what service can do to the brain — blast, toxic exposure, and chronic stress — so you understand why we prepare the terrain, not because any medicine is promised to fix it.</p>
+</header>
+<section class="sec"><div class="box" style="border-left:4px solid #2e7d52;background:#eef6f0"><h3 style="margin:0 0 5px;font-size:15px">🎖️ In plain English</h3><p style="margin:0">Service can quietly change your brain in three ways: blasts can mess with blood flow, some exposures can reach it, and years of stress can leave it inflamed. That is biology, not a character flaw — and a lot of it can actually be measured. This module is about knowing the current state of your brain and body (we call it your "terrain") and making it healthier and better-rested. No pill, plant, or "cleanse" is promised to fix it here; getting your baseline stronger is worth doing on its own.</p></div></section>
+<section class="sec">
+  <p>Before we talk about any medicine, let's talk about the ground it would land on: your brain, and everything service may have asked it to absorb. We call that ground the <b>terrain</b> — and understanding yours is the first real act of preparation.</p>
+
+  <h3>What "terrain" means</h3>
+  <p>Terrain is the physical state of your brain and body right now: how well blood moves through it, how much inflammation it carries, how rested and regulated your nervous system is. None of this is a character flaw. It's biology that was loaded under conditions civilians rarely face — and, unlike a lot of what happened to you, some of it is measurable.</p>
+  <p>Three parts of the veteran terrain show up again and again: blast's effect on blood flow, toxic exposures, and the inflammatory weight of chronic stress. We'll take them one at a time, and we'll be honest about how strong the evidence is for each.</p>
+</section>
+
+<section class="sec">
+  <h3>Blast changes blood flow — even without a "diagnosed" TBI <span class="tag t-plaus">Plausible</span></h3>
+  <p>You don't need a moderate or severe brain injury for blast to leave a mark. In a rat model of mild, "subclinical" blast — the kind that doesn't knock you out — exposure damaged the small blood vessels of the brain and disrupted the structures that regulate cerebral blood flow, producing a <i>chronic</i> vascular pathology that persisted long after the blast itself<sup class="cite"><a href="https://consensus.app/papers/details/16789993fbc6503ba608c05cfd9503a7/" target="_blank" rel="noopener">[1]</a></sup>.</p>
+  <p>Human imaging points the same direction. Low-level blast exposure appears to alter cerebral blood flow and the blood–brain barrier, and MRI perfusion imaging — a technique called arterial spin labeling — can pick up those changes in people with blast histories<sup class="cite"><a href="https://consensus.app/papers/details/0ff92739d9ce530cade91c2db6c9119e/" target="_blank" rel="noopener">[2]</a></sup>. Blood flow is how the brain feeds, clears waste from, and repairs itself, so a change here is not a small thing.</p>
+  <div class="box"><b>Read the grade honestly:</b> the mechanism above is <span class="tag t-plaus">Plausible</span>, not settled. The strongest causal evidence is from animal models, and the human work is largely imaging that shows association — not proof of harm in any one veteran. It's a well-supported concern, not a diagnosis you should hand yourself.</div>
+</section>
+
+<section class="sec">
+  <h3>The neurovascular unit: your brain's supply line <span class="tag t-plaus">Plausible</span></h3>
+  <p>Blood vessels in the brain aren't just plumbing. Neurons, support cells called glia, and the vessel wall work together as one system — the <b>neurovascular unit</b> — matching blood delivery to whatever each patch of brain is doing, moment to moment. The blast studies matter because they show this <i>partnership</i> getting disrupted: the connections between glia, vessels, and neurons frayed, and the barrier that normally keeps blood and brain tissue properly separated became leakier<sup class="cite"><a href="https://consensus.app/papers/details/16789993fbc6503ba608c05cfd9503a7/" target="_blank" rel="noopener">[1]</a></sup>.</p>
+  <p>Why say all this before a psychedelic module? Because a brain with compromised blood flow and a stressed barrier is a different starting terrain than a textbook one. That is context for a treating clinician to weigh — not a reason for alarm, and not something you diagnose in yourself from a course.</p>
+</section>
+
+<section class="sec">
+  <h3>Toxic exposures can reach the brain <span class="tag t-plaus">Plausible</span></h3>
+  <p>Burn pits, contaminated water, jet fuel, industrial solvents, heavy metals — many veterans carry exposure histories that most doctors never think to ask about. Some of these substances can cross the blood–brain barrier and, at high enough levels, drive oxidative stress and cellular damage that can feed neuroinflammation over time.</p>
+  <div class="warn"><b>What this is NOT:</b> it is not "metals get locked in your brain," it is not a "pineal decalcification" story, and no tea, sauna, or supplement "flushes out the toxins" as a cure. Those are pseudoscience, and some of them are dangerous. Real exposure concerns are handled by <b>testing first</b> with a clinician — measuring what is actually there — not by guessing and detoxing blindly.</div>
+</section>
+
+<section class="sec">
+  <h3>Chronic stress leaves an inflammatory footprint <span class="tag t-plaus">Plausible</span></h3>
+  <p>Long-term stress and trauma don't only live in your thoughts. Sustained threat physiology is associated with chronic neuroinflammation — activated immune cells in the brain and elevated inflammatory signaling — and with lower levels of BDNF, a protein that helps neurons stay healthy and adaptable.</p>
+  <p>Here is where we have to be careful, because this is exactly where courses tend to overpromise. It is tempting to say "so a psychedelic will raise your BDNF and rewire you." That leap is a <span class="tag t-hyp">Hypothesis</span>, not a fact: a 2024 meta-analysis of human studies found <i>no</i> reliable change in peripheral (blood-measured) BDNF after psychedelic dosing. Whatever these medicines do, "boosts your BDNF" is not something we can promise you.</p>
+</section>
+
+<section class="sec">
+  <h3>So why prepare the terrain at all?</h3>
+  <p>Because a healthier terrain — better sleep, lower inflammation, steadier blood pressure and vascular health — is good for your brain <i>no matter what you do next</i>. That part is <span class="tag t-est">Established</span> general-health science. What is <i>not</i> established is whether optimizing the terrain first changes how any psychedelic treatment turns out — that specific claim is a <span class="tag t-hyp">Hypothesis</span>, and we'll keep flagging it as one rather than selling it to you.</p>
+  <div class="good"><b>The honest reason to prepare:</b> you gain a stronger, calmer, better-measured baseline — something worth having whether or not you ever pursue any medicine. Preparation is about knowing your terrain and improving your everyday health, on your own timeline.</div>
+  <div class="warn"><b>More detox is not "more safe."</b> Aggressive detox, chelation, or fasting crammed in right before a treatment can <i>add</i> risk, not remove it — especially before a medicine like ibogaine, which can trigger dangerous — sometimes fatal — heart-rhythm disturbances by prolonging the heart's QT interval. (Ibogaine, psilocybin, MDMA, LSD, and DMT are Schedule I federally, and this course never promotes illegal or unsupervised use.) Real prep is <b>test-first and physician-timed</b>, decided by your treating clinician — never a rushed cleanse.</div>
+</section>
+
+<div class="takeaway">
+  <h3>Key takeaways</h3>
+  <ul class="key">
+    <li>Your "terrain" is the measurable physical state of your brain — blood flow, inflammation, nervous-system regulation. It is biology, not a flaw.</li>
+    <li>Blast can disrupt cerebral blood flow and the neurovascular unit even without a diagnosed TBI — <span class="tag t-plaus">Plausible</span>, strongest in animal models and supported by human imaging.</li>
+    <li>Toxic exposures can reach the brain, but the answer is <b>testing with a clinician</b> — never blind "cleanses" or metal-detox myths.</li>
+    <li>Chronic stress carries an inflammatory footprint; that a psychedelic reverses it by raising BDNF is a <span class="tag t-hyp">Hypothesis</span> — a 2024 human meta-analysis found no peripheral BDNF change.</li>
+    <li>Preparing the terrain is worth doing for your everyday health; that it improves treatment outcomes is unproven, and rushed detox before a cardiotoxic medicine can add danger.</li>
+  </ul>
+</div>
+
+<div class="reflect">
+  <h3>Reflect before you move on</h3>
+  <ul>
+    <li>Which parts of your service history — blast events, exposures, years of chronic stress — has a doctor actually measured, versus never asked about?</li>
+    <li>Where have you heard "detox" or "cleanse" language before, and did it come with real testing and a clinician, or with a product to buy?</li>
+    <li>If preparing the terrain only improved your everyday sleep, inflammation, and vascular health — and changed nothing else — would that still be worth your time?</li>
+  </ul>
+</div>
+
+<p class="carry"><b>Carry this out of the lesson:</b> your brain carries a load that was rarely measured — and tending that terrain is worth doing for its own sake, long before any medicine enters the picture.</p>
+
+<section class="sec refs">
+  <h2 style="font-size:18px">Sources</h2>
+  <ol>
+    <li>Gama Sosa et al., 2019, Acta Neuropathologica Communications. <a href="https://consensus.app/papers/details/16789993fbc6503ba608c05cfd9503a7/">Low-level blast exposure disrupts gliovascular and neurovascular connections and induces chronic vascular pathology ↗</a></li>
+    <li>Kilgore et al., 2024, International Journal of Molecular Sciences. <a href="https://consensus.app/papers/details/0ff92739d9ce530cade91c2db6c9119e/">Effects of Low-Level Blast on Neurovascular Health and Cerebral Blood Flow ↗</a></li>
+  </ol>
+  <p style="font-size:11.5px;color:#8a8f98">Evidence surfaced via Consensus (consensus.app).</p>
+</section>
+<section class="sec"><div id="quiz"></div></section>
+<div class="sec" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><a class="pn" href="course-patient.html">↩ All 12 modules</a><span class="pnbar"><a class="pn" href="course-patient-01.html">← Module 01</a><a class="pn primary" href="course-patient-03.html">Module 03 →</a></span></div>
+<div class="foot"><p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Patient Track · Module 02 — DRAFT v0.1. Educational only; not medical advice, and not an endorsement of any substance. Clinical decisions belong to your treating clinician; content marked for clinician sign-off is not final until a named physician approves it.</p><p>In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p></div>
+</div><script src="owh-config.js"></script><script src="owh-app.js"></script><script>OWH.ready.then(function(){ OWH.mountQuiz("quiz",{course:"patient",moduleId:"02",passPct:75,questions:[
+{q:"What does 'terrain' mean in this module?",options:["The current physical state of your brain and body — blood flow, inflammation, and how regulated your nervous system is","A character flaw you have to fix before treatment","A specific psychedelic medicine","A type of brain scan"],answer:0,explain:"Terrain is your brain and body's current, measurable physical state — it is biology, not a flaw."},
+{q:"How should you treat the idea that a psychedelic will 'boost your BDNF' and rewire your brain?",options:["As a proven fact the course guarantees","As a Hypothesis — a 2024 human meta-analysis found no reliable change in blood-measured BDNF","As a reason you can skip your doctor","As settled, established science"],answer:1,explain:"It is a Hypothesis, not a promise — a 2024 meta-analysis found no reliable change in blood-measured BDNF after psychedelics."},
+{q:"Why can rushing an aggressive detox or cleanse right before a medicine like ibogaine be dangerous?",options:["It isn't — more detox is always safer","Ibogaine can cause dangerous, sometimes fatal heart-rhythm problems, and a rushed cleanse adds risk instead of removing it","Because ibogaine is FDA-approved and sold in stores","Because the cleanse cures the toxins first"],answer:1,explain:"Ibogaine can trigger dangerous, sometimes fatal heart-rhythm disturbances (QT prolongation), so cramming in detox beforehand adds risk."},
+{q:"If you have a history of toxic exposures like burn pits or solvents, what does the module say is the right first step?",options:["Do a sauna or supplement cleanse to flush the toxins out","Get tested first with a clinician to measure what is actually there","Assume the metals are locked in your brain forever","Nothing can be measured, so just guess"],answer:1,explain:"Real exposure concerns start with testing by a clinician — not blind cleanses or metal-detox myths."},
+{q:"Under U.S. federal law, psilocybin, MDMA, LSD, DMT, and ibogaine are currently:",options:["FDA-approved medicines you can buy over the counter","Schedule I controlled substances, and this course never promotes illegal or unsupervised use","Legal to use on your own at home","Completely unregulated"],answer:1,explain:"Those five are Schedule I federally, and this course never promotes illegal or unsupervised use."}
+]}); });</script></body></html>

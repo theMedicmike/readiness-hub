@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psychological &amp; Psychiatric Screening — Provider Track</title>
+<script src="owh-config.js"></script><script src="owh-app.js"></script>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b;--gate:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.65}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.25;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:900px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 26px;gap:10px;flex-wrap:wrap}
+  .topin img{height:32px}
+  nav a{color:var(--muted);font-size:12.5px;font-weight:600;margin-left:13px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:12.5px;padding:8px 14px;border-radius:8px;margin-left:13px}
+  .hero{background:linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:38px 44px;border-bottom:5px solid var(--gold)}
+  .hero .kick{letter-spacing:.22em;text-transform:uppercase;font-size:11px;color:var(--gold-soft);font-weight:700}
+  .hero .mnum{display:inline-block;font-family:Georgia,serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-soft);margin:8px 0 2px}
+  .hero h1{color:#fff;font-size:29px;margin:.1em 0 .25em}.hero p{color:#cfe0ef;font-size:16.5px;max-width:68ch;margin:0}
+  .gatebar{background:#fdf3f0;border-bottom:1px solid #efc9c2;color:#7c2420;font-size:13px;padding:9px 44px}
+  .sec{padding:22px 44px;border-bottom:1px solid var(--line)}
+  .sec h3{font-size:19px;margin:.2em 0 .3em}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:13px 16px;font-size:14.5px;margin:12px 0}
+  .box p{margin:0}
+  ul.key{padding-left:20px}ul.key li{margin:7px 0}
+  .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;vertical-align:middle}
+  .t-est{background:var(--est)}.t-plaus{background:var(--plaus)}.t-hyp{background:var(--hyp)}.t-gate{background:var(--gate)}
+  .navbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 44px;border-bottom:1px solid var(--line)}
+  .foot{background:var(--navy);color:#cdddec;padding:22px 44px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:820px){.hero{padding:26px 20px}.sec,.navbar,.foot,.gatebar{padding-left:20px;padding-right:20px}.hero h1{font-size:23px}}</style></head>
+<body><div class="wrap">
+<div class="protobar">PROTOTYPE / DRAFT v0.1 — provider continuing education</div>
+<div class="topbar"><div class="topin"><a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a><nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html" class="here">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav></div></div>
+<header class="hero"><div class="kick">Operation Whole Health · Provider Track</div><span class="mnum">Module P4</span><h1>Psychological &amp; Psychiatric Screening</h1><p>A trauma-informed, evidence-graded protocol for psychiatric intake, C-SSRS suicide screening, psychosis/bipolar risk assessment, and genuinely informed consent before any readiness clearance decision.</p></header>
+
+<section class="sec"><div class="box" style="border-left:4px solid #2e7d52;background:#eef6f0"><h3 style="margin:0 0 5px;font-size:15px">🎖️ Bottom line for a busy clinician</h3><p style="margin:0">Run the full C-SSRS at intake and a short version at every visit after, and treat any positive answer as an immediate escalation, not a checkbox — VHA data show most veterans who later attempt or die by suicide had screened low or moderate, not high, so "clean" today doesn't mean safe tomorrow. Ask directly about personal and family history of psychosis and bipolar disorder every single time; it's the most consistent psychological red flag across every substance in this standard, even though the field is still debating exactly how strict that exclusion should be going forward. The contraindication list gives you flags, not thresholds — you set the exact cutoff and make the go/no-go call, and no protocol overrides your judgment. And informed consent isn't a form: it's honest benefit, honest risk, honest uncertainty, delivered to someone whose psychiatric state you've actually confirmed lets them understand it.</p></div></section>
+<section class="sec">
+<h3>Trauma-Informed Intake: How You Ask Matters as Much as What You Ask</h3>
+<p>Most people arriving at a readiness evaluation for psychedelic-adjacent care are disclosing combat exposure, sexual trauma, moral injury, or years of failed treatment — often for the first time, to a stranger. A rushed or clinically cold intake can retraumatize before you ever reach the psychiatric-risk questions you actually need answered. Framing an intake around safety, choice, and collaboration is associated with better provider recognition of PTSD and depression and higher rates of guideline-concordant, trauma-informed care delivery in primary-care trials <span class="tag t-plaus">Plausible</span> — though that same trial found trauma-informed process improved diagnosis and care delivery without a measurable difference in 12-week symptom outcomes, so treat it as good practice, not a proven treatment effect in itself.</p>
+<ul class="key">
+<li>Screen in a private, unhurried setting; explain why each question is being asked before you ask it.</li>
+<li>Offer choice: "You can decline to go into detail — I only need to know if this happened, not the story" lets the patient keep control of disclosure.</li>
+<li>Use the patient's own language for their experience rather than imposing a diagnostic label early.</li>
+<li>Watch for dissociation or activation during the interview (blank affect, dissociative pauses, escalating distress) and have a grounding technique ready before continuing.</li>
+<li>Explain what happens after a positive safety-screen answer before you ask the question, so disclosure doesn't feel like a trap.</li>
+</ul>
+<div class="box">Clinical pearl: the intake interview is itself a clinical intervention. A veteran who feels rushed or interrogated will underreport suicidal ideation and psychiatric history — the two things this module needs most. <span class="tag t-plaus">Plausible</span></div>
+</section>
+
+<section class="sec">
+<h3>The C-SSRS: Your Non-Negotiable Suicide Screen</h3>
+<p>The Columbia-Suicide Severity Rating Scale (C-SSRS) is the field's gold-standard suicide-risk instrument, validated across adolescent and adult, psychiatric and general-medical populations <span class="tag t-est">Established</span>, and it is the mandated suicide screen across the entire Veterans Health Administration. It separates two constructs that matter clinically: ideation severity (from a passive wish to be dead through active ideation with a specific plan and intent) and behavior — preparatory acts, aborted or interrupted attempts, and actual attempts, both lifetime and recent.</p>
+<p>Administer the full C-SSRS at intake, and repeat a brief "since we last talked" screener at every subsequent contact — dosing day, daily or weekly check-ins, and every follow-up visit. This is not a one-time gate; risk changes over the course of preparation and treatment.</p>
+<ul class="key">
+<li>Ask every item in sequence — do not skip ahead based on assumption, even if the patient presents as stable.</li>
+<li>A "yes" to active ideation with plan and/or intent, or any preparatory behavior or attempt (recent or lifetime), is an immediate stop point pending psychiatric evaluation — not a note for later.</li>
+<li>Document the exact item endorsed, not just a risk category label, so the next clinician who reads the chart knows precisely what was disclosed.</li>
+<li>Have a written safety plan and crisis-line information ready before you start screening, not after a positive result. Veterans Crisis Line: 988, then press 1.</li>
+</ul>
+<div class="box">Clinical pearl: don't let "low risk" lull you. In Veterans Health Administration data covering roughly 1.9 million C-SSRS screens, 61% of veterans who later died by suicide and 78% of those who later attempted suicide had initially screened low, moderate, or high risk in specialty mental health settings — meaning any positive item, not just a "high risk" label, warrants active follow-up, and a clean screen today doesn't retire the question tomorrow. <span class="tag t-est">Established</span></div>
+</section>
+
+<section class="sec">
+<h3>Personal &amp; Family History of Psychosis or Bipolar Disorder</h3>
+<p>Across every hallucinogen-type substance covered in this standard, personal or family history of a psychotic disorder or bipolar disorder is the single most consistent psychiatric red flag for destabilization <span class="tag t-est">Established</span>. Absolute risk in a monitored clinical setting is low — pooled data across contemporary psychedelic trials put psychedelic-induced psychosis at roughly 0.002% in population-based studies and 0.2%–0.6% across uncontrolled and randomized trials — but that risk concentrates sharply in people who already carry psychotic-spectrum vulnerability: in trials that enrolled participants with schizophrenia, roughly 4 in 100 went on to develop long-lasting psychotic symptoms. Serious adverse events overall — including new-onset psychosis, mania, and suicidal behavior — cluster almost entirely in participants with a pre-existing neuropsychiatric diagnosis (around 4%), versus essentially none reported in healthy volunteers.</p>
+<p>Whether a history of schizophrenia should remain an absolute research-exclusion criterion is an open, actively studied question, and some recent meta-analytic reviews argue for a more individualized approach going forward <span class="tag t-hyp">Hypothesis</span> — but that is a research-design debate, not a clinical green light. Until better-quality data exist, active psychosis or unmanaged bipolar disorder remains a stop point in this standard <span class="tag t-est">Established</span>.</p>
+<ul class="key">
+<li>Ask directly, every time: personal history of psychotic episodes, schizophrenia, or schizoaffective disorder.</li>
+<li>Ask directly: personal history of manic or hypomanic episodes, diagnosed or undiagnosed.</li>
+<li>Ask about first-degree relatives (parent, sibling, child) with schizophrenia or bipolar I disorder — family loading raises concern even with a clean personal history.</li>
+<li>Ask about prior psychiatric hospitalization for psychosis or mania, and about current psychotic symptoms (delusions, hallucinations) regardless of whether they've ever been formally diagnosed.</li>
+<li>A positive family history alone is a flag for closer evaluation and physician discussion, not an automatic permanent disqualification — but active personal psychosis or unmanaged bipolar disorder is a stop point pending psychiatric clearance.</li>
+</ul>
+<div class="box">Clinical pearl: cannabis research offers the clearest dose-response evidence linking a hallucinogen-adjacent substance to precipitated or accelerated psychosis in vulnerable users, and clinicians should generalize that caution as a class effect across this drug family. <span class="tag t-est">Established</span></div>
+</section>
+
+<section class="sec">
+<h3>The Contraindication &amp; Stop Framework</h3>
+<p>This standard flags domains; it does not set the numbers. The universal stop-framework domains are: significant or uncontrolled cardiovascular disease or arrhythmia, uncorrected electrolyte abnormalities, significant hepatic or renal impairment, active psychosis or unmanaged bipolar disorder, acute suicidality, pregnancy, and contraindicated concurrent medications that cannot be safely managed. The treating physician sets the exact threshold for each domain and makes the final go/no-go call — this module documents readiness, it does not clear anyone for treatment.</p>
+<p>Medication reconciliation is where psychiatric screening and pharmacology intersect most dangerously. MDMA acts as a releasing agent at the serotonin, dopamine, and norepinephrine transporters, driving a large surge in synaptic serotonin <span class="tag t-est">Established</span>. Layer an SSRI, SNRI, or MAOI on top of that and you raise the risk of serotonin syndrome — a triad of neuromuscular excitation (tremor, hyperreflexia, clonus), autonomic instability (tachycardia, hyperthermia, blood-pressure swings), and altered mental status (agitation, delirium) that can be fatal if unrecognized <span class="tag t-est">Established</span>. A supervised, prescriber-directed taper — never a patient-directed one — is the standard of care before MDMA or ibogaine in a patient on serotonergic medication.</p>
+<ul class="key">
+<li>Complete full medication and supplement reconciliation at intake, and repeat it before the treatment day, not just once at screening.</li>
+<li>Flag SSRIs, SNRIs, and MAOIs specifically. Note that SSRI pretreatment can also blunt MDMA's subjective effects, since both act on the same serotonin transporter — worth setting realistic expectations if a taper isn't fully complete.</li>
+<li>Remember that abruptly stopping an SSRI carries its own risk — discontinuation symptoms and relapse of the underlying condition — so the taper decision and its timing belong to the prescriber, weighing both risks.</li>
+<li>Cross-check every stop-framework domain explicitly in the chart. "Reviewed, no contraindication found" is not the same as leaving it blank.</li>
+</ul>
+<div class="box">This is a framework, not a substitute for clinical judgment. Every threshold and every go/no-go decision belongs to the patient's treating clinician, never to this document.</div>
+</section>
+
+<section class="sec">
+<h3>Genuinely Informed Consent: Benefits, Honest Risks, and What's Still Unknown</h3>
+<p>A signature is not consent. Genuine informed consent for this population requires three components delivered honestly and specifically, not as boilerplate: what benefit is realistically expected and how strong that evidence actually is; what the specific modality's signature risks are (cardiac for ibogaine, serotonergic and thermal for MDMA, bladder and dependence for ketamine, psychological destabilization risk for psilocybin and LSD, and so on); and what remains unknown, named as unknown rather than glossed over.</p>
+<p>Be precise and current about legal and regulatory status when you disclose it — patients deserve accuracy, not the exaggerated legitimacy that hype cycles create. Psilocybin, MDMA, LSD, DMT, and ibogaine remain Schedule I under federal law; MDMA-assisted therapy has completed only Phase 3 trials and is not FDA-approved; ketamine is Schedule III and used off-label for psychiatric indications; esketamine (Spravato) is the one FDA-approved option in this space, approved specifically for treatment-resistant depression, not for the other indications sometimes discussed alongside it. Never let a patient walk away believing "in trials" means "proven" or "approved."</p>
+<ul class="key">
+<li>State the benefit claim's evidence grade out loud — established, plausible, or hypothesis — don't let optimism round it up.</li>
+<li>Walk through the modality-specific risk annex line by line; don't compress serious risks into a single soft sentence.</li>
+<li>Name the honest unknowns explicitly: whether preparation itself changes treatment outcomes, and whether neuroplasticity benefits seen in animal models translate into durable human benefit, are both open hypotheses this field's registries are built to test — not settled facts.</li>
+<li>Confirm the patient (and caregiver, where involved) can accurately restate the key risks back to you — teach-back, not just a signature.</li>
+<li>Document that consent was voluntary and that withdrawal is possible at any point without penalty to future care.</li>
+</ul>
+<div class="box">Clinical pearl: a positive finding on this module's own screens — active psychosis, an unmanaged manic episode, or acute suicidality — doesn't just contraindicate treatment. It can independently compromise the capacity needed to give genuine informed consent at all. Assess capacity as its own explicit question, not as something that follows automatically from a calm affect in the room. <span class="tag t-est">Established</span></div>
+</section>
+
+<section class="sec">
+<h3>Documentation, Escalation, and the Clinician's Final Call</h3>
+<p>Assemble a clear-to-treat packet before any modality-specific step proceeds: screening results, medication reconciliation, contraindication review, the relevant modality annex, and completed education and consent. A named, licensed clinician-of-record reviews and signs it. This standard documents readiness — it does not clear anyone, and it never substitutes for your own clinic's screening and consent process.</p>
+<p>Any safety flag — a positive C-SSRS item, a destabilization sign, a newly identified contraindication — triggers immediate escalation to the care team. It is never a data point held for the next scheduled visit.</p>
+<ul class="key">
+<li>All Phase 1 screens (medical, cardiovascular, psychiatric, medication/substance, consent/education) completed and reviewed before any preparation step begins.</li>
+<li>Every contraindication domain addressed with an explicit clinician decision in the chart, not left blank.</li>
+<li>An escalation plan and crisis-line information given to the patient and caregiver in writing, before it's needed.</li>
+<li>C-SSRS re-screening scheduled at every subsequent contact, not just at intake.</li>
+</ul>
+</section>
+<section class="sec"><div id="quiz"></div></section>
+<div class="navbar"><a href="course-provider.html">← All 8 modules</a><a href="course-provider-05.html" class="btn">Next · Module P5 →</a></div>
+<div class="foot"><p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Provider Track — prototype, DRAFT v0.1. Continuing education content; not medical, legal, or regulatory advice. Content marked <span style="color:#fff">Clinician sign-off</span> is pending a named licensed physician / Medical Director’s review before use with patients. In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p></div>
+</div>
+<script>OWH.ready.then(function(){ OWH.mountQuiz("quiz",{course:"provider",moduleId:"04",passPct:75,questions:[{"q":"A patient screens \"low risk\" on the C-SSRS at intake. What does that mean for your workflow?","options":["It rules out meaningful suicide risk; no further screening is needed until the next scheduled visit","It's reassuring, but VHA outcome data show many people who later attempt or die by suicide had initially screened low or moderate — so it still warrants ongoing attention and repeat screening, not case closure","It means the patient can be cleared to treatment immediately with no escalation plan in place","The C-SSRS is only administered once, at intake, and never repeated"],"answer":1,"explain":"VHA data on roughly 1.9 million C-SSRS screens found that 61% of veterans who later died by suicide and 78% who later attempted suicide had initially screened low, moderate, or high in specialty mental health settings — a low score lowers but does not eliminate risk, and re-screening at every contact is required."},{"q":"Per the Readiness Standard's contraindication framework, who sets the exact threshold for a flagged domain like \"active psychosis\" or \"acute suicidality,\" and makes the final go/no-go call?","options":["The screening instrument itself, via a fixed universal cutoff score","The treating physician — the framework only flags the domain; the clinician sets the threshold and owns the decision","Whichever team member completed the intake interview","No one; the standard automatically clears or disqualifies patients based on the checklist"],"answer":1,"explain":"The standard is explicit: it flags contraindication domains, but the treating clinician sets exact thresholds and makes the go/no-go decision. The document supports a clinic's own screening and consent process — it never replaces the clinician's judgment."},{"q":"A patient on a daily SSRI wants to proceed toward MDMA-assisted therapy readiness screening. What is the clinically accurate concern?","options":["None — SSRIs have no pharmacological relationship to MDMA","MDMA is a serotonin/dopamine/norepinephrine releasing agent; combined with an SSRI it raises serotonin syndrome risk, and any taper must be supervised by the prescriber, never self-directed by the patient","The patient should simply stop the SSRI on their own the week before the session","SSRIs enhance and prolong MDMA's effects and should be continued through the dosing session"],"answer":1,"explain":"MDMA releases serotonin, dopamine, and norepinephrine from presynaptic transporters; adding an SSRI, SNRI, or MAOI increases serotonin-syndrome risk (neuromuscular excitation, autonomic instability, altered mental status). Any SSRI taper must be prescriber-directed, since abrupt discontinuation carries its own relapse/discontinuation risk."},{"q":"Which statement about psychosis risk and psychedelics is most accurate for informed-consent purposes?","options":["Psychedelics have been proven to never cause psychosis in any population","Personal or family history of psychosis/bipolar disorder is the most consistent psychiatric risk factor for destabilization; population-level incidence of psychedelic-induced psychosis is low overall but rises substantially in people with pre-existing psychotic-spectrum vulnerability","Only LSD carries any psychosis risk; other psychedelics are exempt","Psychosis risk from psychedelics is purely theoretical, with no supporting clinical data"],"answer":1,"explain":"Pooled data put psychedelic-induced psychosis at roughly 0.002% in population studies up to 0.6% in RCTs, but in trials enrolling participants with schizophrenia, about 4% developed long-lasting psychotic symptoms — the risk is real, rare in low-vulnerability populations, and concentrated in exactly the group this module screens for."},{"q":"Beyond a signature, what does this standard require for informed consent to be genuine?","options":["Disclosure only needs to cover expected benefits, since detailing risk creates liability exposure","The patient must be able to recite the substance's exact federal drug schedule from memory","Honestly graded benefit claims, a line-by-line review of modality-specific risks, explicit disclosure of genuine unknowns, and a contemporaneous capacity assessment — since an active psychiatric contraindication can itself compromise the capacity needed to consent","A caregiver's signature is sufficient in place of the patient's own consent"],"answer":2,"explain":"Genuine consent requires evidence-graded benefit claims, honest risk disclosure, explicit naming of unknowns (e.g., that preparation improving outcomes is still a hypothesis), and confirming the patient has the capacity to understand it — active psychosis, unmanaged mania, or acute suicidality can independently undermine that capacity."}]}); });</script>
+</body></html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Governance Charter — Operation Whole Health</title>
+<script src="owh-config.js"></script><script src="owh-app.js"></script>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.6}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.2;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:1040px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 28px;gap:12px;flex-wrap:wrap}
+  .topin img{height:34px}
+  nav a{color:var(--muted);font-size:13px;font-weight:600;margin-left:14px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:8px 15px;border-radius:8px;margin-left:14px}
+  .hero{background:radial-gradient(1100px 420px at 80% -10%,#27557f 0,transparent 60%),linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:52px 44px;border-bottom:5px solid var(--gold)}
+  .hero .kick{letter-spacing:.24em;text-transform:uppercase;font-size:11px;color:var(--gold-soft);font-weight:700}
+  .hero h1{color:#fff;font-size:40px;margin:.2em 0 .25em;max-width:20ch}.hero p{color:#cfe0ef;font-size:18.5px;max-width:72ch;margin:0}
+  .hero .v{margin-top:14px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-soft)}
+  .sec{padding:32px 44px;border-bottom:1px solid var(--line)}
+  .eyebrow{display:inline-block;letter-spacing:.14em;text-transform:uppercase;font-size:11px;font-weight:800;color:var(--gold);background:#fbf6ea;border:1px solid var(--gold-soft);padding:3px 10px;border-radius:30px;margin-bottom:10px}
+  .sec h2{font-size:25px;margin:.1em 0 .3em}.lead{font-size:17px;color:#33424f;max-width:74ch}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:15px 18px;font-size:14.5px;margin:15px 0}
+  .box.unite{background:#eef4fa;border-color:#cfe0ef}
+  .box.gold{background:#fdf6e6;border-color:var(--gold)}
+  .warn{background:#fdf3f0;border:1px solid #efc9c2;color:#7c2420;border-radius:10px;padding:13px 16px;font-size:14px;margin:14px 0}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:18px 0}
+  .card{border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:10px;padding:15px 17px;background:#fcfbf7}
+  .card h3{font-size:16px;margin:0 0 5px}.card p{margin:0;font-size:13.5px;color:#3a4854}
+  .seat{border:1px solid var(--line);border-radius:10px;padding:13px 15px;background:#fff}
+  .seat b{color:var(--navy);display:block;font-size:14.5px;margin-bottom:2px}
+  .seat span{font-size:12.5px;color:var(--muted)}
+  table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#f2ede0;color:var(--navy);font-family:Georgia,serif;font-size:11px;text-transform:uppercase;letter-spacing:.03em}
+  ul.key{padding-left:20px}ul.key li{margin:7px 0}
+  ol.steps{padding-left:20px}ol.steps li{margin:9px 0}
+  .phase{border:1px solid var(--line);border-radius:12px;margin:14px 0;overflow:hidden}
+  .phase .ph{background:var(--navy);color:#fff;padding:11px 16px;font-family:Georgia,serif;font-size:16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .phase .ph span{font-family:system-ui,Arial,sans-serif;font-size:11px;font-weight:700;color:var(--gold-soft);text-transform:uppercase;letter-spacing:.06em}
+  .phase .pb{padding:12px 16px 15px;font-size:14px;color:#33424f}
+  .sig{border-top:1.5px solid var(--navy);margin-top:8px;padding-top:6px;font-size:13px;color:var(--muted)}
+  .sigrow{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:18px}
+  .src{font-size:13px;color:#4a5563}.src li{margin:6px 0}
+  .foot{background:var(--navy);color:#cdddec;padding:26px 44px;font-size:13px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:820px){.grid,.grid2,.sigrow{grid-template-columns:1fr}.hero h1{font-size:30px}.sec{padding:26px 20px}}
+</style></head>
+<body><div class="wrap">
+  <div class="protobar">PROTOTYPE / DRAFT v0.1 — open for founding review, not yet ratified</div>
+  <div class="topbar"><div class="topin">
+    <a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a>
+    <nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav>
+  </div></div>
+
+  <header class="hero">
+    <div class="kick">Operation Whole Health · Governance Charter</div>
+    <h1>The Standards &amp; Registry Council Charter</h1>
+    <p>The document that makes "one united body" real: who governs the Readiness Standard and the Common Outcome Protocol, how decisions get made in the open, how the conflict of interest is firewalled, and how this becomes a truly independent, field-wide institution — not one company's private standard.</p>
+    <div class="v">Draft v0.1 · not yet ratified · published for founding review and public comment</div>
+  </header>
+
+  <section class="sec">
+    <span class="eyebrow">Why a charter</span>
+    <h2>A standard is only as strong as the body that governs it</h2>
+    <p class="lead">The <a href="hub-standard.html">Readiness Standard</a>, the <a href="Readiness Certification - Framework and Governance (DRAFT v0.1).html">Certification Framework</a>, and the <a href="protocol-common-outcomes.html">Common Outcome Protocol</a> have each described an "independent Standards Council." This charter is where that promise becomes a real, accountable institution — with defined seats, defined rules for how the standard changes, a real conflict-of-interest firewall, and a real path to full independence from Operation Whole Health. Without this document, "independent council" is just a phrase. With it, it's an obligation the whole field can hold OWH to.</p>
+    <div class="box unite"><b>Stronger together, governed together.</b> Every clinic, university, clinician, and veteran who adopts the Common Core is trusting that no single company can quietly bend the standard to its advantage. This charter is how that trust is earned and kept — in writing, versioned, and open to challenge.</div>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">The credibility bar</span>
+    <h2>Built to the standard that clinical guideline bodies are held to</h2>
+    <p class="lead">This charter is not improvised. It is deliberately built to match the National Academy of Medicine's <b>Standards for Developing Trustworthy Clinical Practice Guidelines</b> (2011) — the same bar bodies like the American Diabetes Association's Standards of Care are measured against — as operationalized by the NEATS instrument used to audit guideline trustworthiness.</p>
+    <table><thead><tr><th>NAM trustworthy-guideline domain</th><th>How this charter meets it</th></tr></thead><tbody>
+      <tr><td>Transparency &amp; funding disclosure</td><td>§3 COI Firewall — funding sources, product sales, and any Council member's outside income are disclosed publicly</td></tr>
+      <tr><td>Conflict-of-interest management</td><td>§3 — mandatory disclosure, recusal rules, and structural separation from any commercial arm</td></tr>
+      <tr><td>Multidisciplinary, balanced composition</td><td>§2 — physician, toxicologist, neuropharmacologist, methodologist, ethics/IRB member, veteran, patient/caregiver seats</td></tr>
+      <tr><td>Patient &amp; stakeholder perspective</td><td>§2 — dedicated veteran and patient/caregiver seats, not advisory-only</td></tr>
+      <tr><td>Systematic, evidence-graded review</td><td>Every claim tagged Established / Plausible / Hypothesis across the White Paper, Protocol v1, and Modality Library</td></tr>
+      <tr><td>External review &amp; public comment</td><td>§4 — every amendment posted for open comment before ratification</td></tr>
+      <tr><td>Clear, actionable, versioned recommendations</td><td>§4 — semantic versioning (vMAJOR.MINOR) with a public, permanent change log</td></tr>
+      <tr><td>Plan for updating</td><td>§4 — scheduled annual review plus an emergency-amendment path for new safety evidence</td></tr>
+    </tbody></table>
+    <p style="font-size:12.5px;color:var(--muted);margin-top:4px">Grounded in Jue LE, et al. <i>Developing and Testing the NGC Extent of Adherence to Trustworthy Standards (NEATS) Instrument</i>, Annals of Internal Medicine, 2019 — operationalizing the National Academy of Medicine's 2011 standards. See Sources.</p>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">§1 · Mission &amp; scope</span>
+    <h2>What the Council governs</h2>
+    <p class="lead">The <b>OWH Standards &amp; Registry Council</b> ("the Council") governs two linked instruments:</p>
+    <div class="grid2">
+      <div class="card"><h3>The Readiness Standard</h3><p>The Common Core (Screen → Prepare → Clear-to-Treat) and its per-medicine safety annexes — <a href="Readiness Standard - Protocol v1 (Universal) DRAFT v0.1.html">Protocol v1</a> — plus the <a href="Readiness Certification - Framework and Governance (DRAFT v0.1).html">4-tier certification</a> issued against it.</p></div>
+      <div class="card"><h3>The Common Outcome Protocol</h3><p>The <a href="protocol-common-outcomes.html">shared minimum dataset</a> and de-identified registry that let clinics, universities, and study groups pool comparable evidence.</p></div>
+    </div>
+    <p class="lead" style="margin-top:12px">The Council does <b>not</b> govern OWH's commercial products, and OWH's commercial products have <b>no seat, no vote, and no veto</b> over anything the Council decides. That separation is the entire point of this charter.</p>
+    <div class="warn"><b>What this Council is not.</b> It does not practice medicine, does not clear any individual patient for treatment, does not certify that any substance is safe or effective, and does not replace FDA, DEA, state medical boards, or any IRB. It certifies a preparation, screening, and documentation <i>process</i> — full stop.</div>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">§2 · Composition &amp; seats</span>
+    <h2>Who sits on the Council</h2>
+    <p class="lead">Seven seats, each serving a defined purpose so no single discipline — or single company — can dominate a decision.</p>
+    <div class="grid">
+      <div class="seat"><b>Medical Director (Chair)</b><span>Named, licensed, psychedelic-medicine-credentialed physician. Owns and signs all clinical content; chairs Council meetings; casts the tie-breaking vote only.</span></div>
+      <div class="seat"><b>Toxicologist</b><span>Reviews every claim touching heavy metals, detox, and organ toxicity — the seat that killed the "pineal decalcification" and "metals get locked in" claims in earlier drafts.</span></div>
+      <div class="seat"><b>Neuropharmacologist</b><span>Reviews mechanism-of-action claims, drug-drug interactions, and CYP2D6/pharmacogenomic content.</span></div>
+      <div class="seat"><b>Methodologist / biostatistician</b><span>Owns the Common Outcome Protocol's instrument selection, pre-registration, and analysis plans — the registry's scientific integrity.</span></div>
+      <div class="seat"><b>Ethics / IRB representative</b><span>Reviews informed-consent language and any registry activity that touches human-subjects research standards.</span></div>
+      <div class="seat"><b>Veteran representative</b><span>A veteran with lived experience of military service (not necessarily of psychedelic treatment); full voting seat, not an advisory role.</span></div>
+      <div class="seat"><b>Patient / caregiver representative</b><span>A patient or caregiver who has been through the readiness process; full voting seat.</span></div>
+    </div>
+    <div class="box"><b>Terms &amp; expansion.</b> Seats serve staggered 2-year terms (renewable once) so the Council never turns over all at once. As new medicine annexes are added (Modality Library extensibility clause), the Council may add a time-limited specialist seat for that medicine's review only. Quorum for any binding vote is 5 of 7 seats, and no vote may pass without the Medical Director, the methodologist, and at least one patient-facing seat (veteran or caregiver) present.</div>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">§3 · The conflict-of-interest firewall</span>
+    <h2>How independence is actually enforced — not just claimed</h2>
+    <p class="lead">Operation Whole Health sells wellness products. Operation Whole Health also convened this Council. Both facts are stated here, together, on purpose — because a firewall that hides the conflict isn't a firewall.</p>
+    <ul class="key">
+      <li><b>Structural separation.</b> The Council operates as a distinct governance body with its own charter (this document), its own meeting record, and its own public change log — separate from any OWH product, sales, or marketing decision.</li>
+      <li><b>Mandatory disclosure.</b> Every Council member files a written disclosure of financial interests, consulting relationships, and equity in any company selling a substance, device, or product referenced by the standard — disclosed publicly alongside their seat.</li>
+      <li><b>Recusal rule.</b> A member with a financial interest in the outcome of a specific decision (e.g., a new annex for a medicine they hold equity in) must recuse from that vote. Recusals are logged in the public minutes.</li>
+      <li><b>No pay-to-play.</b> Certification, listing, or a favorable evidence grade is <b>never contingent on purchasing any OWH product or service</b> — restated from the Certification Framework and binding on the Council's own decisions.</li>
+      <li><b>Funding transparency.</b> The Council publishes its funding sources annually. Where OWH provides operating funds during the incubation period (Phase 0–1, below), that funding is disclosed and is structured as a grant with no decision rights attached — the model used by the American Diabetes Association, which funds its Standards of Care from general revenue with no industry funding for standards work.</li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">§4 · How the standard changes</span>
+    <h2>Amendments happen in the open, on the record</h2>
+    <ol class="steps">
+      <li><b>Proposal.</b> Any Council member, certified program, or member of the public may propose an amendment to the Common Core, a medicine annex, or the Common Outcome Protocol's dataset, citing the evidence behind it.</li>
+      <li><b>Public comment.</b> Proposed amendments are posted publicly for a minimum <b>30-day comment period</b> before a vote — the same open-comment discipline the ADA and ISO-style consensus bodies use.</li>
+      <li><b>Council review &amp; vote.</b> The Council reviews the evidence and comments, then votes under the quorum rule in §2. Safety-tightening amendments (new contraindication, new warning) may be fast-tracked with a 7-day comment period when new adverse-event evidence emerges.</li>
+      <li><b>Versioning &amp; change log.</b> Every ratified change increments a public version number (vMAJOR.MINOR) with a dated, permanent, publicly-viewable change log — nothing is edited silently.</li>
+      <li><b>Annual review.</b> The full standard undergoes a scheduled annual review even absent a specific proposal, to catch evidence that has quietly gone stale.</li>
+    </ol>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">§5 · Certification governance</span>
+    <h2>Fair, consistent, and appealable</h2>
+    <p class="lead">The Council owns final authority over the 4 certification tiers already published in the <a href="Readiness Certification - Framework and Governance (DRAFT v0.1).html">Certification Framework</a> (Certified Program, Certified Provider, Certified Caregiver, Readiness-Prepared Patient Record).</p>
+    <ul class="key">
+      <li><b>Independent review.</b> Certification decisions are reviewed against the published criteria by Council-designated reviewers who are not employed by the applying program.</li>
+      <li><b>Appeals.</b> A denied or revoked certification may be appealed in writing to the full Council within 30 days; the Medical Director may not cast the deciding vote on their own program's appeal.</li>
+      <li><b>Revocation.</b> Certification may be suspended or revoked for a documented safety violation, a false attestation, or a breach of the COI rules above — with written notice and a right to respond before final action.</li>
+      <li><b>Public registry of certified entities.</b> Certified programs, providers, and caregivers are listed publicly (with the honest "listed ≠ endorsed" language already used on the <a href="hub-directory.html">Directory</a>), so the credential can be verified by anyone.</li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">§6 · Registry &amp; data governance</span>
+    <h2>Whose data this is — stated plainly</h2>
+    <ul class="key">
+      <li><b>Voluntary and de-identified.</b> Contribution to the shared registry described in the <a href="protocol-common-outcomes.html">Common Outcome Protocol</a> is opt-in; only de-identified, aggregate-ready data enters the shared pool.</li>
+      <li><b>Portable.</b> A contributing clinic or study group may export and take their own data if they leave — no lock-in.</li>
+      <li><b>Pre-registered analyses.</b> Before any registry finding is published, the analysis plan is registered publicly, so results can't be quietly reshaped after the fact to favor a conclusion.</li>
+      <li><b>Compliance gate.</b> No individually identifiable health data is accepted into any OWH-hosted system until a HIPAA-compliant architecture and signed Business Associate Agreements are in place — a hard gate, not a target date.</li>
+      <li><b>Publication rights.</b> Registry-derived findings are published under the Council's name, not OWH's, and are open-access by default.</li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">§7 · The path to full independence</span>
+    <h2>From OWH-incubated to field-owned</h2>
+    <p class="lead">A standard that never leaves its founder's house is never fully trusted. This charter commits to a phased exit from OWH's operational control.</p>
+    <div class="phase"><div class="ph">Phase 0 — Found <span>now</span></div><div class="pb">Publish this charter; recruit the seven founding Council members, led by the named Medical Director. OWH provides disclosed, no-strings operating funds as a grant.</div></div>
+    <div class="phase"><div class="ph">Phase 1 — Pilot <span>1–3 design partners</span></div><div class="pb">Council pressure-tests the Common Core and Common Outcome Protocol with a small number of design-partner clinics and study groups; amendment process (§4) exercised for the first time in public.</div></div>
+    <div class="phase"><div class="ph">Phase 2 — Formalize <span>independent legal entity</span></div><div class="pb">The Council incorporates as its own nonprofit (or is hosted by an independent fiscal sponsor) with its own board, bylaws, and bank account — legally separate from OWH. OWH becomes one founding supporter among others being recruited.</div></div>
+    <div class="phase"><div class="ph">Phase 3 — Recognize <span>field-wide adoption</span></div><div class="pb">Pursue recognition from professional bodies, state programs, and legislative reference (e.g., the <a href="hub-standard.html">informed-consent benchmark</a> role discussed for the veteran-lifecycle bill) — as an independent standard, not a company's asset.</div></div>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">Ratification</span>
+    <h2>Status &amp; how to join</h2>
+    <div class="box gold"><b>Current status: DRAFT v0.1, unratified.</b> This charter takes effect once the seven founding seats (§2) are filled and a founding vote is held. Until then, the Council described here is a proposal, not a governing body — and this page will say so honestly until that changes.</div>
+    <p class="lead">If you are a psychedelic-medicine physician, toxicologist, neuropharmacologist, methodologist, ethics/IRB professional, veteran, or patient/caregiver willing to help found this Council — or a clinic or study group willing to be a Phase 1 design partner — contact <b>michael@operationwholehealth.org</b> or see <a href="hub-involved.html">Get involved</a>.</p>
+    <div class="sigrow">
+      <div><div class="sig"><b>Operation Whole Health</b><br>Founder &amp; Executive Director — convening sponsor, Phase 0</div></div>
+      <div><div class="sig"><b>Medical Director</b><br>Named clinician-of-record — pending recruitment</div></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">Sources</span>
+    <h2>This charter's credibility framework</h2>
+    <ol class="src">
+      <li>Jue JS, et al. <a href="https://consensus.app/papers/details/2886cf587efa552283fb5d0b7251b08f/?utm_source=claude_code" target="_blank" rel="noopener">Developing and Testing the AHRQ National Guideline Clearinghouse Extent of Adherence to Trustworthy Standards (NEATS) Instrument</a>. <i>Annals of Internal Medicine</i>, 2019 — operationalizes the National Academy of Medicine's 2011 Standards for Trustworthy Guidelines.</li>
+      <li>Kalyani RR, et al. <a href="https://consensus.app/papers/details/f3f526db2efe5873819f30cf1488f76c/?utm_source=claude_code" target="_blank" rel="noopener">Professional Practice Committee: Standards of Medical Care in Diabetes</a>. <i>Diabetes Care</i>, 2017 — the real-world model for a disclosed, general-revenue-funded, publicly-commented standards process.</li>
+    </ol>
+  </section>
+
+  <div class="foot">
+    <p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Governance Charter — prototype, DRAFT v0.1, unratified. Not medical, legal, or regulatory advice.</p>
+    <p>United as one movement for the future of psychedelic-assisted medicine. In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p>
+  </div>
+</div>
+</body></html>

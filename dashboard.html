@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dashboard — Readiness Hub</title>
+<script src="owh-config.js"></script><script src="owh-app.js"></script>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.6}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.2;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:1040px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 28px;gap:12px;flex-wrap:wrap}
+  .topin img{height:34px}
+  nav a{color:var(--muted);font-size:13px;font-weight:600;margin-left:14px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:8px 15px;border-radius:8px;margin-left:14px}
+  .hero{background:linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:34px 40px;border-bottom:5px solid var(--gold);display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+  .hero .kick{letter-spacing:.24em;text-transform:uppercase;font-size:11px;color:var(--gold-soft);font-weight:700}
+  .hero h1{color:#fff;font-size:32px;margin:.2em 0 0}.hero .today{color:#cfe0ef;font-size:13px}
+  .grid{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;padding:26px 40px}
+  .card{border:1px solid var(--line);border-radius:13px;padding:18px 20px;background:#fcfbf7}
+  .card h2{font-size:18px;margin:0 0 4px}
+  .card .eyebrow{display:inline-block;letter-spacing:.12em;text-transform:uppercase;font-size:10px;font-weight:800;color:var(--gold);margin-bottom:6px}
+  .full{grid-column:1/-1}
+  .courses{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+  .ctile{border:1px solid var(--line);border-radius:12px;padding:15px 16px;background:#fff;display:flex;gap:14px;align-items:center}
+  .ring{--pct:0;width:88px;height:88px;border-radius:50%;flex:none;background:conic-gradient(var(--gold) calc(var(--pct)*1%), #e6e2d6 0);display:flex;align-items:center;justify-content:center}
+  .ring .inner{width:66px;height:66px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring .pct{font-family:Georgia,serif;font-size:19px;font-weight:700;color:var(--navy);line-height:1}
+  .ring .lbl{font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+  .ci{flex:1;min-width:0}.ci h3{font-size:16px;margin:0 0 6px}
+  .cta{display:inline-block;background:var(--gold);color:#241606;font-weight:700;font-size:12.5px;padding:7px 13px;border-radius:8px;margin:2px 4px 2px 0}
+  .cta.navy{background:var(--navy);color:#fff}
+  .certline{margin-top:9px;font-size:12.5px;padding:8px 11px;border-radius:8px}
+  .cert-lock{background:#f4f0e6;border:1px solid var(--gold-soft);color:#4a3a1e}
+  .cert-open{background:#eef6f0;border:1px solid #cfe6d8;color:#1b3a29}
+  .mlist{list-style:none;margin:6px 0 0;padding:0}
+  .mlist li{display:flex;align-items:center;gap:11px;padding:8px 0;border-top:1px solid var(--line);font-size:13.5px}
+  .mstat{flex:none;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800}
+  .mstat.done{background:var(--est);color:#fff}.mstat.todo{background:#eae6da;color:#9aa2ab}
+  .mlist .mt{flex:1}.mlist .mt a{color:var(--navy)}.mlist .sc{font-size:11px;color:var(--muted);font-weight:700}
+  .flist,.act{list-style:none;margin:6px 0 0;padding:0}
+  .flist li{padding:10px 0;border-top:1px solid var(--line);font-size:13.5px;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+  .flist .fx{flex:1}.flist .fx b{color:var(--navy)}
+  .unf{flex:none;background:none;border:1px solid var(--line);color:var(--muted);border-radius:7px;font-size:11px;padding:4px 9px;cursor:pointer}.unf:hover{border-color:#efc9c2;color:#9e2a2b}
+  .act{max-height:240px;overflow:auto}.act li{padding:8px 0;border-top:1px solid var(--line);font-size:13px;color:#33424f;display:flex;justify-content:space-between;gap:10px}
+  .act .t{color:var(--muted);font-size:11.5px;white-space:nowrap}
+  .empty{color:var(--muted);font-size:13.5px;padding:10px 0}
+  .acct{font-size:13.5px;color:#33424f}.acct b{color:var(--navy)}
+  .linkrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .qlink{font-size:12.5px;font-weight:600;color:var(--navy);background:#f2ede0;border:1px solid var(--gold-soft);padding:6px 13px;border-radius:20px}
+  .txtbtn{background:none;border:none;color:#9e2a2b;font-size:12.5px;font-weight:600;cursor:pointer;padding:0;margin-right:14px}
+  .foot{background:var(--navy);color:#cdddec;padding:22px 40px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:820px){.grid{grid-template-columns:1fr;padding:20px}.courses{grid-template-columns:1fr}.hero{padding:24px 20px}.foot{padding:20px}}
+</style></head>
+<body><div class="wrap">
+  <div class="protobar">PROTOTYPE / DRAFT v0.1 — your progress is saved in this browser</div>
+  <div class="topbar"><div class="topin">
+    <a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a>
+    <nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav>
+  </div></div>
+
+  <header class="hero">
+    <div><div class="kick">Operation Whole Health · Your Dashboard</div><h1 id="greet">Welcome back</h1></div>
+    <div class="today" id="today"></div>
+  </header>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="foot">
+    <p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Your Dashboard — prototype, DRAFT v0.1. Progress and profile are stored locally in your browser; no health information is collected. In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p>
+  </div>
+</div>
+
+<script>
+OWH.ready.then(function(){
+  if(!OWH.requireLogin()) return;
+  var p = OWH.getProfile();
+  var TITLES = {
+    patient:["Welcome & The Honesty Compact","Your Brain After Service","What These Medicines Actually Are","Informed Consent I — The Benefits, Honestly","Informed Consent II — The Honest Risks","What's Happening in Your Body & Mind","Medical Readiness — What Your Team Will Check","Preparing the Terrain","Mindset, Intention & Emotional Readiness","The Day Of — What to Expect","Integration — Where the Real Work Continues","Red Flags & When to Get Help"],
+    caregiver:["You Are the Second Patient","Understanding What They're Facing","The Risks You Personally Need to Know","Supporting the Preparation","During Treatment — Your Role","Integration & Post-Care — The Weeks After","Crisis Recognition & Response","Caring for the Caregiver"],
+    provider:["The Readiness Standard & Your Role","Cardiac & Physiological Screening","Pharmacology & Drug Interactions","Psychological & Psychiatric Screening","Building the Preparation Plan","Set, Setting & Session Safety","Integration & Aftercare","Documentation, Consent & the Clear-to-Treat Handoff"]
+  };
+  var ORDER = ["patient","caregiver","provider"];
+  function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+  function pad(n){ return n<10?"0"+n:""+n; }
+
+  document.getElementById("greet").textContent = "Welcome back, " + (p.name||"").split(" ")[0] + ".";
+  try{ document.getElementById("today").textContent = new Date().toLocaleDateString(undefined,{weekday:"long",year:"numeric",month:"long",day:"numeric"}); }catch(e){}
+
+  function courseTile(key){
+    var c=OWH.COURSES[key], cp=OWH.courseProgress(key), nextI=OWH.nextModule(key);
+    var contHref = nextI ? c.file(nextI) : c.cert;
+    var contLabel = cp.passed===0 ? "Start →" : (nextI ? "Continue · "+pad(nextI)+" →" : "Review →");
+    var cert = cp.complete
+      ? '<div class="certline cert-open">🎖️ <a href="'+c.cert+'">Certificate unlocked →</a></div>'
+      : '<div class="certline cert-lock">🔒 Certificate at '+cp.passed+'/'+c.total+'</div>';
+    return '<div class="ctile"><div class="ring" style="--pct:'+cp.pct+'"><div class="inner"><span class="pct">'+cp.pct+'%</span><span class="lbl">'+cp.passed+'/'+c.total+'</span></div></div>'
+      +'<div class="ci"><h3>'+esc(c.name)+'</h3><a class="cta" href="'+contHref+'">'+contLabel+'</a><a class="cta navy" href="'+c.index+'">Modules</a>'+cert+'</div></div>';
+  }
+  function checklist(key){
+    var c=OWH.COURSES[key], rows="";
+    for(var i=1;i<=c.total;i++){ var id=pad(i), st=OWH.moduleState(key,id), done=st&&st.passed;
+      rows+='<li><span class="mstat '+(done?"done":"todo")+'">'+(done?"✓":i)+'</span><span class="mt"><a href="'+c.file(i)+'">'+id+' · '+esc(TITLES[key][i-1])+'</a></span><span class="sc">'+(st?(done?"passed "+st.best+"%":"best "+st.best+"%"):"")+'</span></li>';
+    }
+    return '<div class="card full"><span class="eyebrow">'+esc(c.name)+'</span><h2>Progress &amp; quiz scores</h2><ul class="mlist">'+rows+'</ul></div>';
+  }
+
+  var followed=OWH.getFollowed();
+  var fHtml = followed.length ? '<ul class="flist">'+followed.map(function(s){ return '<li><span class="fx"><b><a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.title||s.id)+' ↗</a></b><br><span style="color:#5c6b7a;font-size:12px">'+esc(s.id)+(s.cond?" · "+esc(s.cond):"")+'</span></span><button class="unf" data-id="'+esc(s.id)+'">Unfollow</button></li>'; }).join("")+'</ul>' : '<div class="empty">Not following any studies yet. Open <a href="hub-studies.html">Studies</a> and tap ☆ Follow on any trial.</div>';
+  var acts=OWH.getActivity();
+  var aHtml = acts.length ? '<ul class="act">'+acts.slice(0,20).map(function(a){ return '<li><span>'+esc(a.label)+'</span><span class="t">'+OWH.fmtTime(a.ts)+'</span></li>'; }).join("")+'</ul>' : '<div class="empty">No activity yet.</div>';
+  var since=""; try{ since=new Date(p.created).toLocaleDateString(); }catch(e){}
+
+  var html = '<div class="card full"><span class="eyebrow">Your courses</span><h2>Two tracks, one journey</h2><div class="courses">'+ORDER.map(courseTile).join("")+'</div></div>';
+  html += ORDER.map(checklist).join("");
+  html += '<div class="card"><span class="eyebrow">Following</span><h2>Studies you\'re tracking</h2>'+fHtml+'</div>';
+  html += '<div class="card"><span class="eyebrow">Recent</span><h2>Your activity</h2>'+aHtml+'</div>';
+  html += '<div class="card full"><span class="eyebrow">Account</span><h2>'+esc(p.name)+'</h2><div class="acct">'+(p.email?esc(p.email)+' · ':'')+'Member since '+esc(since)+' · <b>local prototype profile</b></div>'
+    +'<div class="linkrow"><a class="qlink" href="hub-learn.html">Learn</a><a class="qlink" href="hub-studies.html">Studies</a><a class="qlink" href="hub-medicines.html">Medicines</a><a class="qlink" href="protocol-common-outcomes.html">The Protocol</a></div>'
+    +'<div style="margin-top:14px"><button class="txtbtn" id="logout">Log out</button><button class="txtbtn" id="reset">Reset my progress</button></div></div>';
+  document.getElementById("grid").innerHTML = html;
+
+  Array.prototype.forEach.call(document.querySelectorAll(".unf"),function(b){ b.onclick=function(){ OWH.unfollowStudy(b.getAttribute("data-id")); location.reload(); }; });
+  document.getElementById("logout").onclick=function(){ OWH.logout(); location.href="login.html"; };
+  document.getElementById("reset").onclick=function(){ if(confirm("Reset all course progress and followed studies? Your profile stays.")){ OWH.resetProgress(); location.reload(); } };
+});
+</script>
+</body></html>

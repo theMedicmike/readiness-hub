@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cardiac &amp; Physiological Screening — Provider Track</title>
+<script src="owh-config.js"></script><script src="owh-app.js"></script>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b;--gate:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.65}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.25;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:900px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 26px;gap:10px;flex-wrap:wrap}
+  .topin img{height:32px}
+  nav a{color:var(--muted);font-size:12.5px;font-weight:600;margin-left:13px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:12.5px;padding:8px 14px;border-radius:8px;margin-left:13px}
+  .hero{background:linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:38px 44px;border-bottom:5px solid var(--gold)}
+  .hero .kick{letter-spacing:.22em;text-transform:uppercase;font-size:11px;color:var(--gold-soft);font-weight:700}
+  .hero .mnum{display:inline-block;font-family:Georgia,serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-soft);margin:8px 0 2px}
+  .hero h1{color:#fff;font-size:29px;margin:.1em 0 .25em}.hero p{color:#cfe0ef;font-size:16.5px;max-width:68ch;margin:0}
+  .gatebar{background:#fdf3f0;border-bottom:1px solid #efc9c2;color:#7c2420;font-size:13px;padding:9px 44px}
+  .sec{padding:22px 44px;border-bottom:1px solid var(--line)}
+  .sec h3{font-size:19px;margin:.2em 0 .3em}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:13px 16px;font-size:14.5px;margin:12px 0}
+  .box p{margin:0}
+  ul.key{padding-left:20px}ul.key li{margin:7px 0}
+  .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;vertical-align:middle}
+  .t-est{background:var(--est)}.t-plaus{background:var(--plaus)}.t-hyp{background:var(--hyp)}.t-gate{background:var(--gate)}
+  .navbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 44px;border-bottom:1px solid var(--line)}
+  .foot{background:var(--navy);color:#cdddec;padding:22px 44px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:820px){.hero{padding:26px 20px}.sec,.navbar,.foot,.gatebar{padding-left:20px;padding-right:20px}.hero h1{font-size:23px}}</style></head>
+<body><div class="wrap">
+<div class="protobar">PROTOTYPE / DRAFT v0.1 — provider continuing education</div>
+<div class="topbar"><div class="topin"><a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a><nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html" class="here">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav></div></div>
+<header class="hero"><div class="kick">Operation Whole Health · Provider Track</div><span class="mnum">Module P2</span><h1>Cardiac &amp; Physiological Screening</h1><p>Baseline ECG/QTc, electrolyte, and CYP2D6 screening are the single highest-yield safety steps in psychedelic and ibogaine readiness — and ibogaine's hERG-mediated arrhythmia risk is why the cardiac gate can never be treated as a formality.</p></header>
+<div class="gatebar"><b>⚑ Draft for review.</b> This safety-critical module carries a <span class="tag t-gate">Clinician sign-off</span> — a named licensed Medical Director must sign it before use in continuing education credit.</div>
+<section class="sec"><div class="box" style="border-left:4px solid #2e7d52;background:#eef6f0"><h3 style="margin:0 0 5px;font-size:15px">🎖️ Bottom line for a busy clinician</h3><p style="margin:0">Bottom line: before anyone is dosed, get a 12-lead ECG with QTc, correct potassium/magnesium/calcium, and take a real cardiac history — ibogaine can trigger a fatal heart-rhythm problem even in patients with no known heart disease, and the risk lingers for days after dosing because its active metabolite sticks around that long. Check the medication list for anything that blocks the CYP2D6 enzyme (some common SSRIs do) or independently prolongs QT — those interactions can roughly double the effective drug exposure your patient gets. If the QTc is already high, electrolytes aren't corrected, or there's a real cardiac history or family history of sudden cardiac death, that is a stop, not "monitor closely and proceed." The clinician-of-record makes the final go/no-go call — this module's job is just to make sure the right data is in front of them when they make it.</p></div></section>
+<section class="sec">
+<h3>Why cardiac screening is the floor, not paperwork</h3>
+<p>Every modality this standard covers can move blood pressure or heart rate. Only one of them — ibogaine — can kill a physically healthy patient through a specific, well-characterized cardiac mechanism, at a therapeutic dose, with no warning from a normal history. That is why cardiac and physiological screening sits in the Common Core as a universal requirement, and why ibogaine carries its own annex on top of it. This module uses ibogaine as the worked example because it is the clearest, highest-stakes case for the discipline every modality needs. <span class="tag t-est">Established</span></p>
+</section>
+
+<section class="sec">
+<h3>The mechanism: hERG blockade, QT prolongation, and Torsades de Pointes</h3>
+<p>Ibogaine and its long-lived active metabolite noribogaine block the cardiac hERG potassium channel — the current that normally repolarizes the heart after each beat. Patch-clamp studies put the blocking potency of both compounds in the low-micromolar range, with noribogaine slightly more potent than the parent drug. Delayed repolarization lengthens the QT interval, and a sufficiently prolonged QT interval creates the electrical substrate for Torsades de Pointes, a polymorphic ventricular tachycardia that can degenerate into ventricular fibrillation and sudden cardiac death. <span class="tag t-est">Established</span></p>
+<p>A 2016 systematic literature review documented at least 27 ibogaine-associated fatalities in the published case-report record up to that point — a literature snapshot, not a live registry, so the true cumulative number today is almost certainly higher. Among the case reports with adequate clinical or post-mortem detail, eight occurred in people with no pre-existing cardiovascular disease and no family history of cardiac problems. Cardiac risk with ibogaine is not confined to patients who already carry a cardiac diagnosis — that single fact should change how you screen everyone. <span class="tag t-est">Established</span></p>
+</section>
+
+<section class="sec">
+<h3>Why the risk outlasts the dosing session</h3>
+<p>Noribogaine has a much longer elimination half-life than ibogaine and remains at clinically relevant concentrations for days after ingestion. In one closely monitored clinical cohort (opioid-dependent adults given a single weight-based oral dose under continuous observation), the average maximum QTc prolongation was about 95 ms, half of the patients reached a QTc over 500 ms at some point, and in six of fourteen patients the QTc stayed above 450 ms for more than 24 hours post-dose. No Torsades de Pointes occurred in that cohort — which is itself the argument for why that level of monitoring is the standard, not an option. <span class="tag t-est">Established</span></p>
+<p>Practical implication: cardiac monitoring cannot end when the visible acute session ends. Build a monitoring plan around the window noribogaine is still active, not just the hours immediately after dosing.</p>
+</section>
+
+<div class="box">
+<h3>Baseline screening — what has to be in the chart before any dosing decision</h3>
+<ul class="key">
+<li>12-lead ECG with a calculated QTc, with the correction formula recorded. Prefer Fridericia's correction over Bazett's when heart rate is abnormal: Bazett under-corrects at slow heart rates and can make real QT prolongation look falsely reassuring — directly relevant here, since ibogaine commonly causes bradycardia.</li>
+<li>Electrolyte panel — potassium, magnesium, calcium — drawn and corrected before dosing, not just ordered and flagged as abnormal.</li>
+<li>Personal and family cardiac history: structural heart disease, arrhythmia, unexplained syncope, congenital long QT syndrome, sudden cardiac death in a first-degree relative.</li>
+<li>Vitals trend — resting blood pressure and heart rate over time, not a single office reading.</li>
+<li>Hepatic and renal panel, both of which affect drug clearance and the interpretation of exposure risk.</li>
+<li>Full medication and supplement reconciliation, specifically screened for CYP2D6 inhibitors and other QT-prolonging agents.</li>
+<li>CYP2D6 genotype where available, or a documented dose-caution plan when it is not.</li>
+</ul>
+</div>
+
+<section class="sec">
+<h3>Reading the QTc: thresholds that should change your plan</h3>
+<p>Two thresholds anchor most drug-induced QT risk stratification in the general cardiology and pharmacy literature: an absolute QTc greater than 500 ms, and an increase of 60 ms or more from the patient's own baseline. Either one alone is an established marker of meaningfully elevated Torsades de Pointes risk — a patient does not need to meet both. Risk factors that stack on top of a borderline QTc include hypokalemia, hypomagnesemia, hypocalcemia, bradycardia, older age, female sex, structural heart disease or reduced ejection fraction, diuretic use, and any interacting drug that raises plasma levels of a QT-prolonging agent. <span class="tag t-est">Established</span></p>
+<p>None of these thresholds are ibogaine-specific — they are the same criteria pharmacists and cardiologists use to flag any QT-prolonging medication. What is ibogaine-specific is how often patients reach them and how long the elevation persists, per the monitoring data above.</p>
+</section>
+
+<section class="sec">
+<h3>CYP2D6 and medication reconciliation: the same dose is not the same exposure</h3>
+<p>Ibogaine is converted to noribogaine primarily by the CYP2D6 enzyme. In a controlled human pharmacokinetic study, pretreating healthy volunteers with the CYP2D6 inhibitor paroxetine roughly doubled their total exposure to the combined active moiety (ibogaine plus noribogaine) compared with placebo pretreatment — chemically phenocopying a poor metabolizer. The study authors explicitly recommended genotyping patients before ibogaine treatment and at least halving the dose in confirmed CYP2D6 poor metabolizers. <span class="tag t-est">Established</span></p>
+<ul class="key">
+<li>Screen the full medication and supplement list for CYP2D6 inhibitors — several SSRIs, including paroxetine and fluoxetine, are common ones in a veteran population.</li>
+<li>Screen separately for other QT-prolonging drugs (certain antiarrhythmics, some antipsychotics and antiemetics, some macrolide antibiotics) — these stack with ibogaine's own QT effect regardless of CYP2D6 status.</li>
+<li>Any tapering or discontinuation of a serotonergic or interacting medication is a prescriber decision, never something initiated by an education program or supplement protocol.</li>
+<li>Where genotyping is not available, treat the patient as a possible poor metabolizer and build in dose caution rather than assuming average metabolism.</li>
+</ul>
+</section>
+
+<section class="sec">
+<h3>Electrolytes and magnesium: a precondition, not a proven cardioprotectant</h3>
+<p>Correcting potassium, magnesium, and calcium before dosing is not a formality. Hypokalemia, hypomagnesemia, and hypocalcemia are independently established risk factors for Torsades de Pointes, and intravenous magnesium sulfate is the standard emergency treatment once Torsades has already occurred. <span class="tag t-est">Established</span></p>
+<p>Some ibogaine protocols — including a Stanford open-label study in Special Operations veterans with traumatic brain injury — co-administer magnesium alongside ibogaine as a precaution, and that cohort reported no unexpected serious adverse events. That is a reasonable, mechanistically grounded harm-reduction practice — magnesium's antiarrhythmic role is well established in other clinical settings — but it has not been tested in a controlled trial designed to show it prevents Torsades de Pointes specifically in ibogaine dosing. Treat prophylactic magnesium loading as a plausible adjunct to, never a substitute for, baseline ECG, electrolyte correction, and continuous monitoring. <span class="tag t-plaus">Plausible</span></p>
+</section>
+
+<section class="sec">
+<h3>Cardiovascular risk is not identical across modalities</h3>
+<p>The Common Core's cardiovascular baseline applies to every modality, but the signature risk differs, and that should shape what you watch for once ibogaine-specific screening is complete.</p>
+<ul class="key">
+<li>Ibogaine — hERG blockade, QT prolongation, risk of fatal arrhythmia; the acute cardiac outlier in this group.</li>
+<li>MDMA — raises blood pressure and heart rate, and carries a separate, non-channel risk of serotonin syndrome and hyperthermia when combined with serotonergic medications; still warrants cardiovascular assessment and caution in hypertension.</li>
+<li>Ketamine — transient rise in blood pressure and heart rate with acute dosing; the more established long-term risk is dependence and urinary tract toxicity, not arrhythmia.</li>
+<li>Psilocybin and LSD — transient blood pressure and heart rate elevation; medical toxicity is low in controlled settings, with psychiatric contraindications the dominant safety concern.</li>
+</ul>
+<p>Even a well-resourced, late-stage drug program is not exempt from this discipline: when the FDA declined to approve an MDMA-assisted therapy application in 2024, insufficient cardiac and QT-prolongation safety data in the submission was one of the cited concerns. Rigorous cardiac screening is not an artifact of underground ibogaine clinics — it is a live regulatory expectation across the whole field.</p>
+</section>
+
+<section class="sec">
+<h3>The cardiac go/no-go gate: contraindications and who decides</h3>
+<p>The standard flags the domains; your named clinician-of-record sets the exact numeric thresholds and makes the go/no-go call. That decision is never automated by a checklist or delegated to an education module. Domains that should trigger a hold, and typically a cardiology consult before any decision to proceed, include:</p>
+<ul class="key">
+<li>Significant or uncontrolled cardiovascular disease or arrhythmia, or a personal or family history of congenital long QT syndrome or unexplained sudden cardiac death.</li>
+<li>An uncorrected electrolyte abnormality — potassium, magnesium, or calcium out of range at the time screening is reviewed.</li>
+<li>A baseline QTc that is already prolonged, or that would foreseeably cross 500 ms or rise 60 ms or more once ibogaine and noribogaine are on board.</li>
+<li>Significant hepatic or renal impairment that would meaningfully alter clearance and exposure.</li>
+<li>A concurrent medication that is a strong CYP2D6 inhibitor or an independent QT-prolonging agent and cannot be safely paused or substituted by the treating prescriber.</li>
+</ul>
+<p>Any one of these is a stop, not "monitor closely and proceed."</p>
+</section>
+
+<div class="box">
+<h3>Clear-to-treat documentation packet — cardiac component</h3>
+<ul class="key">
+<li>12-lead ECG with QTc and the correction formula used, on file and reviewed by the clinician-of-record.</li>
+<li>Electrolyte panel (potassium, magnesium, calcium) with corrected values documented, not just an order that was placed.</li>
+<li>Cardiac and family cardiac history, explicitly reviewed against the contraindication list above.</li>
+<li>CYP2D6 genotype result, or a documented dose-caution plan when genotyping was not obtained.</li>
+<li>Complete medication and supplement reconciliation, with any CYP2D6 inhibitors or QT-prolonging agents flagged and addressed by the prescriber.</li>
+<li>A documented monitoring plan covering the extended window noribogaine remains active, not only the day of dosing.</li>
+<li>Clinician-of-record signature clearing the cardiac domain specifically — a general "cleared for treatment" note is not sufficient documentation for this gate.</li>
+</ul>
+</div>
+
+<section class="sec">
+<h3>The bottom line for the chart</h3>
+<p>Ibogaine can cause a fatal arrhythmia in a patient with a structurally normal heart, at a therapeutic dose, through a well-understood and reproducible mechanism. That is why cardiac and electrolyte screening is graded <span class="tag t-est">Established</span> rather than <span class="tag t-plaus">Plausible</span> in this standard — it is the piece of readiness screening with the least room for judgment calls. Whether broader "terrain optimization" changes psychedelic treatment outcomes remains an open question this standard's registry is built to test. <span class="tag t-hyp">Hypothesis</span> Whether an uncorrected electrolyte or an unscreened CYP2D6 interaction can kill a patient is not a hypothesis at all.</p>
+</section>
+<section class="sec"><div id="quiz"></div></section>
+<div class="navbar"><a href="course-provider.html">← All 8 modules</a><a href="course-provider-03.html" class="btn">Next · Module P3 →</a></div>
+<div class="foot"><p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Provider Track — prototype, DRAFT v0.1. Continuing education content; not medical, legal, or regulatory advice. Content marked <span style="color:#fff">Clinician sign-off</span> is pending a named licensed physician / Medical Director’s review before use with patients. In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p></div>
+</div>
+<script>OWH.ready.then(function(){ OWH.mountQuiz("quiz",{course:"provider",moduleId:"02",passPct:75,questions:[{"q":"What is the underlying cardiac mechanism by which ibogaine and noribogaine create arrhythmia risk?","options":["Blockade of the cardiac hERG (IKr) potassium channel, delaying repolarization and prolonging the QT interval","Direct stimulation of beta-adrenergic receptors, causing tachycardia","Blockade of L-type calcium channels, slowing AV conduction","Sodium channel activation, widening the QRS complex"],"answer":0,"explain":"Ibogaine and noribogaine block the hERG potassium channel that repolarizes the heart after each beat; delayed repolarization prolongs the QT interval and creates the substrate for Torsades de Pointes (Alper et al., Cardiovascular Toxicology, 2016)."},{"q":"Per standard drug-induced QT risk criteria, which single finding is independently sufficient to flag meaningfully elevated Torsades de Pointes risk?","options":["Resting heart rate above 100 bpm","A QTc greater than 500 ms, OR an increase of 60 ms or more from the patient's own baseline","Systolic blood pressure above 140 mmHg","Any QTc reading taken more than once in the same visit"],"answer":1,"explain":"Either an absolute QTc over 500 ms or a rise of 60 ms or more from baseline is independently an established Torsades de Pointes risk marker; a patient does not need to meet both (Tisdale, Canadian Pharmacists Journal, 2016)."},{"q":"Why can ibogaine's cardiac risk persist for days after the dosing session ends, rather than just during acute monitoring?","options":["Ibogaine itself has an unusually long half-life and is still being absorbed for days","Noribogaine, the long-lived active metabolite, remains at clinically relevant concentrations and continues to block hERG for an extended period","The risk after the first 24 hours is purely psychological and has no cardiac basis","Renal clearance of electrolytes is delayed for several days after any oral dose"],"answer":1,"explain":"Noribogaine has a much longer elimination half-life than ibogaine and stays at clinically relevant levels for days; in one monitored cohort, QTc remained above 450 ms beyond 24 hours in nearly half the patients. Monitoring plans must cover this extended window, not just the acute session."},{"q":"A patient scheduled for ibogaine is currently taking paroxetine, a CYP2D6 inhibitor. What is the correct clinical response?","options":["Proceed at the standard dose since paroxetine only affects mood, not ibogaine metabolism","Treat the patient as a probable poor metabolizer: reconcile the medication with the prescriber, consider genotyping, and plan for a reduced dose before proceeding","Double the ibogaine dose to compensate for reduced absorption","No action needed unless the patient reports side effects from paroxetine itself"],"answer":1,"explain":"In a controlled study, CYP2D6 inhibition by paroxetine roughly doubled total active-moiety exposure (ibogaine plus noribogaine); investigators recommended genotyping and at least halving the dose in poor metabolizers (Glue et al., Journal of Clinical Pharmacology, 2015)."},{"q":"How should a clinician characterize prophylactic magnesium loading before ibogaine dosing, based on current evidence?","options":["An FDA-approved cardioprotective premedication proven to prevent Torsades de Pointes in ibogaine dosing","Unnecessary, because ibogaine carries no meaningful cardiac risk","A plausible, mechanistically grounded harm-reduction practice used in some protocols alongside monitoring — not a proven substitute for baseline ECG and electrolyte correction","A treatment that eliminates the need for a baseline ECG or electrolyte panel"],"answer":2,"explain":"Magnesium's antiarrhythmic role is well established generally, and open-label ibogaine protocols using it report no unexpected serious adverse events, but no controlled trial has shown it prevents Torsades de Pointes specifically in ibogaine dosing — it is Plausible, not Established, and never replaces the baseline cardiac workup."}]}); });</script>
+</body></html>

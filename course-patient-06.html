@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 06 — What’s Happening in Your Body & Mind · Patient Track</title>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.65}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.22;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:900px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 26px;gap:14px;flex-wrap:wrap}
+  .topin img{height:34px}
+  nav a{color:var(--muted);font-size:13px;font-weight:600;margin-left:14px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:8px 15px;border-radius:8px;margin-left:14px}
+  .subnav{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:11px 40px;background:#f6f2e8;border-bottom:1px solid var(--line);font-size:12.5px}
+  .crumb{color:var(--muted);font-weight:600}.crumb a{color:var(--navy2)}.crumb b{color:var(--navy)}
+  .prog{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+  .pnbar{display:flex;gap:8px}
+  .pn{display:inline-block;font-size:12.5px;font-weight:700;border:1px solid var(--line);border-radius:8px;padding:6px 12px;background:#fff;color:var(--navy2)}
+  .pn:hover{border-color:var(--gold-soft);color:var(--gold)}
+  .pn.primary{background:var(--gold);color:#241606;border-color:var(--gold)}
+  .pn.disabled{opacity:.4;pointer-events:none}
+  .gatebar{background:#fbeceb;border-left:4px solid var(--clin);color:#7c2420;padding:11px 16px;font-size:13.5px;margin:0;border-bottom:1px solid #efc9c2}
+  .hero{background:linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:34px 40px;border-bottom:5px solid var(--gold)}
+  .mnum{display:inline-block;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+  .hero h1{color:#fff;font-size:30px;margin:.25em 0 .3em}
+  .hero .sub{color:#cfe0ef;font-size:16.5px;max-width:64ch;margin:0}
+  .sec{padding:26px 40px;border-bottom:1px solid var(--line)}
+  .sec h2{font-size:21px;margin:.1em 0 .4em}.sec h3{font-size:16.5px;margin:1.1em 0 .3em}
+  .sec p{margin:.5em 0}
+  .lead{font-size:17px;color:#33424f}
+  .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;vertical-align:middle;margin-left:4px}
+  .t-est{background:var(--est)}.t-plaus{background:var(--plaus)}.t-hyp{background:var(--hyp)}.t-gate{background:var(--clin)}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:#3a4854;margin:8px 0 2px}
+  ul.key,ol.key{padding-left:20px}ul.key li,ol.key li{margin:6px 0}
+  .good{background:#eef6f0;border:1px solid #cfe6d8;border-left:4px solid var(--est);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px}
+  .warn{background:#fdf3f0;border:1px solid #efc9c2;border-left:4px solid var(--clin);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px;color:#7c2420}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:14px 16px;font-size:14.5px;margin:14px 0}
+  .takeaway{background:#fbf6ea;border:1px solid var(--gold-soft);border-left:4px solid var(--gold);border-radius:9px;padding:13px 16px;margin:16px 0}
+  .takeaway h3{margin:0 0 .3em;font-size:15px;color:var(--navy)}
+  .reflect{background:#eef4fa;border:1px solid #cfe0ef;border-radius:10px;padding:14px 16px;margin:16px 0;font-size:14.5px}
+  .reflect h3{margin:0 0 .3em;font-size:15px}
+  .carry{font-size:16px;color:var(--navy);font-style:italic;border-top:2px solid var(--gold-soft);padding-top:12px;margin-top:8px}
+  sup.cite a{color:var(--gold);font-weight:700;font-size:11px;text-decoration:none}
+  .refs{background:#faf8f1}
+  .refs ol{padding-left:22px;font-size:12.5px;color:#3a4854}.refs li{margin:6px 0}
+  .foot{background:var(--navy);color:#cdddec;padding:24px 40px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:720px){.hero h1{font-size:24px}.sec,.subnav,.hero,.foot{padding-left:18px;padding-right:18px}}
+</style></head>
+<body><div class="wrap">
+<div class="protobar">PROTOTYPE / DRAFT v0.1 — educational course, pending physician sign-off</div>
+<div class="topbar"><div class="topin"><a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a><nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html" class="here">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav></div></div>
+<div class="subnav"><span class="crumb"><a href="hub-learn.html">Learn</a> › <a href="course-patient.html">Patient Track</a> › <b>Module 06</b></span><span class="prog">Module 06 of 12</span><span class="pnbar"><a class="pn" href="course-patient-05.html">← Module 05</a><a class="pn primary" href="course-patient-07.html">Module 07 →</a></span></div>
+<header class="hero">
+  <div class="mnum">Module 06 · Patient Track</div>
+  <h1>What&rsquo;s Happening in Your Body &amp; Mind <span class="tag t-plaus">Set &amp; setting: Plausible</span></h1>
+  <p class="sub">A plain-English map of how an experience tends to unfold &mdash; so nothing blindsides you, and you know why a calm, prepared, well-monitored room is a real part of safe, careful treatment, not a soft extra.</p>
+</header>
+<section class="sec"><div class="box" style="border-left:4px solid #2e7d52;background:#eef6f0"><h3 style="margin:0 0 5px;font-size:15px">🎖️ In plain English</h3><p style="margin:0">An experience has three parts: it starts, it peaks, then it comes back down &mdash; and it always comes back down, even when the peak feels like it will last forever. Your body may feel rough (upset stomach, dizzy, shaky) and your mind may bring up big feelings; that is normal, not a sign something is broken. Ibogaine is genuinely hard on the heart, so a real team keeps you on a heart monitor the whole time &mdash; never do this alone, and never try to &ldquo;cleanse&rdquo; or &ldquo;detox&rdquo; right before, because losing minerals can make your heart rhythm more dangerous, not safer. Walking in rested, honest with your team, and in a room you trust is a real part of staying safe.</p></div></section>
+<section class="sec">
+  <p>Fear of the unknown makes everything harder. You don&rsquo;t need a script &mdash; no two experiences are identical &mdash; but knowing the general shape lets you relax into the process and work <i>with</i> it instead of bracing against it. This lesson walks the arc, what tends to show up in the body and the mind, and why the room around you genuinely matters.</p>
+
+  <h3>The arc of an experience</h3>
+  <p>Most experiences move through three loose phases: an <b>onset</b> (things begin to shift), a <b>peak</b> (the most intense stretch), and a <b>return</b> (coming back down and re-orienting). Timing varies enormously by medicine and dose. Ibogaine in particular can run many hours &mdash; sometimes a full day or more &mdash; which is one central reason continuous medical monitoring throughout is non-negotiable, not optional.</p>
+  <p>You will not be &ldquo;stuck&rdquo; forever. Every phase passes. Part of preparation is trusting that the return always comes, even when the peak feels timeless.</p>
+
+  <h3>What happens in the body</h3>
+  <p>Common physical sensations include nausea, unsteadiness, sensitivity to light and sound, temperature shifts, a racing or heavy feeling in the chest, and deep fatigue afterward. None of that means something is wrong &mdash; but it is exactly why your clinical team watches your heart rhythm and vital signs the whole time. Welcome that attention; it is there for you.</p>
+  <div class="warn">
+    <b>Ibogaine is physically demanding on the heart.</b> It can prolong the QT interval and has been linked to dangerous, sometimes fatal, arrhythmias &mdash; which is why legitimate settings require ECG and continuous cardiac monitoring by trained staff with emergency equipment on hand. This is also why aggressive &ldquo;detox&rdquo; or chelation right before a cardiotoxic medicine can <i>add</i> risk rather than reduce it &mdash; stripping minerals like potassium and magnesium can worsen exactly the electrical instability the drug already threatens. More detox is not more safe. Real preparation is test-first and physician-timed, never a pre-treatment cleanse.
+  </div>
+
+  <h3>What happens in the mind</h3>
+  <p>People describe vivid autobiographical memories, waves of emotion and release, a life &ldquo;review,&rdquo; a sense of distance from their usual self, or meaning that feels unusually clear. It can be beautiful, difficult, or both in the same hour.</p>
+  <div class="good">
+    <b>Difficult does not mean wrong.</b> Some of the most valued experiences are hard in the moment &mdash; grief that finally moves, an image you&rsquo;ve avoided, tears without a clear reason. You are allowed to feel it, let it pass, and lean on the people in the room. You don&rsquo;t have to fight the experience or perform calm. Your only job is to stay as open and honest as you can and let the team hold the safety.
+  </div>
+
+  <h3>Set &amp; setting is real medicine</h3>
+  <p>Your <b>set</b> (your mindset, intentions, and expectations going in) and your <b>setting</b> (the physical environment and the people around you) genuinely shape what happens and how much it helps. This isn&rsquo;t vibes &mdash; across reviews of psychedelic-assisted therapy, individual and contextual factors are described as real moderators of the experience and of clinical outcome <span class="tag t-plaus">Plausible</span>.<sup class="cite"><a href="https://consensus.app/papers/details/32d78128c77855ddb1b8b9f5e06380c2/" target="_blank" rel="noopener">[1]</a></sup> In patients&rsquo; own words, careful preparation, a safe and supportive environment, structured integration afterward, and the ability to &ldquo;surrender&rdquo; rather than fight are named again and again as central to benefit <span class="tag t-plaus">Plausible</span>.<sup class="cite"><a href="https://consensus.app/papers/details/b4cd17bd71055137a14dc513bd7525ec/" target="_blank" rel="noopener">[2]</a></sup></p>
+  <p>Honesty check: set and setting are <i>not</i> standardized or fully understood. A systematic review of 25 studies (763 participants) found that while participant screening and a safe environment were used consistently, many other elements varied widely study to study &mdash; so treat &ldquo;the perfect setting&rdquo; as a direction, not a proven formula.<sup class="cite"><a href="https://consensus.app/papers/details/99c643ba01295c769f27b54178d125c6/" target="_blank" rel="noopener">[3]</a></sup> What you <i>can</i> control &mdash; walking in rested, honest with your team, and in a room you trust &mdash; is worth doing regardless.</p>
+
+  <h3>A word on &ldquo;rewiring the brain&rdquo;</h3>
+  <p>You&rsquo;ll hear that these medicines &ldquo;rewire&rdquo; the brain by boosting neuroplasticity and BDNF (a growth-related protein). In animal and lab models that idea is interesting, but in <i>humans</i> it remains unproven &mdash; a 2024 meta-analysis of human studies found no reliable change in peripheral (blood) BDNF after psychedelics. Treat brain-&ldquo;rewiring&rdquo; talk as a <span class="tag t-hyp">Hypothesis</span>, not a promise, and be skeptical of anyone selling it as settled science or as a reason to skip medical caution.</p>
+
+  <h3>Where the law actually stands</h3>
+  <div class="box">
+    So you&rsquo;re not misled: in the U.S., <b>psilocybin, MDMA, LSD, DMT, and ibogaine are Schedule I federally</b> &mdash; illegal outside authorized research. <b>Ketamine is Schedule III</b> (a legal anesthetic used off-label), and <b>esketamine (Spravato) is FDA-approved</b> for specific depression indications under strict supervision. <b>MDMA is not FDA-approved.</b> This course never promotes illegal or unsupervised use; every clinical decision belongs to a treating clinician, and any content marked <i>Clinician sign-off</i> is a draft pending review by a named physician.
+  </div>
+
+  <div class="takeaway">
+    <h3>Key takeaways</h3>
+    <ul class="key">
+      <li>Experiences move through onset &rarr; peak &rarr; return; every phase passes, and ibogaine&rsquo;s long duration is a core reason for continuous medical monitoring.</li>
+      <li>Physical sensations (nausea, unsteadiness, chest sensations, fatigue) are common; ibogaine specifically stresses the heart and requires cardiac monitoring <span class="tag t-est">Established</span> risk.</li>
+      <li>Difficult moments in the mind are normal and often valuable &mdash; your job is openness and honesty, not control.</li>
+      <li>Preparation, a safe environment, and integration are plausibly part of how these treatments work and stay safe <span class="tag t-plaus">Plausible</span> &mdash; but set/setting is not a standardized, proven formula.</li>
+      <li>&ldquo;Brain rewiring&rdquo;/BDNF benefit in humans is a <span class="tag t-hyp">Hypothesis</span>; more detox is never automatically safer, and aggressive pre-treatment cleanses can add cardiac risk.</li>
+    </ul>
+  </div>
+
+  <div class="reflect">
+    <h3>Reflect before you move on</h3>
+    <ol>
+      <li>If a hard or frightening moment arrives at the peak, what would help you remember it will pass &mdash; a phrase, a person, an intention?</li>
+      <li>What does a <i>safe setting</i> mean to you specifically &mdash; who and what would need to be in the room for you to let your guard down?</li>
+      <li>Where in your own thinking are you hoping for a guaranteed outcome, and how might you hold that hope honestly &mdash; as a possibility, not a promise?</li>
+    </ol>
+  </div>
+
+  <p class="carry"><b>Carry this out of the lesson:</b> You can&rsquo;t control the tide, but you can prepare the boat and trust the crew &mdash; the arc always returns, and a calm, honest, well-monitored room is a real part of safe, careful treatment.</p>
+</section>
+
+<section class="sec refs">
+  <h2 style="font-size:18px">Sources</h2>
+  <ol>
+    <li>Cavarra et al., 2022, Frontiers in Psychology. <a href="https://consensus.app/papers/details/32d78128c77855ddb1b8b9f5e06380c2/" target="_blank" rel="noopener">Psychedelic-Assisted Psychotherapy&mdash;A Systematic Review of Associated Psychological Interventions &nearr;</a></li>
+    <li>Beaussant et al., 2025, General Hospital Psychiatry. <a href="https://consensus.app/papers/details/b4cd17bd71055137a14dc513bd7525ec/" target="_blank" rel="noopener">Set and setting in psilocybin-assisted therapy: A qualitative study of patients with cancer and depression &nearr;</a></li>
+    <li>Estric et al., 2025, Journal of Psychopharmacology. <a href="https://consensus.app/papers/details/99c643ba01295c769f27b54178d125c6/" target="_blank" rel="noopener">Set and setting of psychedelics for therapeutic use in psychiatry: A systematic review &nearr;</a></li>
+  </ol>
+  <p style="font-size:11.5px;color:#8a8f98">Evidence surfaced via Consensus (consensus.app).</p>
+</section>
+<section class="sec"><div id="quiz"></div></section>
+<div class="sec" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><a class="pn" href="course-patient.html">↩ All 12 modules</a><span class="pnbar"><a class="pn" href="course-patient-05.html">← Module 05</a><a class="pn primary" href="course-patient-07.html">Module 07 →</a></span></div>
+<div class="foot"><p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Patient Track · Module 06 — DRAFT v0.1. Educational only; not medical advice, and not an endorsement of any substance. Clinical decisions belong to your treating clinician; content marked for clinician sign-off is not final until a named physician approves it.</p><p>In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p></div>
+</div><script src="owh-config.js"></script><script src="owh-app.js"></script><script>OWH.ready.then(function(){ OWH.mountQuiz("quiz",{course:"patient",moduleId:"06",passPct:75,questions:[
+{q:"What is true about the phases of a psychedelic or ibogaine experience?",options:["Once you hit the peak, you can get permanently stuck there","Every phase passes — onset, then peak, then return — even when the peak feels timeless","The experience is exactly the same length and shape for everyone","The return only happens if you fight the experience"],answer:1,explain:"Experiences move through onset, peak, and return, and every phase passes — the return always comes."},
+{q:"Why does ibogaine require continuous ECG and heart monitoring by trained staff?",options:["It has no real effect on the body; monitoring is just a nice extra","It can prolong the QT interval and trigger dangerous, sometimes fatal, heart-rhythm problems","It only affects the heart in people who already have heart disease","Monitoring is only needed for the first few minutes"],answer:1,explain:"Ibogaine can prolong the QT interval and has been linked to dangerous, sometimes fatal arrhythmias, so continuous cardiac monitoring is required."},
+{q:"Is doing an aggressive detox or cleanse right before an ibogaine session a good idea?",options:["Yes — the more detox, the safer you will be","Yes — it clears out toxins so the medicine works better","No — stripping minerals like potassium and magnesium can worsen the heart-rhythm danger and add risk","It makes no difference either way"],answer:2,explain:"More detox is not more safe; losing potassium and magnesium can worsen the QT and rhythm danger ibogaine already carries."},
+{q:"If a frightening or painful moment comes up during the experience, what does this lesson suggest?",options:["It means the treatment is going wrong and must be stopped","You should fight it and force yourself to look calm","Difficult does not mean wrong — stay open and honest and let the team hold the safety","You should hide it from the people in the room"],answer:2,explain:"Difficult moments are normal and can be valuable; your job is openness and honesty, not control."},
+{q:"How should you treat claims that these medicines rewire your brain by boosting BDNF?",options:["As settled, proven science you can fully count on","As a hypothesis — in humans it is unproven, and a 2024 review found no reliable change in blood BDNF","As a good reason to skip medical caution","As proof the treatment is guaranteed to work"],answer:1,explain:"Brain-rewiring and BDNF benefit in humans is a hypothesis, not a promise — a 2024 human meta-analysis found no reliable change in blood BDNF."}
+]}); });</script></body></html>

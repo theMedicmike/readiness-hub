@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 05 — Informed Consent II — The Honest Risks · Patient Track</title>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.65}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.22;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:900px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 26px;gap:14px;flex-wrap:wrap}
+  .topin img{height:34px}
+  nav a{color:var(--muted);font-size:13px;font-weight:600;margin-left:14px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:8px 15px;border-radius:8px;margin-left:14px}
+  .subnav{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:11px 40px;background:#f6f2e8;border-bottom:1px solid var(--line);font-size:12.5px}
+  .crumb{color:var(--muted);font-weight:600}.crumb a{color:var(--navy2)}.crumb b{color:var(--navy)}
+  .prog{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+  .pnbar{display:flex;gap:8px}
+  .pn{display:inline-block;font-size:12.5px;font-weight:700;border:1px solid var(--line);border-radius:8px;padding:6px 12px;background:#fff;color:var(--navy2)}
+  .pn:hover{border-color:var(--gold-soft);color:var(--gold)}
+  .pn.primary{background:var(--gold);color:#241606;border-color:var(--gold)}
+  .pn.disabled{opacity:.4;pointer-events:none}
+  .gatebar{background:#fbeceb;border-left:4px solid var(--clin);color:#7c2420;padding:11px 16px;font-size:13.5px;margin:0;border-bottom:1px solid #efc9c2}
+  .hero{background:linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:34px 40px;border-bottom:5px solid var(--gold)}
+  .mnum{display:inline-block;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+  .hero h1{color:#fff;font-size:30px;margin:.25em 0 .3em}
+  .hero .sub{color:#cfe0ef;font-size:16.5px;max-width:64ch;margin:0}
+  .sec{padding:26px 40px;border-bottom:1px solid var(--line)}
+  .sec h2{font-size:21px;margin:.1em 0 .4em}.sec h3{font-size:16.5px;margin:1.1em 0 .3em}
+  .sec p{margin:.5em 0}
+  .lead{font-size:17px;color:#33424f}
+  .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;vertical-align:middle;margin-left:4px}
+  .t-est{background:var(--est)}.t-plaus{background:var(--plaus)}.t-hyp{background:var(--hyp)}.t-gate{background:var(--clin)}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:#3a4854;margin:8px 0 2px}
+  ul.key,ol.key{padding-left:20px}ul.key li,ol.key li{margin:6px 0}
+  .good{background:#eef6f0;border:1px solid #cfe6d8;border-left:4px solid var(--est);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px}
+  .warn{background:#fdf3f0;border:1px solid #efc9c2;border-left:4px solid var(--clin);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px;color:#7c2420}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:14px 16px;font-size:14.5px;margin:14px 0}
+  .takeaway{background:#fbf6ea;border:1px solid var(--gold-soft);border-left:4px solid var(--gold);border-radius:9px;padding:13px 16px;margin:16px 0}
+  .takeaway h3{margin:0 0 .3em;font-size:15px;color:var(--navy)}
+  .reflect{background:#eef4fa;border:1px solid #cfe0ef;border-radius:10px;padding:14px 16px;margin:16px 0;font-size:14.5px}
+  .reflect h3{margin:0 0 .3em;font-size:15px}
+  .carry{font-size:16px;color:var(--navy);font-style:italic;border-top:2px solid var(--gold-soft);padding-top:12px;margin-top:8px}
+  sup.cite a{color:var(--gold);font-weight:700;font-size:11px;text-decoration:none}
+  .refs{background:#faf8f1}
+  .refs ol{padding-left:22px;font-size:12.5px;color:#3a4854}.refs li{margin:6px 0}
+  .foot{background:var(--navy);color:#cdddec;padding:24px 40px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:720px){.hero h1{font-size:24px}.sec,.subnav,.hero,.foot{padding-left:18px;padding-right:18px}}
+</style></head>
+<body><div class="wrap">
+<div class="protobar">PROTOTYPE / DRAFT v0.1 — educational course, pending physician sign-off</div>
+<div class="topbar"><div class="topin"><a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a><nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html" class="here">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav></div></div>
+<div class="subnav"><span class="crumb"><a href="hub-learn.html">Learn</a> › <a href="course-patient.html">Patient Track</a> › <b>Module 05</b></span><span class="prog">Module 05 of 12</span><span class="pnbar"><a class="pn" href="course-patient-04.html">← Module 04</a><a class="pn primary" href="course-patient-06.html">Module 06 →</a></span></div>
+<div class="gatebar"><b>⚑ Clinician sign-off required.</b> This lesson covers medical-safety content that a named licensed physician must review and sign before it is used with any patient. Treat the specifics here as a draft to discuss with your care team — not medical advice.</div><header class="hero">
+  <div class="mnum">Module 05 · Patient Track</div>
+  <h1>Informed Consent II — The Honest Risks <span class="tag t-gate">Clinician sign-off</span></h1>
+  <p class="sub">The real risks — starting with the one that can stop your heart — and the exact screening you have every right to demand before anyone doses you.</p>
+</header>
+<section class="sec"><div class="box" style="border-left:4px solid #2e7d52;background:#eef6f0"><h3 style="margin:0 0 5px;font-size:15px">🎖️ In plain English</h3><p style="margin:0">These drugs might help a few people, but they can also hurt or kill you — most often by messing with your heart's rhythm, and that can happen even to healthy people. Before anyone gives you a dose, you have every right to demand a heart tracing (an ECG), a blood test, and a full review of every medicine, supplement, and substance you take — hiding one thing can turn a survivable dose into a deadly one. Never stop or lower your own psychiatric meds to "make room" for a psychedelic; that is a doctor's call, not yours or a coach's. If a provider won't run these checks or won't have emergency heart care ready, walking away is the smart, strong move.</p></div></section>
+<section class="sec">
+  <p>If anyone tells you a psychedelic is "completely safe" or "all natural, so it can't hurt you," they have just told you they cannot be trusted with your life. The honest version is more useful: these medicines can help some people <span class="tag t-plaus">Plausible</span>, and they can also injure or kill — and the gap between those two outcomes is very often <b>screening you can insist on</b>.</p>
+
+  <h3>The heart is the risk that can end everything</h3>
+  <p>Ibogaine — the highest-acuity example, and the one we use here to teach the principle — disturbs the heart's electrical rhythm. It blocks a channel (hERG) that governs the heartbeat's "reset," stretching out the <b>QT interval</b>; a dangerously long QT can trigger a fatal rhythm called Torsades de Pointes. This is documented, not theoretical: reviewers have recorded deaths at therapeutic doses <b>even in people with no known heart disease</b>, and genetic differences in metabolism raise the danger further<sup class="cite"><a href="https://consensus.app/papers/details/533d03cb6c505e11854e5b063aa50405/" target="_blank" rel="noopener">[1]</a></sup>.</p>
+  <p>The numbers are sobering. In a clinical study of 14 people, a single 10 mg/kg dose lengthened the QTc by roughly <b>95 milliseconds</b> on average, and <b>half of them exceeded a QTc of 500 ms</b> — the threshold clinicians treat as the danger zone for a lethal rhythm — alongside severe, temporary loss of coordination<sup class="cite"><a href="https://consensus.app/papers/details/d65579a1076a53ada51fbbca43c57bd1/" target="_blank" rel="noopener">[2]</a></sup>. Because ibogaine's active byproduct lingers for days, that window of risk can extend well past dosing day<sup class="cite"><a href="https://consensus.app/papers/details/533d03cb6c505e11854e5b063aa50405/" target="_blank" rel="noopener">[1]</a></sup>.</p>
+  <div class="warn"><b>This can be fatal.</b> Cardiac arrest from these rhythm changes has happened at normal therapeutic doses in otherwise healthy people. No amount of good intention on a provider's part changes the electrophysiology.</div>
+  <div class="good"><b>Demand this before dosing:</b> a baseline ECG with a <i>measured</i> QTc, an electrolyte panel (potassium, magnesium, calcium), and honest disclosure of every heart symptom and family history of sudden death. A provider who won't run a real cardiac screen — and won't have emergency cardiac care on hand — has told you exactly who they are. Walking away is a valid, strong choice.</div>
+</section>
+
+<section class="sec">
+  <h3>Your body may not process the dose like anyone else's</h3>
+  <p>How fast you clear a drug is partly written in your genes. A liver enzyme called <b>CYP2D6</b> varies widely between people, and that variation changes blood levels, effectiveness, and side effects for many medications — including the antidepressants a lot of veterans already take<sup class="cite"><a href="https://consensus.app/papers/details/8f784997314454debf0c5162f5e98b87/" target="_blank" rel="noopener">[3]</a></sup>. A "poor metabolizer" can end up with far higher exposure from the exact same dose. For ibogaine specifically, this is why expert reviewers call for <b>genotyping and monitoring</b>, not a one-size-fits-all dose<sup class="cite"><a href="https://consensus.app/papers/details/533d03cb6c505e11854e5b063aa50405/" target="_blank" rel="noopener">[1]</a></sup>.</p>
+  <div class="box">Genotyping here isn't a boutique upsell — for a drug with ibogaine's cardiac profile, it's part of what genuine supervision looks like. A "standard dose" is not standard for you until someone has checked.</div>
+</section>
+
+<section class="sec">
+  <h3>Some of your medications can turn a survivable dose lethal</h3>
+  <p>Interactions raise risk two ways. First, a drug that blocks CYP2D6 (several common SSRIs do) can push the blood level of the psychedelic higher. Second, other drugs — some antibiotics, anti-nausea meds, methadone — can prolong the QT on their own, stacking risk on top of risk.</p>
+  <p>There is also a distinct, potentially fatal reaction: <b>serotonin syndrome</b>. Combining serotonergic drugs — SSRIs, MAOIs, and serotonergic psychedelics like MDMA — can drive serotonin activity too high, producing autonomic and neuromuscular signs that can kill<sup class="cite"><a href="https://consensus.app/papers/details/d4935f493df558d9ae859983b8b02799/" target="_blank" rel="noopener">[4]</a></sup>. It is diagnosed clinically, and the cornerstone of treatment is stopping the offending drug early and giving supportive care<sup class="cite"><a href="https://consensus.app/papers/details/a33bf80e1742591c96c9808226eef26a/" target="_blank" rel="noopener">[5]</a></sup>. MAOIs are especially dangerous — and some plant brews (ayahuasca) contain them.</p>
+  <div class="warn"><b>Do not hide anything, and do not self-adjust.</b> Every prescription, over-the-counter drug, supplement, and substance — disclose it to your treating clinician. And never taper or stop a psychiatric medication on your own or on a non-clinician's say-so to "make room" for a psychedelic. That taper is itself a medical decision that belongs to a physician who knows your history.</div>
+</section>
+
+<section class="sec">
+  <h3>The psychological risks are real — including in the trials</h3>
+  <p>These are intense experiences. They can surface buried trauma, flood you with fear, or bring a temporary sense of reality coming apart. Risk is higher for anyone with a personal or family history of psychosis or bipolar disorder, which is exactly why psychiatric screening matters.</p>
+  <p>This isn't fringe alarmism — it shows up in the best studies. In a rigorous phase 2b psilocybin trial (233 people with treatment-resistant depression), a 25 mg dose reduced depression scores more than a 1 mg dose at three weeks <span class="tag t-plaus">Plausible</span> — a real benefit signal — but <b>adverse events occurred in 77%</b>, and <b>suicidal ideation or self-injurious behavior appeared across all dose groups</b><sup class="cite"><a href="https://consensus.app/papers/details/28ba51bc7d9f5cb586bd0b5856121c61/" target="_blank" rel="noopener">[6]</a></sup>. A promising result and serious psychiatric risk turned up in the same well-run study. That is why preparation, a trusted setting, and real integration afterward are part of the safety, not optional extras.</p>
+  <div class="warn"><b>If your mind turns dark during or after:</b> that is a medical event, not a personal failure. Veterans Crisis Line — dial <b>988</b>, then press <b>1</b>. Free, confidential, 24/7. Have this plan agreed with your clinician <i>before</i> you dose.</div>
+</section>
+
+<section class="sec">
+  <h3>What we honestly don't know <span class="tag t-hyp">Hypothesis</span></h3>
+  <p>We won't fake certainty. We do not yet have proof of long-term outcomes for most people, who benefits most, or how durable any benefit is. The idea that "preparing the body's terrain" or detoxing beforehand improves psychedelic outcomes is a <b>hypothesis, not a proven fact</b> — we are openly studying it, not promising it. The related claim that these drugs deliver a lasting neuroplasticity or BDNF benefit in humans is also unproven; a 2024 human meta-analysis found no change in peripheral BDNF.</p>
+  <div class="warn"><b>More detox is not more safe.</b> Aggressive "cleanses," high-dose chelation, or fasting right before a cardiotoxic drug can shift your electrolytes and <i>add</i> cardiac risk — the opposite of protection. Real preparation here is test-first and physician-timed, never a purge. Ignore anyone selling "pineal decalcification," "flushing locked-in metals," or any guaranteed cure — those are marketing, not medicine.</div>
+  <div class="box"><b>Legal reality, stated plainly:</b> ibogaine, psilocybin, MDMA, LSD, and DMT are Schedule I under federal law; ketamine is Schedule III; esketamine (Spravato) is FDA-approved; MDMA is <b>not</b> FDA-approved. Anyone promising you a legal, guaranteed cure is selling something.</div>
+</section>
+
+<div class="takeaway">
+  <h3>Key takeaways</h3>
+  <ul class="key">
+    <li>The cardiac/QT risk can be fatal — even in healthy people. A single ibogaine dose raised QTc by ~95 ms on average, with half of subjects over 500 ms. Insist on a baseline ECG and electrolytes.</li>
+    <li>Your genes (CYP2D6) change how you handle the dose. Genotyping and monitoring are part of real supervision, not a luxury.</li>
+    <li>SSRIs, MAOIs, QT-prolonging meds, and serotonergic psychedelics can interact dangerously — including serotonin syndrome. Disclose everything; never self-taper.</li>
+    <li>Psychological harm, including suicidal ideation, appeared across all dose groups in a top-tier trial. Screening, setting, and integration are safety, not extras.</li>
+    <li>Benefit-from-prep and human neuroplasticity claims are unproven hypotheses; aggressive detox before a cardiotoxic drug can add risk.</li>
+  </ul>
+</div>
+
+<div class="reflect">
+  <h3>Reflect before you move on</h3>
+  <ul>
+    <li>If a provider dismissed your request for an ECG and a full medication review, what would you do — and who would you call?</li>
+    <li>Which of your current medications and supplements have you not yet written down to hand your clinician, honestly, including the ones you'd rather not mention?</li>
+    <li>What would "enough screening to feel safe" actually look like for you — and are you willing to walk away if you don't get it?</li>
+  </ul>
+</div>
+
+<p class="carry"><b>Carry this out of the lesson:</b> the safest veteran in the room is the one who insists on a cardiac screen, a full med review, and an emergency plan — and is prepared to walk away if a provider won't give them.</p>
+
+<section class="sec refs">
+  <h2 style="font-size:18px">Sources</h2>
+  <ol>
+    <li>Brunt, 2026, Addiction. <a href="https://consensus.app/papers/details/533d03cb6c505e11854e5b063aa50405/">Ibogaine and cardiovascular complications—prolonged QT interval and ventricular arrhythmias ↗</a></li>
+    <li>Knuijver et al., 2021, Addiction. <a href="https://consensus.app/papers/details/d65579a1076a53ada51fbbca43c57bd1/">Safety of ibogaine administration in detoxification of opioid-dependent individuals: open-label observational study ↗</a></li>
+    <li>Bousman et al., 2023, Clinical Pharmacology &amp; Therapeutics. <a href="https://consensus.app/papers/details/8f784997314454debf0c5162f5e98b87/">CPIC Guideline for CYP2D6, CYP2C19, and Serotonin Reuptake Inhibitor Antidepressants ↗</a></li>
+    <li>Francescangeli et al., 2019, International Journal of Molecular Sciences. <a href="https://consensus.app/papers/details/d4935f493df558d9ae859983b8b02799/">The Serotonin Syndrome: From Molecular Mechanisms to Clinical Practice ↗</a></li>
+    <li>Chiew et al., 2024, British Journal of Clinical Pharmacology. <a href="https://consensus.app/papers/details/a33bf80e1742591c96c9808226eef26a/">Management of serotonin syndrome (toxicity) ↗</a></li>
+    <li>Goodwin et al., 2022, New England Journal of Medicine. <a href="https://consensus.app/papers/details/28ba51bc7d9f5cb586bd0b5856121c61/">Single-Dose Psilocybin for a Treatment-Resistant Episode of Major Depression ↗</a></li>
+  </ol>
+  <p style="font-size:11.5px;color:#8a8f98">Evidence surfaced via Consensus (consensus.app).</p>
+</section>
+<section class="sec"><div id="quiz"></div></section>
+<div class="sec" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><a class="pn" href="course-patient.html">↩ All 12 modules</a><span class="pnbar"><a class="pn" href="course-patient-04.html">← Module 04</a><a class="pn primary" href="course-patient-06.html">Module 06 →</a></span></div>
+<div class="foot"><p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Patient Track · Module 05 — DRAFT v0.1. Educational only; not medical advice, and not an endorsement of any substance. Clinical decisions belong to your treating clinician; content marked for clinician sign-off is not final until a named physician approves it.</p><p>In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p></div>
+</div><script src="owh-config.js"></script><script src="owh-app.js"></script><script>OWH.ready.then(function(){ OWH.mountQuiz("quiz",{course:"patient",moduleId:"05",passPct:75,questions:[
+{q:"What is the most dangerous, potentially deadly risk this lesson warns about with ibogaine?",options:["It can dangerously disturb your heart's rhythm (a long QT), which can be fatal","It stains your teeth","It is guaranteed to cure addiction","It is completely safe because it is natural"],answer:0,explain:"Ibogaine can stretch the heart's QT interval and trigger a fatal rhythm, even in otherwise healthy people."},
+{q:"Before being dosed with a high-risk psychedelic like ibogaine, what does the lesson say you have every right to insist on?",options:["Nothing - just trust the provider","A baseline ECG (heart tracing), an electrolyte blood panel, and a full review of your meds and family heart history","A signed guarantee of a cure","A bigger dose to be sure it works"],answer:1,explain:"A real cardiac screen plus an honest medication and family-history review is part of genuine supervision."},
+{q:"Why does the lesson say you must tell your clinician about every medication and supplement you take?",options:["So they can charge you more","Because some drugs (certain SSRIs, MAOIs, or QT-prolonging meds) can stack risk or cause serotonin syndrome, turning a survivable dose deadly","It does not matter - you can just stop your meds yourself","Only illegal drugs count"],answer:1,explain:"Hidden drugs can raise blood levels or trigger a dangerous reaction like serotonin syndrome, so full disclosure matters."},
+{q:"The lesson says stopping or lowering your psychiatric medication to \"make room\" for a psychedelic is:",options:["Something you can safely do on your own","A medical decision that belongs to a physician who knows your history - never done on a non-clinician's say-so","Required before every session","Completely harmless"],answer:1,explain:"Tapering a psychiatric medication is itself a medical decision for a physician, not a self-directed step."},
+{q:"Which statement is the honest, accurate one according to the lesson?",options:["Psychedelics are proven safe and permanently rewire the human brain","A detox cleanse before a heart-risky drug always makes it safer","Benefits are possible but not proven, and aggressive detox cleanses before a heart-risky drug can actually add danger","Anything natural cannot hurt you"],answer:2,explain:"Benefit-from-prep and neuroplasticity claims are unproven hypotheses, and aggressive detox can shift electrolytes and raise cardiac risk."}
+]}); });</script></body></html>

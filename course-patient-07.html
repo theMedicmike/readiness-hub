@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 07 — Medical Readiness — What Your Team Will Check · Patient Track</title>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.65}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.22;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:900px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 26px;gap:14px;flex-wrap:wrap}
+  .topin img{height:34px}
+  nav a{color:var(--muted);font-size:13px;font-weight:600;margin-left:14px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:8px 15px;border-radius:8px;margin-left:14px}
+  .subnav{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:11px 40px;background:#f6f2e8;border-bottom:1px solid var(--line);font-size:12.5px}
+  .crumb{color:var(--muted);font-weight:600}.crumb a{color:var(--navy2)}.crumb b{color:var(--navy)}
+  .prog{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+  .pnbar{display:flex;gap:8px}
+  .pn{display:inline-block;font-size:12.5px;font-weight:700;border:1px solid var(--line);border-radius:8px;padding:6px 12px;background:#fff;color:var(--navy2)}
+  .pn:hover{border-color:var(--gold-soft);color:var(--gold)}
+  .pn.primary{background:var(--gold);color:#241606;border-color:var(--gold)}
+  .pn.disabled{opacity:.4;pointer-events:none}
+  .gatebar{background:#fbeceb;border-left:4px solid var(--clin);color:#7c2420;padding:11px 16px;font-size:13.5px;margin:0;border-bottom:1px solid #efc9c2}
+  .hero{background:linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:34px 40px;border-bottom:5px solid var(--gold)}
+  .mnum{display:inline-block;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+  .hero h1{color:#fff;font-size:30px;margin:.25em 0 .3em}
+  .hero .sub{color:#cfe0ef;font-size:16.5px;max-width:64ch;margin:0}
+  .sec{padding:26px 40px;border-bottom:1px solid var(--line)}
+  .sec h2{font-size:21px;margin:.1em 0 .4em}.sec h3{font-size:16.5px;margin:1.1em 0 .3em}
+  .sec p{margin:.5em 0}
+  .lead{font-size:17px;color:#33424f}
+  .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;vertical-align:middle;margin-left:4px}
+  .t-est{background:var(--est)}.t-plaus{background:var(--plaus)}.t-hyp{background:var(--hyp)}.t-gate{background:var(--clin)}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:#3a4854;margin:8px 0 2px}
+  ul.key,ol.key{padding-left:20px}ul.key li,ol.key li{margin:6px 0}
+  .good{background:#eef6f0;border:1px solid #cfe6d8;border-left:4px solid var(--est);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px}
+  .warn{background:#fdf3f0;border:1px solid #efc9c2;border-left:4px solid var(--clin);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px;color:#7c2420}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:14px 16px;font-size:14.5px;margin:14px 0}
+  .takeaway{background:#fbf6ea;border:1px solid var(--gold-soft);border-left:4px solid var(--gold);border-radius:9px;padding:13px 16px;margin:16px 0}
+  .takeaway h3{margin:0 0 .3em;font-size:15px;color:var(--navy)}
+  .reflect{background:#eef4fa;border:1px solid #cfe0ef;border-radius:10px;padding:14px 16px;margin:16px 0;font-size:14.5px}
+  .reflect h3{margin:0 0 .3em;font-size:15px}
+  .carry{font-size:16px;color:var(--navy);font-style:italic;border-top:2px solid var(--gold-soft);padding-top:12px;margin-top:8px}
+  sup.cite a{color:var(--gold);font-weight:700;font-size:11px;text-decoration:none}
+  .refs{background:#faf8f1}
+  .refs ol{padding-left:22px;font-size:12.5px;color:#3a4854}.refs li{margin:6px 0}
+  .foot{background:var(--navy);color:#cdddec;padding:24px 40px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:720px){.hero h1{font-size:24px}.sec,.subnav,.hero,.foot{padding-left:18px;padding-right:18px}}
+</style></head>
+<body><div class="wrap">
+<div class="protobar">PROTOTYPE / DRAFT v0.1 — educational course, pending physician sign-off</div>
+<div class="topbar"><div class="topin"><a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a><nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html" class="here">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav></div></div>
+<div class="subnav"><span class="crumb"><a href="hub-learn.html">Learn</a> › <a href="course-patient.html">Patient Track</a> › <b>Module 07</b></span><span class="prog">Module 07 of 12</span><span class="pnbar"><a class="pn" href="course-patient-06.html">← Module 06</a><a class="pn primary" href="course-patient-08.html">Module 08 →</a></span></div>
+<div class="gatebar"><b>⚑ Clinician sign-off required.</b> This lesson covers medical-safety content that a named licensed physician must review and sign before it is used with any patient. Treat the specifics here as a draft to discuss with your care team — not medical advice.</div><header class="hero">
+  <div class="mnum">Module 07 · Patient Track</div>
+  <h1>Medical Readiness — What Your Team Will Check <span class="tag t-gate">Clinician sign-off</span></h1>
+  <p class="sub">The exact pre-treatment medical screen a responsible program runs — so you can ask for every item by name and know what "safe" actually looks like.</p>
+</header>
+<section class="sec"><div class="box" style="border-left:4px solid #2e7d52;background:#eef6f0"><h3 style="margin:0 0 5px;font-size:15px">🎖️ In plain English</h3><p style="margin:0">Before any serious program gives you a medicine like ibogaine, it checks your heart with an ECG (a "QTc" reading), tests three minerals in your blood — potassium, magnesium, and calcium — and goes over every medication you take plus your family's heart history. Ibogaine can throw even a healthy heart into a deadly rhythm, so these checks aren't red tape; they're what catches trouble before it starts. They lower the risk — they do not make it "safe," and ibogaine is still a Schedule I drug the FDA has not approved. If a place offers to dose you with no baseline ECG and no heart monitoring, that's your cue to walk out.</p></div></section>
+<section class="sec">
+  <p>You've earned the right to ask hard questions about anything going into your body. This lesson hands you the concrete medical checklist a serious program runs <i>before</i> treatment — not as red tape, but as the thing that stands between you and a preventable tragedy. Learn each item well enough to ask for it out loud.</p>
+
+  <h3>Why your heart gets checked first</h3>
+  <p>The single most important pre-treatment test is a baseline <b>ECG (electrocardiogram)</b> that measures your <b>QTc</b> — the time your heart's electrical system takes to reset between beats. A long QTc is the warning sign for a dangerous rhythm called Torsades de Pointes. This matters most for ibogaine: at the doses used in treatment settings it prolongs the QTc and can trigger potentially fatal ventricular arrhythmias <span class="tag t-est">Established</span> — even in people with <i>no</i> prior heart disease.<sup class="cite"><a href="https://consensus.app/papers/details/533d03cb6c505e11854e5b063aa50405/" target="_blank" rel="noopener">[1]</a></sup></p>
+  <p>This is not a theoretical worry. In a supervised study of opioid-dependent patients, a single 10 mg/kg dose of ibogaine prolonged the QTc by an average of about 95 milliseconds, and half of the participants crossed a QTc of 500 ms — the threshold clinicians treat as a red-alert danger zone — alongside severe temporary loss of coordination.<sup class="cite"><a href="https://consensus.app/papers/details/d65579a1076a53ada51fbbca43c57bd1/" target="_blank" rel="noopener">[2]</a></sup></p>
+  <div class="warn"><b>If a program offers ibogaine without a baseline ECG and continuous cardiac monitoring, that is a stop sign — leave.</b> Ibogaine is a Schedule I substance federally in the United States and is not FDA-approved; the safety data here comes from supervised medical settings, and none of it makes unsupervised or unmonitored use safe. Cardiac screening and continuous monitoring lower the danger and give a crisis a chance to be caught in time — they don't erase the risk, and going without them is how people die.</div>
+
+  <h3>Electrolytes — the quiet safety net</h3>
+  <p>Your heart's electrical stability depends on three minerals in your blood: <b>potassium (K), magnesium (Mg), and calcium (Ca)</b>. When any of these run low, the QT interval stretches and the arrhythmia risk climbs — so a good team draws these labs and corrects them <i>before</i> dosing, not after. Veterans on diuretics ("water pills"), or anyone who has been vomiting, sweating hard, or eating poorly, can be low without feeling it. Ask for these three by name.</p>
+
+  <h3>Your cardiac history and physical exam</h3>
+  <p>Numbers on a page aren't the whole story. A thorough intake asks about <b>your personal and family cardiac history</b>: any history of fainting (especially during exertion), palpitations, heart attack, congenital heart conditions, or — the big one — <b>sudden unexplained death in a blood relative under 50</b>, which can flag an inherited rhythm disorder. Bring this history written down. A hands-on exam and, when indicated, a specialist referral are part of a real screen, not an upsell.</p>
+
+  <h3>Full medication and supplement reconciliation</h3>
+  <p>"Reconciliation" means the team builds one complete, verified list of <i>everything</i> you take — prescriptions, over-the-counter drugs, supplements, and protein powders. This matters for two reasons. First, many common medications independently prolong the QT interval, stacking risk on top of a cardiotoxic medicine. Second, your genetics change how you process drugs.</p>
+  <p>An enzyme called <b>CYP2D6</b> is a major pathway your liver uses to break down ibogaine and many antidepressants. People carry different genetic versions of it, and that variation changes drug levels, effectiveness, and side effects — which is why pharmacogenetic guidelines now use CYP2D6 (and CYP2C19) status to guide antidepressant dosing.<sup class="cite"><a href="https://consensus.app/papers/details/8f784997314454debf0c5162f5e98b87/" target="_blank" rel="noopener">[3]</a></sup> A "slow metabolizer" can end up with far higher, longer-lasting drug levels than expected — which is why <b>CYP2D6 genotyping</b> is part of a careful ibogaine workup, and why serotonergic medications (SSRIs, SNRIs, MAOIs) often require a physician-supervised taper on a specific timeline.<sup class="cite"><a href="https://consensus.app/papers/details/533d03cb6c505e11854e5b063aa50405/" target="_blank" rel="noopener">[1]</a></sup></p>
+  <div class="warn"><b>Never stop a psychiatric medication on your own to "get ready."</b> Abruptly quitting an antidepressant can be dangerous, and the timing of any taper is a clinical decision that belongs to your treating prescriber — not to you, a forum, or a retreat's intake form.</div>
+
+  <h3>Contraindications and mental-health screening</h3>
+  <p>A responsible program also screens for conditions that make treatment unsafe: significant liver impairment (the liver processes ibogaine), active or unstable heart disease, pregnancy, and a personal or family history of <b>psychosis or bipolar disorder</b>, since psychedelics can precipitate mania or psychotic episodes in vulnerable people. Answering these honestly protects you — a "no" that saves your life is a good outcome, not a rejection.</p>
+
+  <h3>A word on "detox" before dosing</h3>
+  <p>You may hear that an aggressive cleanse or chelation protocol will "prepare your terrain" and improve results. Be careful. The idea that pre-treatment detox improves psychedelic outcomes is a <span class="tag t-hyp">Hypothesis</span>, not a proven benefit — and a widely cited claim that these medicines raise BDNF (a brain-growth protein) in humans was <i>not</i> supported by a 2024 human meta-analysis, which found no change in blood BDNF levels. More concerning: hammering your body with a harsh detox or chelation right before a drug that stresses the heart can <b>add</b> risk by disturbing the very electrolytes your rhythm depends on. Real preparation is test-first and physician-timed, never "more cleanse equals more safety."</p>
+
+  <div class="good"><b>Your ask-for-each checklist.</b> Walk in and request, by name: (1) a baseline <b>ECG with my QTc value</b>; (2) <b>potassium, magnesium, and calcium</b> labs, corrected before dosing; (3) a review of my <b>personal and family cardiac history</b>; (4) a full <b>medication and supplement reconciliation</b>, including <b>CYP2D6 considerations</b> and any taper plan; (5) <b>liver function</b> labs; and (6) a <b>mental-health history</b> review. A good team will be glad you asked — and will have already planned every one.</div>
+
+  <div class="box">These screening thresholds and decisions are clinical judgments made by your program's physician for your specific medicine and history. This module is educational and defers to your treating clinicians on every point.</div>
+
+  <div class="takeaway">
+    <h3>Key takeaways</h3>
+    <ul class="key">
+      <li>A baseline <b>ECG/QTc plus K, Mg, and Ca</b> is the core cardiac safety screen — ibogaine can cause dangerous QTc prolongation and arrhythmias even in healthy hearts. <span class="tag t-est">Established</span></li>
+      <li>A single 10 mg/kg ibogaine dose prolonged QTc by ~95 ms and pushed half of patients past 500 ms in a supervised study — which is why continuous monitoring matters, and why unmonitored use can kill even a healthy person.</li>
+      <li><b>CYP2D6 genetics</b> change how you metabolize ibogaine and antidepressants; genotyping and a physician-run medication taper are part of a careful workup.</li>
+      <li>Never stop a psychiatric med on your own; never treat "more detox" as "safer" — harsh cleanses can destabilize the electrolytes your heart needs.</li>
+      <li>If a program skips these checks, that is a reason to walk away.</li>
+    </ul>
+  </div>
+
+  <div class="reflect">
+    <h3>Reflect before you move on</h3>
+    <ul>
+      <li>Which items on the ask-for-each checklist could you request at your very next appointment — and who is the right clinician to ask?</li>
+      <li>Do you know your family's cardiac history, including any sudden or unexplained deaths? If not, who could you call this week to find out?</li>
+      <li>Can you write down a complete, honest list of every medication and supplement you take — even the ones you'd rather not mention?</li>
+    </ul>
+  </div>
+
+  <p class="carry"><b>Carry this out of the lesson:</b> Screening isn't a hurdle between you and the care you're weighing — it's how a responsible team lowers the risk of serious harm, so insist on every check by name.</p>
+</section>
+
+<section class="sec refs">
+  <h2 style="font-size:18px">Sources</h2>
+  <ol>
+    <li>Brunt et al., 2026, Addiction. <a href="https://consensus.app/papers/details/533d03cb6c505e11854e5b063aa50405/" target="_blank" rel="noopener">Ibogaine and cardiovascular complications — prolonged QT interval and ventricular arrhythmias ↗</a></li>
+    <li>Knuijver et al., 2021, Addiction. <a href="https://consensus.app/papers/details/d65579a1076a53ada51fbbca43c57bd1/" target="_blank" rel="noopener">Safety of ibogaine administration in detoxification of opioid-dependent individuals: an open-label observational study ↗</a></li>
+    <li>Bousman et al., 2023, Clinical Pharmacology &amp; Therapeutics. <a href="https://consensus.app/papers/details/8f784997314454debf0c5162f5e98b87/" target="_blank" rel="noopener">CPIC Guideline for CYP2D6, CYP2C19, and Serotonin Reuptake Inhibitor Antidepressants ↗</a></li>
+  </ol>
+  <p style="font-size:11.5px;color:#8a8f98">Evidence surfaced via Consensus (consensus.app).</p>
+</section>
+<section class="sec"><div id="quiz"></div></section>
+<div class="sec" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><a class="pn" href="course-patient.html">↩ All 12 modules</a><span class="pnbar"><a class="pn" href="course-patient-06.html">← Module 06</a><a class="pn primary" href="course-patient-08.html">Module 08 →</a></span></div>
+<div class="foot"><p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Patient Track · Module 07 — DRAFT v0.1. Educational only; not medical advice, and not an endorsement of any substance. Clinical decisions belong to your treating clinician; content marked for clinician sign-off is not final until a named physician approves it.</p><p>In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p></div>
+</div><script src="owh-config.js"></script><script src="owh-app.js"></script>
+<script>OWH.ready.then(function(){ OWH.mountQuiz("quiz",{course:"patient",moduleId:"07",passPct:75,questions:[
+{q:"What is the single most important heart test a responsible program runs before ibogaine treatment?",options:["A baseline ECG that measures your QTc","A treadmill stress test","A cholesterol panel","No test is needed if you feel healthy"],answer:0,explain:"The most important pre-treatment test is a baseline ECG measuring your QTc, because ibogaine can prolong the QTc and trigger a dangerous heart rhythm even in people with no prior heart disease."},
+{q:"A program offers ibogaine but runs no baseline ECG and no heart monitoring. What does this module say to do?",options:["Go ahead if you feel fine","Walk away — that is a stop sign","Ask for a smaller dose instead","Just take extra magnesium first"],answer:1,explain:"The module calls this a stop sign and says to leave. Screening and continuous cardiac monitoring lower the danger but do not erase it, and going without them is how people die."},
+{q:"Which three blood minerals help keep your heart rhythm stable and should be checked and corrected before dosing?",options:["Iron, zinc, and sodium","Potassium, magnesium, and calcium","Vitamin C, D, and B12","Chloride, phosphate, and copper"],answer:1,explain:"Potassium, magnesium, and calcium keep the heart's electrical system stable. When they run low, the QT interval stretches and arrhythmia risk climbs, so a good team corrects them before dosing."},
+{q:"Should you stop your antidepressant on your own to get ready for treatment?",options:["Yes, quit a few days before","No — abruptly stopping can be dangerous, and any taper is a decision for your prescriber","Only if a retreat's intake form tells you to","Yes, but only cut the dose in half"],answer:1,explain:"Never stop a psychiatric medication on your own. Abruptly quitting can be dangerous, and the timing of any taper is a clinical decision that belongs to your treating prescriber — not a forum or a retreat's intake form."},
+{q:"How does the module describe an aggressive detox or cleanse right before dosing?",options:["A proven way to improve results","Unproven for outcomes, and possibly harmful because it can disturb the electrolytes your heart rhythm depends on","Required by every good program","A guaranteed way to heal the brain"],answer:1,explain:"Pre-treatment detox improving outcomes is a hypothesis, not a proven benefit. A harsh cleanse can add risk by disturbing the electrolytes your heart depends on, and the claimed human BDNF benefit was not supported by a 2024 meta-analysis."}
+]}); });</script></body></html>

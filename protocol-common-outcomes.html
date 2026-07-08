@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Common Outcome Protocol — Operation Whole Health</title>
+<script src="owh-config.js"></script><script src="owh-app.js"></script>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.6}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.2;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:1040px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 28px;gap:12px;flex-wrap:wrap}
+  .topin img{height:34px}
+  nav a{color:var(--muted);font-size:13px;font-weight:600;margin-left:14px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:8px 15px;border-radius:8px;margin-left:14px}
+  .hero{background:radial-gradient(1100px 420px at 80% -10%,#27557f 0,transparent 60%),linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:52px 44px;border-bottom:5px solid var(--gold)}
+  .hero .kick{letter-spacing:.24em;text-transform:uppercase;font-size:11px;color:var(--gold-soft);font-weight:700}
+  .hero h1{color:#fff;font-size:40px;margin:.2em 0 .25em;max-width:20ch}.hero p{color:#cfe0ef;font-size:18.5px;max-width:72ch;margin:0}
+  .hero .v{margin-top:14px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-soft)}
+  .sec{padding:34px 44px;border-bottom:1px solid var(--line)}
+  .eyebrow{display:inline-block;letter-spacing:.14em;text-transform:uppercase;font-size:11px;font-weight:800;color:var(--gold);background:#fbf6ea;border:1px solid var(--gold-soft);padding:3px 10px;border-radius:30px;margin-bottom:10px}
+  .sec h2{font-size:25px;margin:.1em 0 .3em}.lead{font-size:17px;color:#33424f;max-width:74ch}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:15px 18px;font-size:14.5px;margin:15px 0}
+  .box.unite{background:#eef4fa;border-color:#cfe0ef}
+  .warn{background:#fdf3f0;border:1px solid #efc9c2;color:#7c2420;border-radius:10px;padding:13px 16px;font-size:14px;margin:14px 0}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:18px 0}
+  .card{border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:10px;padding:15px 17px;background:#fcfbf7}
+  .card h3{font-size:16px;margin:0 0 5px}.card p{margin:0;font-size:13.5px;color:#3a4854}
+  .phase{border:1px solid var(--line);border-radius:12px;margin:14px 0;overflow:hidden}
+  .phase .ph{background:var(--navy);color:#fff;padding:11px 16px;font-family:Georgia,serif;font-size:16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .phase .ph span{font-family:system-ui,Arial,sans-serif;font-size:11px;font-weight:700;color:var(--gold-soft);text-transform:uppercase;letter-spacing:.06em}
+  .phase .pb{padding:6px 16px 14px}
+  table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13.5px}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#f2ede0;color:var(--navy);font-family:Georgia,serif;font-size:11px;text-transform:uppercase;letter-spacing:.03em}
+  .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;white-space:nowrap}
+  .t-core{background:var(--navy)}.t-val{background:var(--est)}.t-adj{background:var(--gold)}.t-safety{background:var(--clin)}
+  .legend{display:flex;flex-wrap:wrap;gap:16px;font-size:12.5px;color:#3a4854;margin:12px 0}
+  ul.key{padding-left:20px}ul.key li{margin:6px 0}
+  ol.steps{padding-left:20px}ol.steps li{margin:8px 0}
+  .checkins{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+  .ci{border:1px solid var(--line);border-radius:11px;padding:16px 18px;background:#fcfbf7}
+  .ci h3{font-size:16px;margin:0 0 6px}.ci ul{margin:6px 0 0;padding-left:18px;font-size:13.5px}.ci li{margin:4px 0}
+  .ci.pt{border-top:4px solid var(--est)}.ci.cl{border-top:4px solid var(--navy2)}
+  .src{font-size:13px;color:#4a5563}.src li{margin:6px 0}
+  .foot{background:var(--navy);color:#cdddec;padding:26px 44px;font-size:13px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:820px){.grid,.grid2,.checkins{grid-template-columns:1fr}.hero h1{font-size:30px}.sec{padding:26px 20px}}
+</style></head>
+<body><div class="wrap">
+  <div class="protobar">PROTOTYPE / DRAFT v0.1 — open for the field to shape</div>
+  <div class="topbar"><div class="topin">
+    <a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a>
+    <nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav>
+  </div></div>
+
+  <header class="hero">
+    <div class="kick">Operation Whole Health · Global Readiness &amp; Outcomes Standard</div>
+    <h1>The Common Outcome Protocol</h1>
+    <p>One shared way to measure readiness, safety, and results — so that every clinic, study group, and university studying psychedelic-assisted care is finally speaking the same language, and the whole field can learn together instead of apart.</p>
+    <div class="v">Draft v0.1 · open methodology · to be ratified by an independent Standards &amp; Registry Council</div>
+  </header>
+
+  <section class="sec">
+    <span class="eyebrow">Why this exists</span>
+    <h2>Fractured evidence is the enemy. A shared protocol is the cure.</h2>
+    <p class="lead">Right now, a hundred good-faith teams are measuring different things, in different ways, at different times. The result is a mountain of data that <b>can't be pooled, compared, or trusted</b> — exactly when lawmakers, regulators, and the public are deciding the future of these medicines. If we all measure the same core the same way, every veteran's experience adds to one growing, credible body of evidence.</p>
+    <div class="box unite"><b>Stronger together.</b> This protocol is an open invitation, not a walled garden. It belongs to the movement. Adopt it on paper, in a spreadsheet, or in software — the point is that we stop producing divided, throw-away data and start building <b>one shared record of what actually helps</b>, and what doesn't. United as one movement, governed as one body.</div>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">How it stays credible</span>
+    <h2>Neutral governance &amp; an honest conflict-of-interest firewall</h2>
+    <p class="lead">A standard is only worth adopting if it can't be accused of cooking the books. So the rules come first:</p>
+    <ul class="key">
+      <li><b>Independent stewardship.</b> The protocol and the registry are governed by the <b><a href="governance-charter.html">independent, nonprofit Standards &amp; Registry Council</a></b> (psychedelic-medicine physician, toxicologist, methodologist/biostatistician, ethics/IRB member, plus veteran, patient, and caregiver representatives) — not by any product company.</li>
+      <li><b>COI firewall, stated plainly.</b> Operation Whole Health sells wellness products <b>and</b> helped convene this standard. Those functions are walled apart: the standards/registry arm is separate, analyses are <b>pre-registered</b>, methods are <b>open</b>, and no result is ever contingent on anyone buying anything.</li>
+      <li><b>Your data stays yours.</b> Each clinic, study group, or participant owns their record. Contribution to the shared registry is <b>voluntary, de-identified, and portable</b> — you can leave and take your data with you.</li>
+      <li><b>Ethics first.</b> Collecting outcomes to learn what works is <b>human-subjects research</b> — it requires IRB oversight and informed consent, and (for any digital record of health data) a HIPAA-compliant system with a signed BAA. This document is the measurement standard; the compliant platform is built <b>behind</b> those rails, not before them.</li>
+    </ul>
+    <div class="warn"><b>Not medical advice.</b> This protocol standardizes measurement. It does not recommend any substance, does not certify any treatment as safe or effective, and never replaces a treating clinician's judgment. Substances vary in legality by jurisdiction. In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</div>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">The core idea</span>
+    <h2>A Common Core + a per-medicine annex</h2>
+    <p class="lead">Everyone collects the same <b>minimum dataset</b> at the same milestones, using <b>validated instruments</b>. Each medicine adds its own short safety annex on top (cardiac for ibogaine, serotonergic for MDMA, and so on — mapped to the <a href="Readiness Standard - Protocol v1 (Universal) DRAFT v0.1.html">Readiness Standard, Protocol v1</a>). Low burden, high comparability.</p>
+    <div class="legend">
+      <span><span class="tag t-core">Core</span> required of everyone</span>
+      <span><span class="tag t-safety">Safety</span> non-negotiable safety measure</span>
+      <span><span class="tag t-val">Validated</span> published, peer-reviewed instrument</span>
+      <span><span class="tag t-adj">Adjunct</span> recommended, optional</span>
+    </div>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">The minimum dataset</span>
+    <h2>What everyone collects, and when</h2>
+
+    <div class="phase"><div class="ph">1 · Screening &amp; eligibility <span>before anything else</span></div><div class="pb">
+      <table><thead><tr><th>Measure</th><th>What it captures</th><th>Type</th></tr></thead><tbody>
+        <tr><td>Cardiac screen — ECG/QTc, blood pressure, heart rate</td><td>The risk that can end everything, especially for QT-prolonging medicines like ibogaine</td><td><span class="tag t-safety">Safety</span> <span class="tag t-core">Core</span></td></tr>
+        <tr><td>Medication reconciliation &amp; interaction check</td><td>Full med list; serotonergic drugs (SSRIs/MAOIs), CYP2D6 considerations</td><td><span class="tag t-safety">Safety</span> <span class="tag t-core">Core</span></td></tr>
+        <tr><td>C-SSRS — Columbia Suicide Severity Rating Scale</td><td>Suicidal ideation &amp; behavior — the field's gold-standard safety screen</td><td><span class="tag t-safety">Safety</span> <span class="tag t-val">Validated</span></td></tr>
+        <tr><td>Medical &amp; psychiatric history / contraindications</td><td>Personal &amp; family cardiac history, psychosis/bipolar screen, pregnancy</td><td><span class="tag t-core">Core</span></td></tr>
+        <tr><td>Readiness index (OWH)</td><td>Whether preparation steps and understanding are in place</td><td><span class="tag t-adj">Adjunct</span></td></tr>
+      </tbody></table>
+    </div></div>
+
+    <div class="phase"><div class="ph">2 · Baseline <span>pre-treatment</span></div><div class="pb">
+      <table><thead><tr><th>Measure</th><th>What it captures</th><th>Type</th></tr></thead><tbody>
+        <tr><td>Primary condition outcome — <b>PCL-5</b> (PTSD), <b>PHQ-9</b> (depression), or <b>GAD-7</b> (anxiety)</td><td>The main symptom target, chosen to match the person's condition</td><td><span class="tag t-core">Core</span> <span class="tag t-val">Validated</span></td></tr>
+        <tr><td>Function &amp; disability — WHODAS 2.0 or Sheehan Disability Scale</td><td>Whether life actually works better: work, relationships, daily function</td><td><span class="tag t-core">Core</span> <span class="tag t-val">Validated</span></td></tr>
+        <tr><td>Wellbeing — WEMWBS (Warwick-Edinburgh)</td><td>The positive side — not just fewer symptoms, but more life</td><td><span class="tag t-adj">Adjunct</span> <span class="tag t-val">Validated</span></td></tr>
+        <tr><td>Therapeutic alliance (baseline)</td><td>Trust with the care team — a known driver of outcomes</td><td><span class="tag t-adj">Adjunct</span></td></tr>
+      </tbody></table>
+    </div></div>
+
+    <div class="phase"><div class="ph">3 · Day-of / dosing session <span>clinician-recorded</span></div><div class="pb">
+      <table><thead><tr><th>Measure</th><th>What it captures</th><th>Type</th></tr></thead><tbody>
+        <tr><td>Vital signs over time; adverse-event log</td><td>Blood pressure, heart rate, temperature; anything unexpected, graded</td><td><span class="tag t-safety">Safety</span> <span class="tag t-core">Core</span></td></tr>
+        <tr><td>Medicine, dose, set &amp; setting record</td><td>Exactly what was given and under what conditions — so results are comparable</td><td><span class="tag t-core">Core</span></td></tr>
+        <tr><td><b>MEQ-30</b> (or brief MEQ-4) — mystical-type experience</td><td>Intensity/quality of the acute experience, which tracks with outcomes</td><td><span class="tag t-adj">Adjunct</span> <span class="tag t-val">Validated</span></td></tr>
+        <tr><td><b>CEQ</b> (or brief CEQ-7) — challenging experience</td><td>The hard parts — fear, grief, difficulty — measured honestly</td><td><span class="tag t-adj">Adjunct</span> <span class="tag t-val">Validated</span></td></tr>
+        <tr><td>EBI — Emotional Breakthrough; CADSS — dissociation</td><td>Emotional release and dissociative states during the session</td><td><span class="tag t-adj">Adjunct</span> <span class="tag t-val">Validated</span></td></tr>
+      </tbody></table>
+    </div></div>
+
+    <div class="phase"><div class="ph">4 · Daily / weekly check-ins <span>patient + clinician</span></div><div class="pb">
+      <p style="font-size:14px;color:#33424f;margin:4px 0 6px">Short, repeatable, and shared — the running pulse that turns individual journeys into learnable data. Kept deliberately brief to protect trust and reduce burden.</p>
+      <table><thead><tr><th>Measure</th><th>What it captures</th><th>Type</th></tr></thead><tbody>
+        <tr><td>Brief mood / sleep / craving / side-effect check</td><td>How the days are actually going, in a 60-second check-in</td><td><span class="tag t-core">Core</span></td></tr>
+        <tr><td>C-SSRS screener (since-last-visit)</td><td>Ongoing suicide-risk safety net, with an escalation trigger</td><td><span class="tag t-safety">Safety</span> <span class="tag t-val">Validated</span></td></tr>
+        <tr><td>Integration engagement</td><td>Did the practices/plans actually happen this week?</td><td><span class="tag t-adj">Adjunct</span></td></tr>
+      </tbody></table>
+    </div></div>
+
+    <div class="phase"><div class="ph">5 · Integration &amp; follow-up <span>2 wk · 4 wk · 3 mo · 6 mo · 12 mo</span></div><div class="pb">
+      <table><thead><tr><th>Measure</th><th>What it captures</th><th>Type</th></tr></thead><tbody>
+        <tr><td>Repeat primary outcome (PCL-5 / PHQ-9 / GAD-7)</td><td>Did symptoms change — and does the change <b>last</b>?</td><td><span class="tag t-core">Core</span> <span class="tag t-val">Validated</span></td></tr>
+        <tr><td>Repeat function &amp; wellbeing (WHODAS/SDS, WEMWBS)</td><td>Durability of real-life improvement</td><td><span class="tag t-core">Core</span> <span class="tag t-val">Validated</span></td></tr>
+        <tr><td>Adverse events &amp; new medications</td><td>Delayed or lasting harms, including HPPD-type effects</td><td><span class="tag t-safety">Safety</span> <span class="tag t-core">Core</span></td></tr>
+        <tr><td>Loss-of-diagnosis (where applicable)</td><td>The outcome that matters most to a veteran — no longer meeting criteria</td><td><span class="tag t-adj">Adjunct</span></td></tr>
+      </tbody></table>
+    </div></div>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">The daily tracker</span>
+    <h2>Both sides check in — and the questions actually move the needle</h2>
+    <p class="lead">The patient and the clinician each answer a short, purpose-built check-in. Same event, two viewpoints — which is exactly what makes the data honest and useful. Any safety flag (a positive C-SSRS screen, a serious side effect) triggers an <b>immediate escalation</b> to the care team, never a silent data point.</p>
+    <div class="checkins">
+      <div class="ci pt"><h3>🧑 Patient check-in</h3>
+        <ul>
+          <li>How are you feeling today? (mood, 0–10)</li>
+          <li>How did you sleep?</li>
+          <li>Any cravings or urges? How strong?</li>
+          <li>Any side effects or physical symptoms?</li>
+          <li>Since we last talked, any thoughts of harming yourself? (C-SSRS screener)</li>
+          <li>Did you do your integration practice? What came up?</li>
+          <li>One word for today.</li>
+        </ul>
+      </div>
+      <div class="ci cl"><h3>🩺 Clinician check-in</h3>
+        <ul>
+          <li>Observed function &amp; engagement since last contact</li>
+          <li>Any adverse events? (type, severity, action taken)</li>
+          <li>Vitals / cardiac notes where indicated</li>
+          <li>Medication changes or interaction concerns</li>
+          <li>Suicide-risk assessment &amp; safety plan status</li>
+          <li>Integration support delivered</li>
+          <li>Clinical impression of change (better / same / worse)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="box"><b>Why this design:</b> every item either protects the person (safety) or answers the field's central question — <i>does preparation and this modality actually help, for whom, and for how long?</i> Nothing is collected that doesn't earn its place. That discipline is how we prove — or honestly disprove — what works.</div>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">Join the movement</span>
+    <h2>Who adopts this — and how</h2>
+    <div class="grid">
+      <div class="card"><h3>Clinics &amp; programs</h3><p>Adopt the Common Core, keep your own records, and contribute de-identified aggregates. Certify to the standard for the OWH-Prepared seal.</p></div>
+      <div class="card"><h3>Study groups &amp; universities</h3><p>Align your outcome set to the Common Core so your findings pool with everyone else's — and count toward the collective evidence base.</p></div>
+      <div class="card"><h3>Clinicians &amp; facilitators</h3><p>Use the shared check-ins with your patients; earn continuing-education credit through the <a href="hub-learn.html">provider track</a>.</p></div>
+      <div class="card"><h3>Patients &amp; veterans</h3><p>Your journey, measured with care and consent, becomes part of the proof that helps the next person — and shapes fair policy.</p></div>
+      <div class="card"><h3>Researchers &amp; methodologists</h3><p>Help refine the instruments and pre-register the analyses. The methodology is open by design.</p></div>
+      <div class="card"><h3>Policymakers</h3><p>Reference a transparent, standardized evidence base — without any endorsement of a specific substance.</p></div>
+    </div>
+    <div class="box unite"><b>How to start today (no software required):</b> adopt the Common Core on paper or in a spreadsheet, run it with real informed consent and IRB oversight, and align your milestones to the schedule above. The digital, HIPAA-compliant platform — patient trackers, clinician and study-group dashboards — is built on top of this protocol once the compliance and governance rails are in place. The standard comes first; the software serves it.</div>
+    <p style="margin-top:14px">To adopt the protocol, join the Standards &amp; Registry Council, or pilot it with your program, contact <b>michael@operationwholehealth.org</b> or see <a href="hub-involved.html">Get involved</a>.</p>
+  </section>
+
+  <section class="sec">
+    <span class="eyebrow">Sources</span>
+    <h2>Instruments are validated, not invented</h2>
+    <ol class="src">
+      <li>Posner K, et al. <a href="https://consensus.app/papers/details/caedb44cca965cf19aa08c77f994b20d/?utm_source=claude_code" target="_blank" rel="noopener">The Columbia–Suicide Severity Rating Scale: Initial Validity and Internal Consistency Findings From Three Multisite Studies</a>. <i>Am J Psychiatry</i>, 2011.</li>
+      <li>Ashbaugh AR, et al. <a href="https://consensus.app/papers/details/eac688d220265afbbd447ef66288d46b/?utm_source=claude_code" target="_blank" rel="noopener">Psychometric Validation of the English and French Versions of the PTSD Checklist for DSM-5 (PCL-5)</a>. <i>PLoS ONE</i>, 2016.</li>
+      <li>Barrett FS, et al. <a href="https://consensus.app/papers/details/2db69323ec645761b358e0ec1c4317fd/?utm_source=claude_code" target="_blank" rel="noopener">Validation of the revised Mystical Experience Questionnaire (MEQ30) in experimental sessions with psilocybin</a>. <i>J Psychopharmacol</i>, 2015.</li>
+      <li>Strickland JC, et al. <a href="https://consensus.app/papers/details/ee9b6155b4de51f3af27d911d4d2321f/?utm_source=claude_code" target="_blank" rel="noopener">The Mystical Experience Questionnaire 4-Item (MEQ-4) and Challenging Experience Questionnaire 7-Item (CEQ-7)</a>. <i>Psychedelic Medicine</i>, 2024.</li>
+    </ol>
+    <p style="font-size:12.5px;color:var(--muted)">PHQ-9, GAD-7, WHODAS 2.0, Sheehan Disability Scale, WEMWBS, EBI, and CADSS are widely published, validated instruments; their inclusion and final versions are subject to review by the Standards &amp; Registry Council before ratification. Instrument set verified against the peer-reviewed literature (Consensus, PubMed) — full citations to be attached at v1.0.</p>
+  </section>
+
+  <div class="foot">
+    <p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). The Common Outcome Protocol — prototype, DRAFT v0.1, open for the field to shape. Not medical, legal, or research advice; adoption requires local IRB oversight, informed consent, and applicable data-protection compliance.</p>
+    <p>United as one movement for the future of psychedelic-assisted medicine. In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p>
+  </div>
+</div>
+</body></html>

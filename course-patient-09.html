@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 09 — Mindset, Intention & Emotional Readiness · Patient Track</title>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.65}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.22;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:900px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 26px;gap:14px;flex-wrap:wrap}
+  .topin img{height:34px}
+  nav a{color:var(--muted);font-size:13px;font-weight:600;margin-left:14px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:8px 15px;border-radius:8px;margin-left:14px}
+  .subnav{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:11px 40px;background:#f6f2e8;border-bottom:1px solid var(--line);font-size:12.5px}
+  .crumb{color:var(--muted);font-weight:600}.crumb a{color:var(--navy2)}.crumb b{color:var(--navy)}
+  .prog{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+  .pnbar{display:flex;gap:8px}
+  .pn{display:inline-block;font-size:12.5px;font-weight:700;border:1px solid var(--line);border-radius:8px;padding:6px 12px;background:#fff;color:var(--navy2)}
+  .pn:hover{border-color:var(--gold-soft);color:var(--gold)}
+  .pn.primary{background:var(--gold);color:#241606;border-color:var(--gold)}
+  .pn.disabled{opacity:.4;pointer-events:none}
+  .gatebar{background:#fbeceb;border-left:4px solid var(--clin);color:#7c2420;padding:11px 16px;font-size:13.5px;margin:0;border-bottom:1px solid #efc9c2}
+  .hero{background:linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:34px 40px;border-bottom:5px solid var(--gold)}
+  .mnum{display:inline-block;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+  .hero h1{color:#fff;font-size:30px;margin:.25em 0 .3em}
+  .hero .sub{color:#cfe0ef;font-size:16.5px;max-width:64ch;margin:0}
+  .sec{padding:26px 40px;border-bottom:1px solid var(--line)}
+  .sec h2{font-size:21px;margin:.1em 0 .4em}.sec h3{font-size:16.5px;margin:1.1em 0 .3em}
+  .sec p{margin:.5em 0}
+  .lead{font-size:17px;color:#33424f}
+  .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;vertical-align:middle;margin-left:4px}
+  .t-est{background:var(--est)}.t-plaus{background:var(--plaus)}.t-hyp{background:var(--hyp)}.t-gate{background:var(--clin)}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:#3a4854;margin:8px 0 2px}
+  ul.key,ol.key{padding-left:20px}ul.key li,ol.key li{margin:6px 0}
+  .good{background:#eef6f0;border:1px solid #cfe6d8;border-left:4px solid var(--est);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px}
+  .warn{background:#fdf3f0;border:1px solid #efc9c2;border-left:4px solid var(--clin);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px;color:#7c2420}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:14px 16px;font-size:14.5px;margin:14px 0}
+  .takeaway{background:#fbf6ea;border:1px solid var(--gold-soft);border-left:4px solid var(--gold);border-radius:9px;padding:13px 16px;margin:16px 0}
+  .takeaway h3{margin:0 0 .3em;font-size:15px;color:var(--navy)}
+  .reflect{background:#eef4fa;border:1px solid #cfe0ef;border-radius:10px;padding:14px 16px;margin:16px 0;font-size:14.5px}
+  .reflect h3{margin:0 0 .3em;font-size:15px}
+  .carry{font-size:16px;color:var(--navy);font-style:italic;border-top:2px solid var(--gold-soft);padding-top:12px;margin-top:8px}
+  sup.cite a{color:var(--gold);font-weight:700;font-size:11px;text-decoration:none}
+  .refs{background:#faf8f1}
+  .refs ol{padding-left:22px;font-size:12.5px;color:#3a4854}.refs li{margin:6px 0}
+  .foot{background:var(--navy);color:#cdddec;padding:24px 40px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:720px){.hero h1{font-size:24px}.sec,.subnav,.hero,.foot{padding-left:18px;padding-right:18px}}
+</style></head>
+<body><div class="wrap">
+<div class="protobar">PROTOTYPE / DRAFT v0.1 — educational course, pending physician sign-off</div>
+<div class="topbar"><div class="topin"><a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a><nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html" class="here">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav></div></div>
+<div class="subnav"><span class="crumb"><a href="hub-learn.html">Learn</a> › <a href="course-patient.html">Patient Track</a> › <b>Module 09</b></span><span class="prog">Module 09 of 12</span><span class="pnbar"><a class="pn" href="course-patient-08.html">← Module 08</a><a class="pn primary" href="course-patient-10.html">Module 10 →</a></span></div>
+<header class="hero">
+  <div class="mnum">Module 09 · Patient Track</div>
+  <h1>Mindset, Intention &amp; Emotional Readiness <span class="tag t-plaus">Plausible</span></h1>
+  <p class="sub">How to prepare your mind — set an intention, make room for fear and surrender, learn grounding skills, and build the circle that carries you — without over-promising what any of it can do.</p>
+</header>
+<section class="sec"><div class="box" style="border-left:4px solid #2e7d52;background:#eef6f0"><h3 style="margin:0 0 5px;font-size:15px">🎖️ In plain English</h3><p style="margin:0">Getting your head right before treatment is real work, not just waiting around: set a simple intention, line up people who will support you, and practice a couple of calm-down skills now. None of this is a magic fix — no psychedelic is proven safe or a guaranteed cure, and preparing your mind is not proven to change your brain chemistry. But your mindset and your circle are things you can actually control, so they are worth taking seriously. Never go it alone or use anything illegally; this only belongs inside a supervised, supported plan with your care team.</p></div></section>
+<section class="sec">
+  <p>The days before treatment are not empty waiting — they are part of the work. How you walk in, and who is walking with you, is one of the few things you can actually shape. This lesson is about preparing your inner ground gently and honestly.</p>
+
+  <h3>Why mindset is part of the evidence, not a slogan</h3>
+  <p>In psychedelic-assisted therapy the two words that keep coming up are <i>set</i> (your mindset going in) and <i>setting</i> (the environment and people around you). A systematic review of the psychological work wrapped around these sessions found that set and setting are potential moderators of the clinical outcome — meaning your state of mind and your surroundings may shape what the experience does, for better or worse <span class="tag t-plaus">Plausible</span><sup class="cite"><a href="https://consensus.app/papers/details/32d78128c77855ddb1b8b9f5e06380c2/" target="_blank" rel="noopener">[1]</a></sup>. This is not a promise that a good mindset delivers a good result. It means your preparation is worth taking seriously.</p>
+  <div class="box">A quick honesty note: some programs claim mindset or prep "rewires the brain" or boosts BDNF (a growth protein). In humans that is still a <span class="tag t-hyp">Hypothesis</span> — a 2024 meta-analysis of human studies found no reliable change in peripheral BDNF after psychedelics. Prepare your mind because it may help you feel steadier and more supported, not because it is proven to change your biology.</div>
+
+  <h3>Set your intention</h3>
+  <p>Spend time before treatment with one simple question: <i>what am I hoping to face, release, or understand?</i> An intention isn't a demand for a specific outcome — it's a direction, an anchor you can return to if the experience gets intense. Write it in a sentence or two. Keep it honest and open ("I want to stop running from this grief"), not a prescription ("I will be cured of my PTSD"). When patients in one study described what helped them, preparation and a felt sense of safety were named as central to any benefit they got <span class="tag t-plaus">Plausible</span><sup class="cite"><a href="https://consensus.app/papers/details/b4cd17bd71055137a14dc513bd7525ec/" target="_blank" rel="noopener">[2]</a></sup>.</p>
+
+  <h3>Make room for fear — and for surrender</h3>
+  <p>It's normal to be afraid. These experiences often ask you to stop fighting and let go — which runs directly against a lot of military training, where control keeps you alive. In that same patient study, the ability to <i>surrender</i> rather than brace against the experience was described as part of what let benefit happen <span class="tag t-plaus">Plausible</span><sup class="cite"><a href="https://consensus.app/papers/details/b4cd17bd71055137a14dc513bd7525ec/" target="_blank" rel="noopener">[2]</a></sup>. You can rehearse letting go in small ways now: in slow breathing, in trusting your team with something minor, in noticing the urge to control and softening it by a degree.</p>
+  <div class="good"><b>This is safe to practice.</b> Surrender here means loosening your grip <i>inside a supported, supervised container</i> — with a team, a plan, and people who have you. It never means going in alone, unmonitored, or "toughing it out" solo. Letting go is something you do <i>because</i> you are held, not instead of being held.</div>
+
+  <h3>Trauma-informed grounding you can learn now</h3>
+  <p>Grounding skills — slow breath, orienting to the room, a physical anchor like feet on the floor or a hand on your chest — are an <span class="tag t-est">Established</span> part of trauma-informed care for riding out difficult moments. Their specific effect on psychedelic outcomes is not proven <span class="tag t-plaus">Plausible</span>, but they cost nothing and give you a tool you own. Ask your team to teach you two or three before the day, and practice them when you're calm so they're automatic when you're not.</p>
+  <ul class="key">
+    <li><b>Orient:</b> name five things you can see and two you can hear — it pulls you back into the present room.</li>
+    <li><b>Anchor:</b> press your feet down, feel the chair, hold a grounding object your team approves.</li>
+    <li><b>Breath:</b> longer exhale than inhale (in for 4, out for 6) to settle the body.</li>
+  </ul>
+
+  <h3>Build your circle</h3>
+  <p>Line up your support <i>before</i> treatment, not after: who you'll talk to, who's handling logistics and the ride home, who's walking the caregiver track alongside you. You should not do this alone. A safe, supportive environment and the people in it were described by patients as key to any benefit <span class="tag t-plaus">Plausible</span><sup class="cite"><a href="https://consensus.app/papers/details/b4cd17bd71055137a14dc513bd7525ec/" target="_blank" rel="noopener">[2]</a></sup> — and it is one of the most controllable parts of your preparation.</p>
+
+  <h3>Integration starts before you begin</h3>
+  <p>Integration — making sense of the experience afterward and folding it into your life — is widely regarded as important. Be honest with yourself about the state of that evidence: a systematised review found the field cannot yet say any specific integration framework is proven effective <span class="tag t-hyp">Hypothesis</span><sup class="cite"><a href="https://consensus.app/papers/details/05fbb5d202ec54b9a9bac98f00c31a80/" target="_blank" rel="noopener">[3]</a></sup>. What you can do now is plan the scaffolding: journaling, a follow-up conversation with your team, and gentle days with no heavy obligations right after.</p>
+
+  <div class="warn"><b>Where this gets risky.</b> Preparation can stir up hard emotions before treatment ever happens — grief, anger, memories. Have a crisis plan and a person to call if that surges. And keep the frame clear: no psychedelic is proven safe or a guaranteed cure, and most (psilocybin, MDMA, LSD, DMT, ibogaine) are Schedule I federally. Ketamine is Schedule III and esketamine (Spravato) is FDA-approved; MDMA is <i>not</i> FDA-approved. A prepared mindset is never a reason to pursue illegal or unsupervised use. Clinical decisions belong to your treating clinician.</div>
+
+  <div class="takeaway">
+    <h3>Key takeaways</h3>
+    <ul class="key">
+      <li>Your mindset and setting may shape the outcome — this is <span class="tag t-plaus">Plausible</span>, not a guarantee.</li>
+      <li>An intention is a direction to return to, not a demand for a specific result.</li>
+      <li>Surrender is something you do <i>because</i> you're supported and supervised — never alone.</li>
+      <li>Grounding skills are a real, <span class="tag t-est">Established</span> tool you can practice before the day.</li>
+      <li>Build your circle and a crisis plan <i>before</i> treatment; you should not do this solo.</li>
+    </ul>
+  </div>
+
+  <div class="reflect">
+    <h3>Reflect before you move on</h3>
+    <ul>
+      <li>In one or two honest sentences, what are you hoping to face, release, or understand?</li>
+      <li>Where in your life does letting go feel unsafe — and what would make it feel a little safer?</li>
+      <li>Name three people for your circle: someone to talk to, someone for logistics, and someone to call in a crisis.</li>
+    </ul>
+  </div>
+
+  <p class="carry"><b>Carry this out of the lesson:</b> Courage here isn't gritting your teeth — sometimes it's the harder thing: letting go, inside a circle strong enough to hold you.</p>
+</section>
+
+<section class="sec refs">
+  <h2 style="font-size:18px">Sources</h2>
+  <ol>
+    <li>Cavarra et al., 2022, Frontiers in Psychology. <a href="https://consensus.app/papers/details/32d78128c77855ddb1b8b9f5e06380c2/" target="_blank" rel="noopener">Psychedelic-Assisted Psychotherapy — A Systematic Review of Associated Psychological Interventions ↗</a></li>
+    <li>Beaussant et al., 2025, General Hospital Psychiatry. <a href="https://consensus.app/papers/details/b4cd17bd71055137a14dc513bd7525ec/" target="_blank" rel="noopener">Set and setting in psilocybin-assisted therapy: A qualitative study of patients with cancer and depression ↗</a></li>
+    <li>Thal et al., 2023, Clinical Psychology &amp; Psychotherapy. <a href="https://consensus.app/papers/details/05fbb5d202ec54b9a9bac98f00c31a80/" target="_blank" rel="noopener">Therapeutic frameworks in integration sessions in substance-assisted psychotherapy: A systematised review ↗</a></li>
+  </ol>
+  <p style="font-size:11.5px;color:#8a8f98">Evidence surfaced via Consensus (consensus.app).</p>
+</section>
+<section class="sec"><div id="quiz"></div></section>
+<div class="sec" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><a class="pn" href="course-patient.html">↩ All 12 modules</a><span class="pnbar"><a class="pn" href="course-patient-08.html">← Module 08</a><a class="pn primary" href="course-patient-10.html">Module 10 →</a></span></div>
+<div class="foot"><p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Patient Track · Module 09 — DRAFT v0.1. Educational only; not medical advice, and not an endorsement of any substance. Clinical decisions belong to your treating clinician; content marked for clinician sign-off is not final until a named physician approves it.</p><p>In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p></div>
+</div><script src="owh-config.js"></script><script src="owh-app.js"></script>
+<script>OWH.ready.then(function(){ OWH.mountQuiz("quiz",{course:"patient",moduleId:"09",passPct:75,questions:[
+{q:"In psychedelic-assisted therapy, what do the words 'set' and 'setting' mean?",options:["Your mindset going in ('set') and the environment and people around you ('setting')","The dose of the medicine and how often you take it","The therapist's license and the clinic's street address","Two different brand names for the same drug"],answer:0,explain:"Set is your inner state going in; setting is your surroundings and support. A systematic review suggests both may shape the experience — plausible, not a guarantee."},
+{q:"Is it proven that preparing your mindset 'rewires the brain' or raises BDNF (a growth protein) in people?",options:["No — in humans that is still a hypothesis; a 2024 meta-analysis found no reliable change in peripheral BDNF","Yes, it is fully proven in humans","Yes, but only when you take ibogaine","BDNF is a type of psychedelic drug"],answer:0,explain:"Prepare your mind because it may help you feel steadier and more supported — not because it is proven to change your biology."},
+{q:"What does a safe kind of 'surrender' mean before treatment?",options:["Loosening your grip inside a supervised, supported setting — never going in alone","Toughing it out by yourself with no team around","Taking a bigger dose to force a breakthrough","Pretending you feel no fear at all"],answer:0,explain:"Letting go is something you do because you are held by a team and a plan — not instead of being held."},
+{q:"Which statement about legal status is accurate?",options:["Psilocybin, MDMA, LSD, DMT and ibogaine are Schedule I; ketamine is Schedule III; esketamine is FDA-approved; MDMA is not FDA-approved","Every psychedelic is now FDA-approved","MDMA is FDA-approved for PTSD","It is illegal for any doctor to prescribe ketamine"],answer:0,explain:"A prepared mindset is never a reason to pursue illegal or unsupervised use. Clinical decisions belong to your treating clinician."},
+{q:"What is a smart safety step while you prepare?",options:["Have a crisis plan and someone to call, because prep can stir up hard emotions before treatment","Prepare completely alone so no one can influence you","Cut off contact with your care team until the session","Skip grounding skills because they are not proven for psychedelics"],answer:0,explain:"Preparation can surface grief, anger, or memories. A circle and a crisis plan built before treatment are among the most controllable parts of your prep."}
+]}); });</script></body></html>

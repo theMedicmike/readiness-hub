@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 12 — Red Flags & When to Get Help · Patient Track</title>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.65}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.22;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:900px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 26px;gap:14px;flex-wrap:wrap}
+  .topin img{height:34px}
+  nav a{color:var(--muted);font-size:13px;font-weight:600;margin-left:14px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:8px 15px;border-radius:8px;margin-left:14px}
+  .subnav{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:11px 40px;background:#f6f2e8;border-bottom:1px solid var(--line);font-size:12.5px}
+  .crumb{color:var(--muted);font-weight:600}.crumb a{color:var(--navy2)}.crumb b{color:var(--navy)}
+  .prog{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+  .pnbar{display:flex;gap:8px}
+  .pn{display:inline-block;font-size:12.5px;font-weight:700;border:1px solid var(--line);border-radius:8px;padding:6px 12px;background:#fff;color:var(--navy2)}
+  .pn:hover{border-color:var(--gold-soft);color:var(--gold)}
+  .pn.primary{background:var(--gold);color:#241606;border-color:var(--gold)}
+  .pn.disabled{opacity:.4;pointer-events:none}
+  .gatebar{background:#fbeceb;border-left:4px solid var(--clin);color:#7c2420;padding:11px 16px;font-size:13.5px;margin:0;border-bottom:1px solid #efc9c2}
+  .hero{background:linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:34px 40px;border-bottom:5px solid var(--gold)}
+  .mnum{display:inline-block;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+  .hero h1{color:#fff;font-size:30px;margin:.25em 0 .3em}
+  .hero .sub{color:#cfe0ef;font-size:16.5px;max-width:64ch;margin:0}
+  .sec{padding:26px 40px;border-bottom:1px solid var(--line)}
+  .sec h2{font-size:21px;margin:.1em 0 .4em}.sec h3{font-size:16.5px;margin:1.1em 0 .3em}
+  .sec p{margin:.5em 0}
+  .lead{font-size:17px;color:#33424f}
+  .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;vertical-align:middle;margin-left:4px}
+  .t-est{background:var(--est)}.t-plaus{background:var(--plaus)}.t-hyp{background:var(--hyp)}.t-gate{background:var(--clin)}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:#3a4854;margin:8px 0 2px}
+  ul.key,ol.key{padding-left:20px}ul.key li,ol.key li{margin:6px 0}
+  .good{background:#eef6f0;border:1px solid #cfe6d8;border-left:4px solid var(--est);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px}
+  .warn{background:#fdf3f0;border:1px solid #efc9c2;border-left:4px solid var(--clin);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px;color:#7c2420}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:14px 16px;font-size:14.5px;margin:14px 0}
+  .takeaway{background:#fbf6ea;border:1px solid var(--gold-soft);border-left:4px solid var(--gold);border-radius:9px;padding:13px 16px;margin:16px 0}
+  .takeaway h3{margin:0 0 .3em;font-size:15px;color:var(--navy)}
+  .reflect{background:#eef4fa;border:1px solid #cfe0ef;border-radius:10px;padding:14px 16px;margin:16px 0;font-size:14.5px}
+  .reflect h3{margin:0 0 .3em;font-size:15px}
+  .carry{font-size:16px;color:var(--navy);font-style:italic;border-top:2px solid var(--gold-soft);padding-top:12px;margin-top:8px}
+  sup.cite a{color:var(--gold);font-weight:700;font-size:11px;text-decoration:none}
+  .refs{background:#faf8f1}
+  .refs ol{padding-left:22px;font-size:12.5px;color:#3a4854}.refs li{margin:6px 0}
+  .foot{background:var(--navy);color:#cdddec;padding:24px 40px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:720px){.hero h1{font-size:24px}.sec,.subnav,.hero,.foot{padding-left:18px;padding-right:18px}}
+</style></head>
+<body><div class="wrap">
+<div class="protobar">PROTOTYPE / DRAFT v0.1 — educational course, pending physician sign-off</div>
+<div class="topbar"><div class="topin"><a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a><nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html" class="here">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav></div></div>
+<div class="subnav"><span class="crumb"><a href="hub-learn.html">Learn</a> › <a href="course-patient.html">Patient Track</a> › <b>Module 12</b></span><span class="prog">Module 12 of 12</span><span class="pnbar"><a class="pn" href="course-patient-11.html">← Module 11</a><a class="pn primary" href="certificate-patient.html">Get your certificate →</a></span></div>
+<div class="gatebar"><b>⚑ Clinician sign-off required.</b> This lesson covers medical-safety content that a named licensed physician must review and sign before it is used with any patient. Treat the specifics here as a draft to discuss with your care team — not medical advice.</div><header class="hero">
+  <div class="mnum">Module 12 · Patient Track</div>
+  <h1>Red Flags &amp; When to Get Help <span class="tag t-gate">Clinician sign-off</span></h1>
+  <p class="sub">The short list of body-and-mind warning signs that mean act now — and the one rule that means you never have to guess.</p>
+</header>
+<section class="sec"><div class="box" style="border-left:4px solid #2e7d52;background:#eef6f0"><h3 style="margin:0 0 5px;font-size:15px">🎖️ In plain English</h3><p style="margin:0">This lesson is about spotting when something has gone wrong and getting help fast. The one rule: if your body or mind is doing something that scares you and it isn't settling, get help now — you do not have to be sure it is serious. Heart trouble (chest pain, fainting, a pounding or skipping heartbeat, or a seizure) means call 911, especially in the hours to days after ibogaine, which can throw off your heart's rhythm. For your head — thoughts of hurting yourself, or a mind that won't calm down — call 988 and press 1; calling early is never the wrong move, and nobody will be angry that you called too soon.</p></div></section>
+<section class="sec">
+  <p>You have made it this far by paying attention — to your body, to your buddies, to your surroundings. This lesson hands you a small, memorable set of warning signs and one simple rule, so that if something goes wrong during or after therapy, you act on instinct instead of talking yourself out of it.</p>
+
+  <h3>The one rule that beats memorizing every symptom</h3>
+  <p>Here it is: <b>if your body or your mind is doing something that frightens you and it is not settling, treat it as an emergency and get help now — you do not have to be certain.</b> A false alarm costs you an hour and a little embarrassment. Waiting because you weren't sure can cost far more. Nobody on your care team will be angry that you called too soon.</p>
+  <div class="good">
+    <b>You will not be punished for a false alarm.</b> Clinicians would rather check you out ten times for nothing than miss the one time it mattered. Calling early is exactly what a squared-away patient does — it is not weakness, and it is not wasting anyone's time.
+  </div>
+</section>
+
+<section class="sec">
+  <h3>Physical red flag #1 — your heart <span class="tag t-est">Established</span></h3>
+  <p>The most dangerous physical signs are cardiac. Call 911 for any of these: fainting or nearly fainting, a heartbeat that is racing, pounding, or skipping, chest pain or pressure, severe dizziness, or a seizure. These matter most in the hours-to-days after ibogaine, because ibogaine can stretch the heart's electrical cycle — a prolonged QT interval — and trigger a life-threatening rhythm called Torsades de Pointes, even in people with no known heart disease.<sup class="cite"><a href="https://consensus.app/papers/details/533d03cb6c505e11854e5b063aa50405/" target="_blank" rel="noopener">[1]</a></sup> In one supervised study, a single dose lengthened that cycle by about 95 milliseconds on average, and half the patients crossed the recognized danger threshold.<sup class="cite"><a href="https://consensus.app/papers/details/d65579a1076a53ada51fbbca43c57bd1/" target="_blank" rel="noopener">[2]</a></sup></p>
+  <div class="warn">
+    <b>Danger — do not "wait and see" with the heart.</b> Fainting, chest pain, or a pounding or irregular heartbeat after ibogaine is a 911 call, not a lie-down-and-hope. This risk is exactly why legitimate ibogaine care requires an EKG, continuous cardiac monitoring, and lab work — never a back room or a retreat with no equipment. And to be clear about the law: ibogaine is <b>not approved by the FDA</b> and is a <b>Schedule I</b> controlled substance in the U.S., so lawful, monitored care means an authorized clinical trial or a licensed clinic outside the U.S. — never an unsupervised or "underground" session.
+  </div>
+</section>
+
+<section class="sec">
+  <h3>Physical red flag #2 — serotonin syndrome <span class="tag t-est">Established</span></h3>
+  <p>Serotonin syndrome is what happens when there is too much serotonin activity in the body — most often when two or more serotonin-raising drugs are combined, for example an antidepressant taken alongside a serotonergic psychedelic. It can be mild, or it can be fatal.<sup class="cite"><a href="https://consensus.app/papers/details/d4935f493df558d9ae859983b8b02799/" target="_blank" rel="noopener">[3]</a></sup> Learn the cluster so you can name it fast: agitation or confusion, a racing heart rate, a rising body temperature with heavy sweating, shivering, muscle twitching, jerking, or stiffness, tremor, and sometimes diarrhea. It usually comes on within hours of the trigger.</p>
+  <p>There is no blood test that names it — doctors diagnose it at the bedside, and treatment starts with stopping the drug that caused it and getting supportive care quickly.<sup class="cite"><a href="https://consensus.app/papers/details/a33bf80e1742591c96c9808226eef26a/" target="_blank" rel="noopener">[4]</a></sup> That is why the single most useful thing you can do is tell the team exactly what you took and when. Your honest answer is half the diagnosis.</p>
+</section>
+
+<section class="sec">
+  <h3>Psychological red flags</h3>
+  <p>Not every warning sign is physical. Get help right away for any of these: thoughts of harming or killing yourself, a lasting sense that the world or your own body isn't real and won't settle, or a wave of distress, panic, or terror that keeps building instead of easing. A hard hour inside a session can be expected; a mind that feels like it is coming apart and staying apart is not something to ride out alone.</p>
+  <p>Reaching out here is not a failure of the therapy and it is not a failure of you. It is the same move as calling for your heart — you name it, and you get a trained person on the line.</p>
+</section>
+
+<section class="sec">
+  <h3>Medication and supplement conflicts</h3>
+  <p>If you realize you took — or were handed — something that was never reconciled with your care team (a supplement, an old prescription, a "helpful" pill from someone at a retreat), tell them now. Do not wait for a symptom to prove it mattered. This is the exact information that lets a clinician catch serotonin syndrome or a drug interaction early, before it grows.</p>
+
+  <h3>Who to call — right now, tonight, or at 3 a.m.</h3>
+  <div class="good">
+    <b>Veterans Crisis Line:</b> dial <b>988</b>, then press <b>1</b> (or text <b>838255</b>). Free, confidential, staffed 24/7 — and you do not have to be enrolled in VA care to use it. For a medical emergency — anything cardiac, a seizure, or the serotonin cluster above — call <b>911</b> first.
+  </div>
+  <div class="box">
+    <b>This is a clinical module.</b> It is a draft pending sign-off by a named licensed physician, and it must line up with your own clinic's emergency protocol. Wherever your treating team's instructions differ from anything written here, follow theirs.
+  </div>
+</section>
+
+<section class="sec">
+  <div class="takeaway">
+    <h3>Key takeaways</h3>
+    <ul class="key">
+      <li>One rule: if your body or mind is doing something that scares you and it isn't settling, get help now — you do not have to be sure.</li>
+      <li>Cardiac signs (fainting, chest pain, pounding or irregular heartbeat, seizure) are a 911 call, especially in the hours-to-days after ibogaine.</li>
+      <li>Serotonin syndrome — agitation, fast heart, high temperature, sweating, muscle twitching or stiffness, tremor — comes on within hours; telling the team what you took is the fastest path to treatment.</li>
+      <li>Psychological red flags — thoughts of self-harm, lasting disconnection from reality, escalating distress — deserve the same fast call as any physical sign.</li>
+      <li>Crisis line: <b>988</b>, then press <b>1</b> (text 838255); <b>911</b> for a medical emergency.</li>
+    </ul>
+  </div>
+
+  <div class="reflect">
+    <h3>Reflect before you move on</h3>
+    <ul>
+      <li>Say the one rule out loud in your own words. Do you believe, right now, that calling early is allowed?</li>
+      <li>Who are your two lifelines — the person you'd call and the number you'd dial — if something felt wrong at 3 a.m.? Are both saved in your phone?</li>
+      <li>Could you list, from memory, every substance and supplement in your body this week? If not, where will you write it down before therapy?</li>
+    </ul>
+  </div>
+
+  <p class="carry"><b>Carry this out of the lesson:</b> When something scares you and won't settle, you call first and explain later — that is the whole skill.</p>
+</section>
+
+<section class="sec refs">
+  <h2 style="font-size:18px">Sources</h2>
+  <ol>
+    <li>Brunt, 2026, Addiction. <a href="https://consensus.app/papers/details/533d03cb6c505e11854e5b063aa50405/">Ibogaine and cardiovascular complications — prolonged QT interval and ventricular arrhythmias ↗</a></li>
+    <li>Knuijver et al., 2021, Addiction. <a href="https://consensus.app/papers/details/d65579a1076a53ada51fbbca43c57bd1/">Safety of ibogaine administration in detoxification of opioid-dependent individuals: open-label observational study ↗</a></li>
+    <li>Francescangeli et al., 2019, International Journal of Molecular Sciences. <a href="https://consensus.app/papers/details/d4935f493df558d9ae859983b8b02799/">The Serotonin Syndrome: From Molecular Mechanisms to Clinical Practice ↗</a></li>
+    <li>Chiew et al., 2024, British Journal of Clinical Pharmacology. <a href="https://consensus.app/papers/details/a33bf80e1742591c96c9808226eef26a/">Management of serotonin syndrome (toxicity) ↗</a></li>
+  </ol>
+  <p style="font-size:11.5px;color:#8a8f98">Evidence surfaced via Consensus (consensus.app).</p>
+</section>
+<section class="sec"><div id="quiz"></div></section>
+<div class="sec" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><a class="pn" href="course-patient.html">↩ All 12 modules</a><span class="pnbar"><a class="pn" href="course-patient-11.html">← Module 11</a><a class="pn primary" href="certificate-patient.html">Get your certificate →</a></span></div>
+<div class="foot"><p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Patient Track · Module 12 — DRAFT v0.1. Educational only; not medical advice, and not an endorsement of any substance. Clinical decisions belong to your treating clinician; content marked for clinician sign-off is not final until a named physician approves it.</p><p>In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p></div>
+</div><script src="owh-config.js"></script><script src="owh-app.js"></script>
+<script>OWH.ready.then(function(){ OWH.mountQuiz("quiz",{course:"patient",moduleId:"12",passPct:75,questions:[
+{q:"The lesson's one rule says: when should you get help?",options:["Only when you are completely certain it is a real emergency","As soon as something with your body or mind scares you and isn't settling — you do not have to be sure","Only after trying to calm yourself down for a few hours first","Only if a buddy agrees that it looks serious"],answer:1,explain:"The rule is to act on instinct: if it scares you and isn't settling, get help now. A false alarm costs you an hour; waiting because you weren't sure can cost far more."},
+{q:"In the hours to days after ibogaine, which of these is a 911 call?",options:["Feeling a little tired the next morning","Fainting, chest pain, or a pounding or irregular heartbeat","Mild thirst","A single yawn"],answer:1,explain:"Cardiac signs are the most dangerous. Ibogaine can lengthen the heart's QT interval and trigger a life-threatening rhythm (Torsades de Pointes), even in people with no known heart disease — so these are 911 emergencies, not wait-and-see."},
+{q:"Which cluster of signs could point to serotonin syndrome?",options:["Agitation or confusion, fast heart rate, rising body temperature with sweating, shivering, muscle twitching or stiffness, and tremor","Slow, calm breathing and sleepiness only","A mild headache that goes away with a glass of water","Dry skin and a very slow, steady heartbeat"],answer:0,explain:"Serotonin syndrome usually comes on within hours and shows as agitation, a fast heart, a rising temperature with heavy sweating, shivering, muscle twitching or stiffness, and tremor."},
+{q:"Why does telling the team exactly what you took, and when, matter so much?",options:["There is a quick blood test for serotonin syndrome, so your account doesn't really matter","There is no blood test for serotonin syndrome — it is diagnosed at the bedside, so your honest list is half the diagnosis","It only matters for insurance paperwork","It has no effect on the treatment they give"],answer:1,explain:"Serotonin syndrome has no confirming blood test; doctors diagnose it at the bedside. Telling them what you took and when is the fastest path to the right treatment."},
+{q:"Who do you call, and when?",options:["Wait until your next scheduled appointment, no matter what is happening","Veterans Crisis Line at 988 then press 1 (or text 838255) for a mental-health crisis; call 911 first for a medical emergency like cardiac signs or a seizure","Only ever call 911, never a crisis line","Post about it online and wait for people to reply"],answer:1,explain:"For a mental-health crisis, dial 988 then press 1 (or text 838255). For a medical emergency — cardiac signs, a seizure, or the serotonin cluster — call 911 first."}
+]}); });</script>
+</body></html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set, Setting &amp; Session Safety — Provider Track</title>
+<script src="owh-config.js"></script><script src="owh-app.js"></script>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b;--gate:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.65}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.25;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:900px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 26px;gap:10px;flex-wrap:wrap}
+  .topin img{height:32px}
+  nav a{color:var(--muted);font-size:12.5px;font-weight:600;margin-left:13px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:12.5px;padding:8px 14px;border-radius:8px;margin-left:13px}
+  .hero{background:linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:38px 44px;border-bottom:5px solid var(--gold)}
+  .hero .kick{letter-spacing:.22em;text-transform:uppercase;font-size:11px;color:var(--gold-soft);font-weight:700}
+  .hero .mnum{display:inline-block;font-family:Georgia,serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-soft);margin:8px 0 2px}
+  .hero h1{color:#fff;font-size:29px;margin:.1em 0 .25em}.hero p{color:#cfe0ef;font-size:16.5px;max-width:68ch;margin:0}
+  .gatebar{background:#fdf3f0;border-bottom:1px solid #efc9c2;color:#7c2420;font-size:13px;padding:9px 44px}
+  .sec{padding:22px 44px;border-bottom:1px solid var(--line)}
+  .sec h3{font-size:19px;margin:.2em 0 .3em}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:13px 16px;font-size:14.5px;margin:12px 0}
+  .box p{margin:0}
+  ul.key{padding-left:20px}ul.key li{margin:7px 0}
+  .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;vertical-align:middle}
+  .t-est{background:var(--est)}.t-plaus{background:var(--plaus)}.t-hyp{background:var(--hyp)}.t-gate{background:var(--gate)}
+  .navbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 44px;border-bottom:1px solid var(--line)}
+  .foot{background:var(--navy);color:#cdddec;padding:22px 44px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:820px){.hero{padding:26px 20px}.sec,.navbar,.foot,.gatebar{padding-left:20px;padding-right:20px}.hero h1{font-size:23px}}</style></head>
+<body><div class="wrap">
+<div class="protobar">PROTOTYPE / DRAFT v0.1 — provider continuing education</div>
+<div class="topbar"><div class="topin"><a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a><nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html" class="here">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav></div></div>
+<header class="hero"><div class="kick">Operation Whole Health · Provider Track</div><span class="mnum">Module P6</span><h1>Set, Setting &amp; Session Safety</h1><p>A clinician's field guide to the dosing day itself: timed vital-sign monitoring, dissociation tracking with CADSS, a calm non-directive presence, and knowing exactly when a difficult moment becomes a cardiac, serotonergic, or psychiatric emergency.</p></header>
+<div class="gatebar"><b>⚑ Draft for review.</b> This safety-critical module carries a <span class="tag t-gate">Clinician sign-off</span> — a named licensed Medical Director must sign it before use in continuing education credit.</div>
+<section class="sec"><div class="box" style="border-left:4px solid #2e7d52;background:#eef6f0"><h3 style="margin:0 0 5px;font-size:15px">🎖️ Bottom line for a busy clinician</h3><p style="margin:0">Bottom line: on dosing day, chart vitals on a fixed clock, not just before-and-after — and for ibogaine that clock has to run for days, not hours, because the cardiac risk from its long-acting metabolite doesn't end when the visible session does. Stay calm, mostly quiet, and don't interpret the patient's experience for them, but the moment there's a real medical or safety concern — clonus and agitation pointing to serotonin syndrome, a new arrhythmia, dissociation the patient can't be grounded out of, any suicidal statement — that non-directive stance stops immediately and your emergency plan takes over. Use CADSS to track dissociation and the Hunter criteria to recognize serotonin syndrome instead of going on gut feel, and have your defibrillator, ACLS contact, and crisis line already staged before you ever give the first dose.</p></div></section>
+<section class="sec">
+<h3>The dosing day is the acute-risk window — treat it that way</h3>
+<p>Everything upstream of dosing day — screening, medication reconciliation, cardiac clearance, informed consent — exists to reduce risk before any medicine is given. But the dosing session itself is where several rare, serious, and fast-moving risks actually live: cardiac arrhythmia, serotonin toxicity, hyperthermia, acute psychiatric decompensation, and dissociation intense enough to be mistaken for either of the first two. This module assumes the Readiness Standard's Phase 3 Clear-to-Treat handoff has already happened and been signed by the clinician-of-record <span class="tag t-est">Established</span>. Your job on dosing day is monitoring, presence, and knowing exactly when "expected and difficult" becomes "a medical emergency."</p>
+<p>This standard, and this module, certify the preparation and monitoring process — not any substance's safety or efficacy. Ibogaine, MDMA, psilocybin, LSD, and DMT remain Schedule I under US federal law; none of them, nor MDMA, is FDA-approved for any indication. Only esketamine (Spravato) carries FDA approval, for treatment-resistant depression, delivered as a nasal spray; generic ketamine is a Schedule III agent used off-label as a dissociative anesthetic/adjunct.</p>
+</section>
+
+<section class="sec">
+<h3>Vital-sign monitoring over time: what to track, how often</h3>
+<p>The Common Outcome Protocol's day-of dataset requires vital signs over time and a graded adverse-event log for every modality — not a single pre/post reading <span class="tag t-est">Established</span>. Parameters and frequency track each medicine's signature risk:</p>
+<ul class="key">
+<li>Ibogaine — continuous cardiac monitoring (telemetry/ECG) for the full dosing period and well beyond, because the arrhythmia risk is not confined to the visible peak. Ibogaine and its active metabolite noribogaine block the cardiac hERG potassium channel, prolonging the QT interval, and can trigger ventricular arrhythmia including torsades de pointes at ordinary therapeutic doses in people with no prior heart disease <span class="tag t-est">Established</span>. Noribogaine's long elimination half-life means this risk can persist for days, not hours — monitoring duration should reflect that, not just the acute session.</li>
+<li>MDMA — blood pressure, heart rate, and core temperature at regular intervals throughout, with closer attention during the roughly 60–120 minute window of peak effect when serotonergic and thermogenic load is highest <span class="tag t-est">Established</span>.</li>
+<li>Ketamine — blood pressure and heart rate (a transient rise is expected and usually self-limited), plus a structured dissociation check rather than a single "are you okay" <span class="tag t-est">Established</span>.</li>
+<li>Psilocybin/LSD — blood pressure and heart rate at intervals; medical toxicity in controlled settings is generally low, so the greater monitoring burden here is psychological, not cardiac <span class="tag t-est">Established</span>.</li>
+</ul>
+<div class="box">Clinical pearl: a single baseline-and-endpoint pair of vitals cannot catch a slow QT-driven arrhythmia or a delayed hyperthermic spike. Chart vitals on a fixed clock (e.g., every 15–30 minutes for cardiac-risk modalities) so a trend, not a snapshot, is what triggers escalation.</div>
+</section>
+
+<section class="sec">
+<h3>Dissociation is expected with some medicines — measure it, don't just eyeball it</h3>
+<p>Dissociation (detachment from body, environment, or self) is a normal, dose-dependent, usually mild-to-moderate effect of ketamine, and can occur with other modalities. The field's validated tool for tracking it is the Clinician-Administered Dissociative States Scale (CADSS), a clinician-rated instrument now standard for monitoring ketamine-induced dissociation in clinical and research settings; a validated 6-item short form (CADSS-6) exists specifically for repeat monitoring across infusions <span class="tag t-est">Established</span>. The Common Outcome Protocol lists CADSS as a validated day-of measure alongside the Emotional Breakthrough Inventory <span class="tag t-est">Established</span>.</p>
+<ul class="key">
+<li>Expected: perceptual distortion, altered sense of time, feeling "outside the body," derealization — this is the mechanism at work, especially with ketamine, not a malfunction.</li>
+<li>Watch closer: dissociation severe enough that the patient cannot respond to your voice, cannot protect their airway, or occurs alongside falling blood pressure or a new arrhythmia — now you are evaluating a medical event, not a psychological one.</li>
+<li>Document it structurally: rating dissociation on CADSS or CADSS-6 at intervals turns "the session was intense" into comparable, registry-grade data, and gives you an objective marker of whether severity is escalating or resolving.</li>
+</ul>
+</section>
+
+<section class="sec">
+<h3>The facilitator's stance: calm, present, non-directive</h3>
+<p>Across published psilocybin- and MDMA-assisted therapy protocols, the facilitator's role during dosing is deliberately non-directive: minimal talking, no steering the content of the experience, a supportive rather than interpretive presence. This is a procedural convention drawn from the field's therapy manuals, not a proven cause of better outcomes — the honest evidence here is correlational. In a controlled psilocybin-assisted therapy trial for major depressive disorder, stronger therapeutic alliance measured before dosing predicted better acute-experience ratings and lower depression scores at 4 weeks through 12 months, but alliance and a non-directive style are associated with outcomes, not demonstrated to cause them <span class="tag t-plaus">Plausible</span>.</p>
+<ul class="key">
+<li>Do: stay physically present, speak rarely and briefly, and let the patient's process unfold without interpreting it for them.</li>
+<li>Don't: offer analysis, ask leading questions about content ("what does that mean to you"), or fill silence out of your own discomfort — the dosing session is not the moment for insight-oriented work.</li>
+<li>Exception, always: the non-directive stance stops the instant there is a safety concern. Calm demeanor is a technique for the psychological work, never a reason to delay a medical or psychiatric intervention.</li>
+</ul>
+<div class="box">Consent and touch: any physical contact (a hand on a shoulder, hand-holding) must be discussed and explicitly consented to before dosing, never improvised in the moment. Publicized misconduct cases in psychedelic-assisted therapy trials have made this a first-order ethical and legal requirement, not a courtesy.</div>
+</section>
+
+<section class="sec">
+<h3>Cardiac emergency preparedness — highest stakes: ibogaine</h3>
+<p>Ibogaine's cardiac risk is the reason continuous monitoring and emergency readiness are non-negotiable for this modality specifically, not optional add-ons <span class="tag t-est">Established</span>.</p>
+<div class="box">
+<ul class="key">
+<li>Confirm the pre-dosing 12-lead ECG/QTc and electrolyte panel (K⁺, Mg²⁺, Ca²⁺) are complete, corrected, and on the chart.</li>
+<li>Confirm CYP2D6 status or slow-metabolizer precautions are documented — poor metabolizers accumulate roughly double the drug exposure at a given dose, raising cardiac risk independent of the dose chosen.</li>
+<li>Confirm continuous telemetry/ECG is actually running, not just intermittent spot-checks.</li>
+<li>Confirm a defibrillator, ACLS-trained staff (or immediate access to them), and a clear transfer/EMS activation plan are in place and tested before the patient is dosed — assembled in advance, not after a rhythm changes.</li>
+<li>Confirm the monitoring and escalation plan extends past the visible session, given noribogaine's multi-day elimination — this is not a same-day-only risk.</li>
+</ul>
+</div>
+<p>If a new arrhythmia, syncope, chest pain, or a QTc that has meaningfully lengthened from baseline appears, that is a medical emergency, not a difficult moment in the experience. Stop, treat per ACLS/institutional protocol, and escalate — do not attempt to manage a cardiac event with reassurance and a non-directive stance.</p>
+</section>
+
+<section class="sec">
+<h3>Recognizing serotonin syndrome — highest stakes: MDMA</h3>
+<p>MDMA is a potent serotonin-releasing agent. Combined with another serotonergic drug (SSRIs, SNRIs, MAOIs, and some analgesics used in acute care) it can precipitate serotonin syndrome, diagnosed clinically with the Hunter Serotonin Toxicity Criteria: spontaneous or inducible clonus, agitation, tremor with hyperreflexia, hypertonia with temperature above 38°C, or ocular clonus, in the setting of a recent serotonergic exposure <span class="tag t-est">Established</span>. This is why the Common Core's medication reconciliation and a supervised taper of serotonergic medications before an MDMA session — done by the prescriber, never by education alone — is a hard gate, not a suggestion.</p>
+<ul class="key">
+<li>Recognize early: agitation, tremor, and clonus (especially inducible ankle clonus on exam) are the findings that separate this from an emotionally intense session.</li>
+<li>First-line response: stop or avoid additional serotonergic agents, provide supportive care (cooling, IV fluids), and use benzodiazepines for agitation and to reduce autonomic/neuromuscular activity; escalate urgently for temperature above 41°C, rigidity, or hemodynamic instability.</li>
+<li>Don't conflate with hyperthermia alone: MDMA can independently cause hyperthermia and hyponatremia (from overhydration or an SIADH-like effect) without full serotonin syndrome — both need active temperature and fluid management regardless of which is present.</li>
+</ul>
+</section>
+
+<section class="sec">
+<h3>Psychiatric emergencies and adverse-event escalation</h3>
+<p>Most "difficult" moments in a dosing session — fear, grief, confusion, transient paranoia — fall in the expected range and are managed with the non-directive supportive stance above, not medication. A true psychiatric emergency is different: acute psychosis, dissociation with loss of situational awareness that does not resolve with grounding, or any new expression of self-harm intent. The latter requires immediate, non-negotiable escalation regardless of how "into the experience" the setting is meant to be — the Common Outcome Protocol treats a positive suicide-risk screen as an immediate-escalation trigger, never a data point to note and revisit later <span class="tag t-est">Established</span>.</p>
+<div class="box">Adverse-event logging, in real time: severity-graded (mild/moderate/severe), medicine/dose/timing noted, action taken recorded, outcome followed to resolution. This is the same log that feeds the shared registry — an undocumented adverse event is invisible to the field's collective safety learning, not just to your own chart.</div>
+<ul class="key">
+<li>Before escalating to emergency services, know in advance: nearest emergency department, on-call physician/psychiatrist contact, and your facility's own crisis protocol — decided before dosing day, not during it.</li>
+<li>Veterans Crisis Line for any patient expressing suicidal ideation: 988, press 1 — have this posted, not just known.</li>
+<li>A calm facilitator and a functioning emergency plan are not in tension: the calm is for the patient, the plan is for you, and it should already be staged before the first dose is given.</li>
+</ul>
+</section>
+
+<section class="sec">
+<h3>Day-of readiness: the checklist before the first dose</h3>
+<div class="box">
+<ul class="key">
+<li>Clear-to-Treat packet signed by the clinician-of-record (Phase 3) is on file — this session should not be happening without it.</li>
+<li>Vital-sign monitoring schedule set and staffed: who checks what, how often, documented where.</li>
+<li>Modality-specific emergency equipment and trained personnel confirmed present and tested — defibrillator/ACLS for ibogaine, cooling and IV access for MDMA, standard resuscitation readiness for all.</li>
+<li>CADSS or CADSS-6 ready if the modality involves dissociation.</li>
+<li>Emergency contacts, transfer plan, and the Veterans Crisis Line (988, press 1) posted and confirmed with every staff member present.</li>
+<li>Consent for any physical contact or touch reconfirmed on the day, not assumed from the intake note.</li>
+<li>Adverse-event log open and ready before dosing begins, not created after something happens.</li>
+</ul>
+</div>
+</section>
+<section class="sec"><div id="quiz"></div></section>
+<div class="navbar"><a href="course-provider.html">← All 8 modules</a><a href="course-provider-07.html" class="btn">Next · Module P7 →</a></div>
+<div class="foot"><p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Provider Track — prototype, DRAFT v0.1. Continuing education content; not medical, legal, or regulatory advice. Content marked <span style="color:#fff">Clinician sign-off</span> is pending a named licensed physician / Medical Director’s review before use with patients. In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p></div>
+</div>
+<script>OWH.ready.then(function(){ OWH.mountQuiz("quiz",{course:"provider",moduleId:"06",passPct:75,questions:[{"q":"What is the mechanism behind ibogaine's most serious cardiac risk?","options":["It directly damages heart muscle tissue (cardiomyopathy)","It blocks the cardiac hERG potassium channel, prolonging the QT interval and enabling ventricular arrhythmia including torsades de pointes","It causes only transient hypertension with no arrhythmia risk","It is dangerous solely in patients with pre-existing heart disease"],"answer":1,"explain":"Ibogaine and its metabolite noribogaine block the hERG channel, prolonging QT and enabling torsades de pointes; this occurs at therapeutic doses even without prior cardiac disease, and CYP2D6 poor metabolizers get roughly double drug exposure at a given dose (Brunt, Addiction, 2026)."},{"q":"What does the CADSS measure, and how is it used clinically?","options":["Suicide risk, administered weekly by phone","Dissociative symptoms, rated by the clinician during/around dosing (e.g., ketamine sessions), with a validated 6-item short form for repeat monitoring","The cardiac QT interval, calculated from a 12-lead ECG","Medication interaction risk at intake"],"answer":1,"explain":"CADSS is the field's validated clinician-administered dissociation scale; CADSS-6, a validated short form, is used for repeat monitoring during ketamine infusions (Rodrigues et al., Journal of Affective Disorders, 2021)."},{"q":"Per the Hunter Criteria, which finding should raise concern for serotonin syndrome during or after an MDMA session?","options":["Mild fatigue and dry mouth alone","Inducible clonus plus agitation and hyperreflexia in a patient with a recent serotonergic exposure","Elevated blood pressure only, with normal reflexes and no clonus","Reports of a vivid or emotionally intense experience"],"answer":1,"explain":"The Hunter Criteria diagnose serotonin syndrome from spontaneous or inducible clonus, agitation, tremor, hyperreflexia, and hyperthermia/hypertonia in a patient with a serotonergic exposure — clonus and neuromuscular findings, not subjective intensity, are the discriminating exam findings."},{"q":"What best describes the facilitator's intended stance during the dosing session, and its evidence status?","options":["Actively interpret the patient's experience in real time to speed insight — proven to improve outcomes","A calm, largely non-directive presence; therapeutic alliance correlates with better trial outcomes, but the stance itself causing those outcomes is not proven","Leave the room once dosing occurs, to preserve the patient's autonomy","Directive coaching toward a specific therapeutic conclusion"],"answer":1,"explain":"Published protocols favor a non-directive supportive stance; in a controlled psilocybin-assisted therapy trial, alliance measured before dosing predicted acute experience and depression outcomes out to 12 months, but this is correlational evidence, graded Plausible, not an established causal claim."},{"q":"A patient has stable vitals 2 hours after completing ibogaine dosing. What is the correct monitoring decision?","options":["Discharge once vitals are normal at 2 hours — the cardiac risk window has passed","Continue extended cardiac monitoring well beyond the acute session, because noribogaine's long half-life means arrhythmia risk can persist for days","Switch to monitoring only if the patient reports symptoms","No further ECG is needed since the pre-dosing ECG already cleared the patient"],"answer":1,"explain":"Noribogaine's long elimination half-life means arrhythmia risk is not confined to the acute session; case literature describes serious cardiac events occurring outside the visible dosing window, so monitoring must extend well past normal vitals at 1-2 hours (Brunt, Addiction, 2026)."}]}); });</script>
+</body></html>

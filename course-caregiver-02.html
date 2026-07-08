@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Understanding What They’re Facing — Caregiver Track</title>
+<script src="owh-config.js"></script><script src="owh-app.js"></script>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b;--gate:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.65}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.25;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:900px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 26px;gap:10px;flex-wrap:wrap}
+  .topin img{height:32px}
+  nav a{color:var(--muted);font-size:12.5px;font-weight:600;margin-left:13px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:12.5px;padding:8px 14px;border-radius:8px;margin-left:13px}
+  .hero{background:linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:38px 44px;border-bottom:5px solid var(--gold)}
+  .hero .kick{letter-spacing:.22em;text-transform:uppercase;font-size:11px;color:var(--gold-soft);font-weight:700}
+  .hero .mnum{display:inline-block;font-family:Georgia,serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-soft);margin:8px 0 2px}
+  .hero h1{color:#fff;font-size:31px;margin:.1em 0 .25em}.hero p{color:#cfe0ef;font-size:17px;max-width:66ch;margin:0}
+  .gatebar{background:#fdf3f0;border-bottom:1px solid #efc9c2;color:#7c2420;font-size:13px;padding:9px 44px}
+  .sec{padding:22px 44px;border-bottom:1px solid var(--line)}
+  .sec h3{font-size:19px;margin:.2em 0 .3em}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:13px 16px;font-size:14.5px;margin:12px 0}
+  .box p{margin:0}
+  ul.key{padding-left:20px}ul.key li{margin:7px 0}
+  .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;vertical-align:middle}
+  .t-est{background:var(--est)}.t-plaus{background:var(--plaus)}.t-hyp{background:var(--hyp)}.t-gate{background:var(--gate)}
+  .navbar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;padding:18px 44px;border-bottom:1px solid var(--line)}
+  .foot{background:var(--navy);color:#cdddec;padding:22px 44px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:820px){.hero{padding:26px 20px}.sec,.navbar,.foot,.gatebar{padding-left:20px;padding-right:20px}.hero h1{font-size:25px}}</style></head>
+<body><div class="wrap">
+<div class="protobar">PROTOTYPE / DRAFT v0.1 — caregiver curriculum</div>
+<div class="topbar"><div class="topin"><a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a><nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html" class="here">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav></div></div>
+<header class="hero"><div class="kick">Operation Whole Health · Caregiver Track</div><span class="mnum">Module C2</span><h1>Understanding What They’re Facing</h1><p>You don't need a medical degree to be their anchor — just a clear, honest picture of what these medicines do, what treatment can look like, and which reactions mean it's time to get help.</p></header>
+
+<section class="sec"><div class="box" style="border-left:4px solid #2e7d52;background:#eef6f0"><h3 style="margin:0 0 5px;font-size:15px">🎖️ In plain English</h3><p style="margin:0">These medicines are strong, and in a supervised setting they can shift how the brain handles emotion and memory. From the outside it can look intense — your person may be very still, tearful, sick to their stomach, or seem far away, and a lot of that is normal. But some things are real emergencies: fainting, chest pain, or a racing or irregular heartbeat (with ibogaine this heart danger can last for days), a seizure, or someone getting hot and confused on MDMA — for any of those, tell the team or call 911. Nothing here is proven and none of it is a cure, and it should never be done at home or without a medical team.</p></div></section>
+<section class="sec">
+<h3>You don't need a medical degree — just a clear picture</h3>
+<p>Your job in this module is simple: understand the treatment well enough to stay steady, so you can be a calm anchor instead of an anxious bystander. You are not there to run the medical side, choose a dose, or read the heart monitor — trained clinicians do that. You are there to understand what's happening so that fear doesn't run the room.</p>
+<p>Here's the honest frame for everything below: these are powerful, still-experimental treatments. Some early results look genuinely hopeful, and some risks are deadly serious. Both of those things are true at the same time, and a good caregiver holds both — without panic and without hype.</p>
+</section>
+
+<section class="sec">
+<h3>The medicines, in plain language</h3>
+<p>Your loved one may be considering one of a few different compounds. They are not interchangeable — they act differently, carry different risks, and have very different legal standing. Knowing which one you're dealing with matters.</p>
+<ul class="key">
+<li><b>Ibogaine</b> — a plant-derived compound, best known for interrupting addiction and, more recently, being explored for PTSD and traumatic brain injury. The session is long (often most of a day), and it carries the most serious heart risk of this group. In the U.S. it is <b>Schedule I and not FDA-approved</b>; the human studies happen abroad or in formal trials. <span class="tag t-est">Established</span> (its cardiac risk)</li>
+<li><b>Psilocybin</b> — the active compound in "magic mushrooms," studied for depression and PTSD. <b>Schedule I and not FDA-approved;</b> available in the U.S. only through clinical trials or a few state-regulated programs.</li>
+<li><b>MDMA</b> — studied alongside talk therapy for PTSD. Despite the headlines, it is <b>not FDA-approved</b> (the FDA declined it in 2024 and asked for more research) and remains <b>Schedule I.</b> Its main physical dangers are overheating and serotonin overload. <span class="tag t-est">Established</span> (those risks)</li>
+<li><b>Ketamine</b> — the one legal, approved option here. It's an <b>FDA-approved anesthetic (Schedule III)</b> that clinics use off-label for depression; a nasal form, <b>esketamine (Spravato), is FDA-approved</b> for hard-to-treat depression. Its own risks include heavy dissociation and, with long-term overuse, bladder and urinary problems.</li>
+</ul>
+<p><b>What they seem to share:</b> in a supervised setting, these medicines can temporarily change how the brain processes emotion and memory, and researchers believe they may briefly open a "window" where the brain can rewire old patterns more easily. That rewiring idea is a promising theory, not a settled fact. <span class="tag t-hyp">Hypothesis</span></p>
+</section>
+
+<section class="sec">
+<h3>Why people are hopeful — and how sure we really are</h3>
+<p>The hope is real and worth understanding. In one early Stanford study, 30 Special Operations veterans with mild traumatic brain injury received magnesium alongside ibogaine and reported large drops in PTSD, depression, and anxiety a month later. Those are striking numbers, and no one should dismiss them. <span class="tag t-plaus">Plausible</span></p>
+<p>But be honest with yourself about what that study was: open-label, with no comparison group and only 30 people — the researchers themselves said controlled trials are still needed. So the right stance is "early and promising," never "proven" and never "a cure." If anyone — a clinic, a website, or even your own hope — tells you a psychedelic is guaranteed to heal, treat that as a red flag, not a green light. <span class="tag t-hyp">Hypothesis</span></p>
+<div class="box"><b>Say it plainly, to yourself and to them:</b> "This might help, and it might not. It is not proven, and it is not safe to do at home or without a medical team." Holding that line protects your veteran better than false certainty ever could.</div>
+</section>
+
+<section class="sec">
+<h3>What it may look like from the outside</h3>
+<p>Watching can be the hardest part, because a normal session can look alarming. With ibogaine especially, the experience can last many hours; your loved one may lie very still, be tearful or emotional, feel nauseated or vomit, tremble or move unsteadily, and seem "far away," as if somewhere you can't reach. Much of what looks dramatic is an expected part of the process in a monitored setting.</p>
+<p>Other medicines look different: an MDMA or psilocybin session usually involves lying down with eyeshades and music, moving through waves of feeling; ketamine often brings a strong sense of floating or detachment. In every case, a trained team is watching vital signs the whole time. Your steady presence — a familiar voice, a calm face — is part of what makes the room feel safe.</p>
+</section>
+
+<section class="sec">
+<h3>Normal vs. concerning — your quick cheat sheet</h3>
+<p>You don't have to memorize medicine. You do need to know the difference between "intense but expected" and "call for help now." When in doubt, speak up — it is always better to flag something that turns out fine than to stay quiet about something that isn't.</p>
+<div class="box"><b>Usually expected in a supervised setting:</b>
+<ul class="key">
+<li>Crying, strong emotion, or reliving hard memories</li>
+<li>Vivid inner images, dreamlike states, or feeling detached and "far away"</li>
+<li>Nausea, vomiting, or an upset stomach (common with ibogaine)</li>
+<li>Trembling, unsteadiness, or sweating</li>
+<li>Sensitivity to light and sound</li>
+</ul></div>
+<div class="box"><b>Not normal — tell the team or call 911 right away:</b>
+<ul class="key">
+<li><b>Fainting, chest pain, or a racing, pounding, or irregular heartbeat</b> — the biggest danger with ibogaine, which can disturb the heart's rhythm (it prolongs the "QT interval" and can trigger a fatal arrhythmia), even in people with no known heart problems. <span class="tag t-est">Established</span></li>
+<li><b>Remember this heart risk can last for days after the session,</b> because a long-lasting byproduct of ibogaine stays in the body — so keep watching, and take these signs seriously even after treatment day. <span class="tag t-est">Established</span></li>
+<li><b>A seizure, or any trouble breathing</b></li>
+<li><b>Overheating with MDMA</b> — very hot or flushed skin, confusion, agitation, or stiff or twitching muscles can signal dangerous overheating or serotonin overload. <span class="tag t-est">Established</span></li>
+<li><b>A lasting break from reality that isn't settling, or any talk of self-harm</b></li>
+</ul></div>
+<p>The deeper medical detail — including why every medication your veteran takes must be disclosed to the team — is in Module C3, and exactly what to do in an emergency is in Module C7. For now, carry one rule: <b>notice, and escalate. You observe; the professionals treat.</b></p>
+</section>
+
+<section class="sec">
+<div class="box"><b>Your steadiness is contagious.</b> If you understand what's happening, you can be the calm in their storm — the person who knows what's normal, spots what isn't, and gets help without panic. That is a real, learnable skill, and you already have what it takes.</div>
+</section>
+<section class="sec"><div id="quiz"></div></section>
+<div class="navbar"><a href="course-caregiver.html">← All 8 modules</a><a href="course-caregiver-03.html" class="btn">Next · Module C3 →</a></div>
+<div class="foot"><p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Caregiver Track — prototype, DRAFT v0.1. Educational only; not medical advice. Content marked <span style="color:#fff">Clinician sign-off</span> is pending a named licensed physician’s review. In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b> · VA Caregiver Support Line <b>1-855-260-3274</b>.</p></div>
+</div>
+<script>OWH.ready.then(function(){ OWH.mountQuiz("quiz",{course:"caregiver",moduleId:"02",passPct:75,questions:[{"q":"In Module C2, what is your main job as a caregiver when it comes to the treatment itself?","options":["To run the medical side and monitor the heart yourself","To understand it well enough to stay calm and know what's normal","To choose which medicine and what dose they take","To diagnose and treat any problems that come up"],"answer":1,"explain":"Your role is to understand enough to be a steady anchor and to notice problems — trained clinicians handle the medical care."},{"q":"During or after an ibogaine session, which of these is an emergency you should report immediately?","options":["Crying or reliving a hard memory","Feeling far away or dreamlike","Fainting, chest pain, or a racing or irregular heartbeat","Mild nausea or trembling"],"answer":2,"explain":"Fainting, chest pain, or an irregular heartbeat can signal a dangerous heart-rhythm problem and need help right away."},{"q":"Why does ibogaine's heart-rhythm danger need watching for days after the session, not just during it?","options":["A long-lasting byproduct stays in the body, so the risk can linger","The risk ends the second the session is over","It only matters for people already diagnosed with heart disease","The danger isn't real once they feel better"],"answer":0,"explain":"Ibogaine's active byproduct lingers in the body, so QT and arrhythmia risk can continue for days after treatment."},{"q":"Which statement about legal and approval status is accurate?","options":["MDMA is FDA-approved to treat PTSD","Ketamine is a legal, FDA-approved medicine (Schedule III), while ibogaine, psilocybin, and MDMA are Schedule I and not FDA-approved","Ibogaine is an FDA-approved prescription medicine","All of these become legal as long as a doctor is in the room"],"answer":1,"explain":"Ketamine and esketamine are FDA-approved; ibogaine, psilocybin, and MDMA remain Schedule I and are not FDA-approved."},{"q":"How should you honestly describe the evidence that these medicines heal PTSD in veterans?","options":["Proven and guaranteed to work","Early and promising, but not yet proven — mostly small, open-label studies","Completely disproven and useless","A guaranteed cure, safe to try at home"],"answer":1,"explain":"The veteran results are hopeful but come from small, uncontrolled studies, so it's promising — not proven — and never safe to try unsupervised."}]}); });</script>
+</body></html>

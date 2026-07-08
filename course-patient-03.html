@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 03 — What These Medicines Actually Are · Patient Track</title>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6;--est:#2e7d52;--plaus:#b9821f;--hyp:#8a8f98;--clin:#9e2a2b}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;background:#eceadf;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.65}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--navy);line-height:1.22;margin:0 0 .4em}
+  a{color:var(--navy2);text-decoration:none}a:hover{color:var(--gold)}
+  .wrap{max-width:900px;margin:0 auto;background:var(--paper);box-shadow:0 2px 40px rgba(20,40,70,.12)}
+  .protobar{background:#9e2a2b;color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+  .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
+  .topin{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 26px;gap:14px;flex-wrap:wrap}
+  .topin img{height:34px}
+  nav a{color:var(--muted);font-size:13px;font-weight:600;margin-left:14px}nav a:hover{color:var(--gold)}nav a.here{color:var(--navy)}
+  .btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:8px 15px;border-radius:8px;margin-left:14px}
+  .subnav{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:11px 40px;background:#f6f2e8;border-bottom:1px solid var(--line);font-size:12.5px}
+  .crumb{color:var(--muted);font-weight:600}.crumb a{color:var(--navy2)}.crumb b{color:var(--navy)}
+  .prog{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+  .pnbar{display:flex;gap:8px}
+  .pn{display:inline-block;font-size:12.5px;font-weight:700;border:1px solid var(--line);border-radius:8px;padding:6px 12px;background:#fff;color:var(--navy2)}
+  .pn:hover{border-color:var(--gold-soft);color:var(--gold)}
+  .pn.primary{background:var(--gold);color:#241606;border-color:var(--gold)}
+  .pn.disabled{opacity:.4;pointer-events:none}
+  .gatebar{background:#fbeceb;border-left:4px solid var(--clin);color:#7c2420;padding:11px 16px;font-size:13.5px;margin:0;border-bottom:1px solid #efc9c2}
+  .hero{background:linear-gradient(160deg,#1a3a5c,#0f2942);color:#eaf1f8;padding:34px 40px;border-bottom:5px solid var(--gold)}
+  .mnum{display:inline-block;font-family:Georgia,serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+  .hero h1{color:#fff;font-size:30px;margin:.25em 0 .3em}
+  .hero .sub{color:#cfe0ef;font-size:16.5px;max-width:64ch;margin:0}
+  .sec{padding:26px 40px;border-bottom:1px solid var(--line)}
+  .sec h2{font-size:21px;margin:.1em 0 .4em}.sec h3{font-size:16.5px;margin:1.1em 0 .3em}
+  .sec p{margin:.5em 0}
+  .lead{font-size:17px;color:#33424f}
+  .tag{display:inline-block;font-size:10px;font-weight:800;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;vertical-align:middle;margin-left:4px}
+  .t-est{background:var(--est)}.t-plaus{background:var(--plaus)}.t-hyp{background:var(--hyp)}.t-gate{background:var(--clin)}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:#3a4854;margin:8px 0 2px}
+  ul.key,ol.key{padding-left:20px}ul.key li,ol.key li{margin:6px 0}
+  .good{background:#eef6f0;border:1px solid #cfe6d8;border-left:4px solid var(--est);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px}
+  .warn{background:#fdf3f0;border:1px solid #efc9c2;border-left:4px solid var(--clin);border-radius:9px;padding:12px 15px;margin:14px 0;font-size:14.5px;color:#7c2420}
+  .box{background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:14px 16px;font-size:14.5px;margin:14px 0}
+  .takeaway{background:#fbf6ea;border:1px solid var(--gold-soft);border-left:4px solid var(--gold);border-radius:9px;padding:13px 16px;margin:16px 0}
+  .takeaway h3{margin:0 0 .3em;font-size:15px;color:var(--navy)}
+  .reflect{background:#eef4fa;border:1px solid #cfe0ef;border-radius:10px;padding:14px 16px;margin:16px 0;font-size:14.5px}
+  .reflect h3{margin:0 0 .3em;font-size:15px}
+  .carry{font-size:16px;color:var(--navy);font-style:italic;border-top:2px solid var(--gold-soft);padding-top:12px;margin-top:8px}
+  sup.cite a{color:var(--gold);font-weight:700;font-size:11px;text-decoration:none}
+  .refs{background:#faf8f1}
+  .refs ol{padding-left:22px;font-size:12.5px;color:#3a4854}.refs li{margin:6px 0}
+  .foot{background:var(--navy);color:#cdddec;padding:24px 40px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
+  @media(max-width:720px){.hero h1{font-size:24px}.sec,.subnav,.hero,.foot{padding-left:18px;padding-right:18px}}
+</style></head>
+<body><div class="wrap">
+<div class="protobar">PROTOTYPE / DRAFT v0.1 — educational course, pending physician sign-off</div>
+<div class="topbar"><div class="topin"><a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a><nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html" class="here">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav></div></div>
+<div class="subnav"><span class="crumb"><a href="hub-learn.html">Learn</a> › <a href="course-patient.html">Patient Track</a> › <b>Module 03</b></span><span class="prog">Module 03 of 12</span><span class="pnbar"><a class="pn" href="course-patient-02.html">← Module 02</a><a class="pn primary" href="course-patient-04.html">Module 04 →</a></span></div>
+<header class="hero">
+  <div class="mnum">Module 03 · Patient Track</div>
+  <h1>What These Medicines Actually Are <span class="tag t-plaus">Mostly Plausible</span> <span class="tag t-hyp">Some Hypothesis</span></h1>
+  <p class="sub">A plain-language tour of psilocybin, MDMA, ketamine, and ibogaine — and an honest sort of what's proven, what's promising, and what's hype.</p>
+</header>
+<section class="sec"><div class="box" style="border-left:4px solid #2e7d52;background:#eef6f0"><h3 style="margin:0 0 5px;font-size:15px">🎖️ In plain English</h3><p style="margin:0">These are four different medicines, not one "psychedelic" — psilocybin (from mushrooms), MDMA, ketamine, and ibogaine — and each one works differently and carries different risks. Scientists are testing them for things like PTSD, depression, and addiction, always with trained people in the room. Early results look hopeful, but nothing here is a proven cure, and no one can honestly promise it is safe or that it will work. Using these on your own is illegal for most of them and can be deadly — ibogaine especially can throw your heart out of rhythm — so this is always a doctor's call, never a solo one.</p></div></section>
+<section class="sec">
+  <p>You're about to hear a handful of names — psilocybin, MDMA, ketamine, ibogaine — usually wrapped in either breathless hype or old "hard drug" fear. This lesson sets both aside and shows you what the science actually says these compounds are, and how researchers <em>think</em> they might work.</p>
+
+  <h3>Meet the medicines</h3>
+  <p>The first honest thing to know: these are not one thing. In plain terms —</p>
+  <ul>
+    <li><b>Psilocybin</b> — the active compound in "magic mushrooms." A classic psychedelic being studied for depression and end-of-life distress.</li>
+    <li><b>MDMA</b> — often called an "empathogen." It can soften fear and lift feelings of trust and connection <span class="tag t-plaus">Plausible</span> — part of why it's being paired with talk therapy for PTSD in trials.</li>
+    <li><b>Ketamine / esketamine</b> — a dissociative anesthetic used in hospitals for decades. In low doses it can, for some people, rapidly ease severe depression <span class="tag t-plaus">Plausible</span>.</li>
+    <li><b>LSD and DMT</b> — other classic psychedelics; DMT is the active ingredient in ayahuasca.</li>
+    <li><b>Ibogaine</b> — a plant-derived compound studied for addiction and, more recently, traumatic brain injury in veterans. It's also the one with the most serious heart-safety cautions.</li>
+  </ul>
+  <div class="box">A note on words: "psychedelic," "empathogen," and "dissociative" describe different drug families that feel and act differently. Lumping them all under "psychedelics" is convenient, but it hides real differences in how they work — and how risky they are.</div>
+</section>
+
+<section class="sec">
+  <h3>The receptor story: 5-HT2A</h3>
+  <p>Most classic psychedelics — psilocybin, LSD, DMT — work largely by switching on one particular serotonin receptor called <b>5-HT2A</b>. Picture a docking port on the surface of your brain cells: when these molecules plug in, they temporarily change how different brain regions talk to one another, loosening rigid, stuck patterns of thought and perception. That the drugs bind this receptor is well-established chemistry; that this binding is what <em>heals</em> a person is still <span class="tag t-plaus">Plausible</span>, not proven.</p>
+  <p>Not everything works this way. MDMA mainly floods the brain with serotonin and "bonding" signals; ketamine blocks a different receptor (NMDA) in the glutamate system; and ibogaine touches many systems at once — part of why it's powerful, and part of why it carries more risk.</p>
+</section>
+
+<section class="sec">
+  <h3>The neuroplasticity idea (and its big asterisk)</h3>
+  <p>One popular explanation for why a single session might matter for weeks is <b>neuroplasticity</b> — the brain's ability to rewire itself. In animals, a single psychedelic dose can trigger rapid growth of new connections between neurons, including a rise in a growth factor called <b>BDNF</b> and more complex branching of brain cells<sup class="cite"><a href="https://consensus.app/papers/details/1ad7c7df369b5ff28cc926f06ab800b4/" target="_blank" rel="noopener">[1]</a></sup>. A 2023 study proposed a specific route: psychedelics may bind directly to BDNF's receptor, <b>TrkB</b><sup class="cite"><a href="https://consensus.app/papers/details/08fffa395e7e51a3af4a2de3fab0a375/" target="_blank" rel="noopener">[2]</a></sup>. It's an elegant idea — and worth grading honestly as <span class="tag t-plaus">Plausible</span>, because nearly all of it comes from cells and mice.</p>
+  <div class="warn"><b>The honest asterisk.</b> A 2024 systematic review and meta-analysis of 29 human studies found <b>no evidence</b> that psychedelics or ketamine raise BDNF measured in people's blood<sup class="cite"><a href="https://consensus.app/papers/details/293c58476b615364991796d05296cfae/" target="_blank" rel="noopener">[3]</a></sup>. The striking animal findings have <em>not</em> clearly shown up in humans. So "these medicines rewire your brain" is a <span class="tag t-hyp">Hypothesis</span> in people — genuinely interesting, not established fact. Be wary of anyone who states it as certainty.</div>
+</section>
+
+<section class="sec">
+  <h3>What the human trials actually show</h3>
+  <p>Set the mechanisms aside for a moment: what happens to real patients? A few results stand out — all promising, all still early.</p>
+  <ul>
+    <li><b>MDMA for PTSD.</b> A phase 3 trial paired MDMA with several preparation and integration therapy sessions and saw a large drop in PTSD severity versus placebo<sup class="cite"><a href="https://consensus.app/papers/details/a4cf654871235898af1b0b5a733ef632/" target="_blank" rel="noopener">[4]</a></sup>. That trial reported no signal of abuse or suicidality — but MDMA still raises heart rate and blood pressure, and combining it with certain antidepressants (including SSRIs many veterans take) can trigger a dangerous serotonin reaction. <span class="tag t-plaus">Plausible</span></li>
+    <li><b>Psilocybin for depression.</b> A small randomized trial found large antidepressant effects four weeks after treatment<sup class="cite"><a href="https://consensus.app/papers/details/3a85e27055975ebc89f7690840901f0a/" target="_blank" rel="noopener">[5]</a></sup> — encouraging, but only about two dozen people. <span class="tag t-plaus">Plausible</span></li>
+    <li><b>Ketamine for severe depression.</b> Esketamine performed about as well as standard ketamine for treatment-resistant depression, and both were generally well tolerated<sup class="cite"><a href="https://consensus.app/papers/details/cc9a58b97ce75935bfa6e3c9153bc53b/" target="_blank" rel="noopener">[6]</a></sup>. <span class="tag t-plaus">Plausible</span></li>
+  </ul>
+  <div class="good">Notice the common thread in the strongest studies: the drug was one part of a structured process — trained people, preparation beforehand, and integration afterward. You are not expected to face any of this alone, or to figure it out by instinct.</div>
+</section>
+
+<section class="sec">
+  <h3>Proven, promising, and hype</h3>
+  <ul>
+    <li><b>Promising and real:</b> meaningful early trial results in PTSD and depression, and a brain-plasticity mechanism that looks promising in animals but is still unproven in people.</li>
+    <li><b>Not yet proven:</b> long-term benefit, who is helped most, how durable it is, and whether the animal "rewiring" story holds in humans at all.</li>
+    <li><b>Hype to distrust:</b> anyone promising a cure, "zero risk," or guaranteed results — or claiming you must "cleanse toxins," "decalcify" anything, or aggressively detox to make the medicine work. Those are marketing lines, not science.</li>
+  </ul>
+  <div class="box">On "terrain" or detox prep: the idea that a cleanse or supplement protocol beforehand improves psychedelic outcomes is a <span class="tag t-hyp">Hypothesis</span> — it has not been shown in humans. And it can cut the wrong way. Aggressive detox or chelation right before a compound that stresses the heart (like ibogaine) may <b>add</b> risk, not reduce it. Real preparation is test-first and physician-timed — never "more is better."</div>
+</section>
+
+<section class="sec">
+  <h3>The legal reality</h3>
+  <p>Honesty includes the law. Federally, in the United States:</p>
+  <ul>
+    <li><b>Psilocybin, MDMA, LSD, DMT, and ibogaine are Schedule I</b> — officially classified as having no accepted medical use and high abuse potential. Possessing or using them outside an authorized study is illegal.</li>
+    <li><b>Ketamine is Schedule III</b> — a legal anesthetic a doctor can prescribe.</li>
+    <li><b>Esketamine (Spravato) is FDA-approved</b> for treatment-resistant depression, given in certified clinics under supervision.</li>
+    <li><b>MDMA is <u>not</u> FDA-approved.</b> Despite strong trials, it has not cleared the FDA — so "MDMA therapy" is not a legal, approved treatment you can simply sign up for today.</li>
+  </ul>
+  <div class="warn">These are not party drugs in this context, and they are not harmless. Doing this on your own — especially with ibogaine, which can affect heart rhythm — can be dangerous or fatal. Any decision to start, stop, or combine these with your current medications belongs to a treating clinician, not a website, a retreat brochure, or a buddy.</div>
+</section>
+
+<section class="sec">
+  <div class="takeaway"><h3>Key takeaways</h3>
+    <ul class="key">
+      <li>These medicines are different families — psychedelic, empathogen, dissociative — not one interchangeable thing.</li>
+      <li>Classic psychedelics act mainly on the 5-HT2A serotonin receptor; the neuroplasticity/BDNF-TrkB "rewiring" story is <span class="tag t-plaus">Plausible</span> in animals but a <span class="tag t-hyp">Hypothesis</span> in humans — a 2024 human meta-analysis found no BDNF change in blood.</li>
+      <li>Early human trials in PTSD and depression are promising but small and short — grade them Plausible, not proven.</li>
+      <li>Legal status varies: most are Schedule I, ketamine is Schedule III, esketamine is FDA-approved, and MDMA is not.</li>
+      <li>No one can honestly promise a cure or "zero risk," and no detox makes an unsupervised session safe.</li>
+    </ul>
+  </div>
+
+  <div class="reflect"><h3>Reflect before you move on</h3>
+    <ul>
+      <li>Which of these medicines have you heard the most claims about — and were those claims graded honestly, or sold to you as certainty?</li>
+      <li>How does it change things to learn that the "brain rewiring" idea is still only a hypothesis in humans?</li>
+      <li>If a program you were considering promised a guaranteed cure or "zero risk," what would you now ask them?</li>
+    </ul>
+  </div>
+
+  <p class="carry"><b>Carry this out of the lesson:</b> these are powerful, still-experimental tools with real promise and real limits — hopeful enough on the honest facts that no one needs to exaggerate them.</p>
+</section>
+
+<section class="sec refs"><h2 style="font-size:18px">Sources</h2>
+  <ol>
+    <li>de Vos et al., 2021, Frontiers in Psychiatry. <a href="https://consensus.app/papers/details/1ad7c7df369b5ff28cc926f06ab800b4/">Psychedelics and Neuroplasticity: A Systematic Review ↗</a></li>
+    <li>Moliner et al., 2023, Nature Neuroscience. <a href="https://consensus.app/papers/details/08fffa395e7e51a3af4a2de3fab0a375/">Psychedelics promote plasticity by directly binding to the BDNF receptor TrkB ↗</a></li>
+    <li>Calder et al., 2024, Molecular Psychiatry. <a href="https://consensus.app/papers/details/293c58476b615364991796d05296cfae/">Effects of psychoplastogens on blood levels of BDNF in humans: a systematic review and meta-analysis ↗</a></li>
+    <li>Mitchell et al., 2021, Nature Medicine. <a href="https://consensus.app/papers/details/a4cf654871235898af1b0b5a733ef632/">MDMA-assisted therapy for severe PTSD: a randomized, double-blind, placebo-controlled phase 3 study ↗</a></li>
+    <li>Davis et al., 2020, JAMA Psychiatry. <a href="https://consensus.app/papers/details/3a85e27055975ebc89f7690840901f0a/">Effects of Psilocybin-Assisted Therapy on Major Depressive Disorder ↗</a></li>
+    <li>Correia-Melo et al., 2019, Journal of Affective Disorders. <a href="https://consensus.app/papers/details/cc9a58b97ce75935bfa6e3c9153bc53b/">Efficacy and safety of esketamine vs racemic ketamine for treatment-resistant depression ↗</a></li>
+  </ol>
+  <p style="font-size:11.5px;color:#8a8f98">Evidence surfaced via Consensus (consensus.app).</p>
+</section>
+<section class="sec"><div id="quiz"></div></section>
+<div class="sec" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><a class="pn" href="course-patient.html">↩ All 12 modules</a><span class="pnbar"><a class="pn" href="course-patient-02.html">← Module 02</a><a class="pn primary" href="course-patient-04.html">Module 04 →</a></span></div>
+<div class="foot"><p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Patient Track · Module 03 — DRAFT v0.1. Educational only; not medical advice, and not an endorsement of any substance. Clinical decisions belong to your treating clinician; content marked for clinician sign-off is not final until a named physician approves it.</p><p>In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p></div>
+</div><script src="owh-config.js"></script><script src="owh-app.js"></script><script>OWH.ready.then(function(){ OWH.mountQuiz("quiz",{course:"patient",moduleId:"03",passPct:75,questions:[
+{q:"How should you think about psilocybin, MDMA, ketamine, and ibogaine?",options:["As one single 'psychedelic' that all work the same way","As several different drug families that act differently and carry different risks","As harmless herbal supplements","As FDA-approved pills you can pick up at any pharmacy"],answer:1,explain:"They are different families -- psychedelic, empathogen, and dissociative -- not one interchangeable thing."},
+{q:"Is it proven that these medicines 'rewire the brain' (neuroplasticity/BDNF) in people?",options:["Yes, it is proven fact in humans","No -- it is still a hypothesis in humans; a 2024 review of 29 studies found no BDNF change in human blood","No, there is zero science behind the idea at all","It is only true for ketamine"],answer:1,explain:"The animal findings look promising but have not clearly shown up in people, so in humans it stays a hypothesis."},
+{q:"Which of these carries the most serious heart-rhythm risk and can be deadly if used on your own?",options:["Psilocybin","Ketamine","Ibogaine","None of them affect the heart"],answer:2,explain:"Ibogaine can prolong the heart's QT interval and trigger dangerous arrhythmias, even at normal doses."},
+{q:"A retreat tells you to do an aggressive 'cleanse' or detox to flush toxins so the medicine works better. What is the honest take?",options:["More detox always means better results","It is a hypothesis, not proven -- and aggressive detox before a heart-stressing drug like ibogaine can add risk","It is required by the FDA","It guarantees the medicine will cure you"],answer:1,explain:"Cleanse-prep is not shown to help in people and can make things more dangerous, especially before ibogaine."},
+{q:"Which statement about legal status is correct today?",options:["MDMA is FDA-approved, so you can sign up for MDMA therapy now","All of these are available by prescription at any pharmacy","Most are Schedule I; ketamine is Schedule III; esketamine is FDA-approved; MDMA is not FDA-approved","They are all legal to use at home without supervision"],answer:2,explain:"Most (psilocybin, MDMA, LSD, DMT, ibogaine) are Schedule I; ketamine is Schedule III; esketamine is FDA-approved; MDMA is not."}
+]}); });</script></body></html>

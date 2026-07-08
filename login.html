@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in — Readiness Hub</title>
+<style>
+  :root{--navy:#16314f;--navy2:#1f4368;--gold:#c1873d;--gold-soft:#e9d6b0;--paper:#fff;--ink:#1b2733;--muted:#5c6b7a;--line:#e6e2d6}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;background:linear-gradient(160deg,#1a3a5c,#0f2942);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;display:flex;align-items:center;justify-content:center;padding:24px}
+  .card{background:var(--paper);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.35);max-width:440px;width:100%;overflow:hidden}
+  .top{background:#fff;text-align:center;padding:26px 26px 6px;border-bottom:5px solid var(--gold)}
+  .top img{height:64px;width:64px;border-radius:50%;object-fit:contain}
+  .top .org{font-family:Georgia,serif;color:var(--navy);font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-top:8px}
+  .body{padding:24px 26px 26px}
+  h1{font-family:Georgia,serif;color:var(--navy);font-size:23px;margin:0 0 4px}
+  .sub{color:var(--muted);font-size:14.5px;margin:0 0 18px}
+  label{display:block;font-size:12.5px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.05em;margin:14px 0 5px}
+  input{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:15px;background:#fcfbf7}
+  input:focus{outline:none;border-color:var(--gold-soft);box-shadow:0 0 0 3px rgba(193,135,61,.15)}
+  .hint{font-size:12px;color:var(--muted);margin-top:5px}
+  .go{width:100%;margin-top:20px;background:var(--navy);color:#fff;border:none;border-radius:10px;padding:14px;font-weight:700;font-size:15px;cursor:pointer}
+  .go:hover{background:var(--navy2)}
+  .go:disabled{opacity:.6;cursor:default}
+  .priv{margin-top:16px;background:#f4f0e6;border:1px solid var(--gold-soft);border-radius:10px;padding:12px 14px;font-size:12.5px;color:#4a3a1e}
+  .sent{margin-top:4px;background:#eef6f0;border:1px solid #cfe6d8;border-radius:10px;padding:14px 16px;font-size:14px;color:#1b3a29}
+  .back{display:block;text-align:center;margin-top:14px;font-size:13px;color:var(--navy2);text-decoration:none}.back:hover{color:var(--gold)}
+  .err{color:#9e2a2b;font-size:13px;font-weight:600;margin-top:6px;display:none}
+  .switch{display:block;text-align:center;margin-top:12px;font-size:12.5px;color:var(--muted);text-decoration:underline;background:none;border:none;cursor:pointer;width:100%}
+</style></head>
+<body>
+  <div class="card">
+    <div class="top">
+      <img src="owh-round.png" alt="Operation Whole Health">
+      <div class="org">Operation Whole Health</div>
+    </div>
+    <div class="body" id="body">
+      <h1>Loading…</h1>
+    </div>
+  </div>
+  <script src="owh-config.js"></script>
+  <script src="owh-app.js"></script>
+  <script>
+  (function(){
+    function qp(k){ try{ return new URLSearchParams(location.search).get(k); }catch(e){ return null; } }
+    function nextUrl(){ var next=qp("next"); return (next && /^[a-z0-9\-]+\.html$/i.test(next)) ? next : "dashboard.html"; }
+    var body = document.getElementById("body");
+
+    function renderLocalForm(){
+      var existing = OWH.getProfile();
+      body.innerHTML =
+        '<h1>Welcome to the Readiness Hub</h1>'
+        +'<p class="sub">Set up your profile to track your courses, quizzes, and the studies you\'re following.</p>'
+        +'<form id="f" novalidate>'
+        +'<label for="name">Your name</label>'
+        +'<input id="name" type="text" autocomplete="name" placeholder="First and last name">'
+        +'<div class="err" id="err">Please enter your name to continue.</div>'
+        +'<label for="email">Email <span style="font-weight:400;text-transform:none;color:#8a8f98">(optional)</span></label>'
+        +'<input id="email" type="email" autocomplete="email" placeholder="you@example.com">'
+        +'<div class="hint">Used only to label your certificate. We don\'t send anything.</div>'
+        +'<button class="go" type="submit">Enter the hub →</button>'
+        +'</form>'
+        +'<div class="priv"><b>This is a prototype.</b> Your profile and progress are saved <b>only in this browser</b> — nothing is uploaded to a server, and no health information is collected.</div>'
+        +'<a class="back" href="hub-home.html">← Back to the hub</a>';
+      if(existing){ document.getElementById("name").value=existing.name||""; document.getElementById("email").value=existing.email||""; }
+      document.getElementById("f").addEventListener("submit",function(e){
+        e.preventDefault();
+        var name=document.getElementById("name").value.trim();
+        var email=document.getElementById("email").value.trim();
+        if(!name){ document.getElementById("err").style.display="block"; return; }
+        OWH.setProfile({name:name,email:email});
+        location.href = nextUrl();
+      });
+    }
+
+    function renderMagicLinkForm(prefillEmail){
+      body.innerHTML =
+        '<h1>Welcome to the Readiness Hub</h1>'
+        +'<p class="sub">Enter your email and we\'ll send you a link to sign in — no password needed.</p>'
+        +'<form id="f" novalidate>'
+        +'<label for="email">Email</label>'
+        +'<input id="email" type="email" autocomplete="email" placeholder="you@example.com" value="'+(prefillEmail?prefillEmail.replace(/"/g,""):"")+'">'
+        +'<div class="err" id="err">Please enter a valid email address.</div>'
+        +'<button class="go" type="submit">Send my sign-in link →</button>'
+        +'</form>'
+        +'<div class="priv"><b>Real account.</b> Your course progress and followed studies sync securely to your account and are visible only to you.</div>'
+        +'<a class="back" href="hub-home.html">← Back to the hub</a>';
+      document.getElementById("f").addEventListener("submit",function(e){
+        e.preventDefault();
+        var email=document.getElementById("email").value.trim();
+        var errEl=document.getElementById("err");
+        if(!email || email.indexOf("@")<0){ errEl.style.display="block"; return; }
+        errEl.style.display="none";
+        var btn=e.target.querySelector(".go"); btn.disabled=true; btn.textContent="Sending…";
+        OWH.sendMagicLink(email).then(function(res){
+          if(res && res.error){ btn.disabled=false; btn.textContent="Send my sign-in link →"; errEl.textContent=res.error.message||"Something went wrong — try again."; errEl.style.display="block"; return; }
+          renderLinkSent(email);
+        });
+      });
+    }
+
+    function renderLinkSent(email){
+      body.innerHTML =
+        '<h1>Check your email</h1>'
+        +'<p class="sub">We sent a sign-in link to <b>'+email.replace(/"/g,"")+'</b>. Click it to enter the hub — this window will pick it up automatically if you return here.</p>'
+        +'<div class="sent">Didn\'t get it? Check spam, or <button class="switch" id="retry" style="width:auto;display:inline;padding:0">try another email</button>.</div>'
+        +'<a class="back" href="hub-home.html">← Back to the hub</a>';
+      document.getElementById("retry").addEventListener("click",function(){ renderMagicLinkForm(email); });
+    }
+
+    function renderCompleteProfile(){
+      body.innerHTML =
+        '<h1>One last step</h1>'
+        +'<p class="sub">You\'re signed in — what should we call you?</p>'
+        +'<form id="f" novalidate>'
+        +'<label for="name">Your name</label>'
+        +'<input id="name" type="text" autocomplete="name" placeholder="First and last name">'
+        +'<div class="err" id="err">Please enter your name to continue.</div>'
+        +'<button class="go" type="submit">Enter the hub →</button>'
+        +'</form>';
+      document.getElementById("f").addEventListener("submit",function(e){
+        e.preventDefault();
+        var name=document.getElementById("name").value.trim();
+        if(!name){ document.getElementById("err").style.display="block"; return; }
+        Promise.resolve(OWH.setProfile({name:name})).then(function(){ location.href = nextUrl(); });
+      });
+    }
+
+    function renderReal(){
+      if(OWH.getSession() && OWH.getProfile()){ location.href = nextUrl(); return; }
+      if(OWH.getSession() && !OWH.getProfile()){ renderCompleteProfile(); return; }
+      renderMagicLinkForm();
+    }
+
+    OWH.ready.then(function(){
+      if(OWH.isRealMode()){
+        window.OWH_ON_AUTH_CHANGE = function(evt){ if(evt==="SIGNED_IN") renderReal(); };
+        renderReal();
+      } else {
+        renderLocalForm();
+      }
+    });
+  })();
+  </script>
+</body></html>
