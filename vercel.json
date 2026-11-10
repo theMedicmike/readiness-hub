@@ -7,12 +7,12 @@
   ],
   "redirects": [
     {
-      "source": "/Readiness Certification - Framework and Governance (DRAFT v0.1).html",
+      "source": "/Readiness Certification - Framework and Governance \\(DRAFT v0.1\\).html",
       "destination": "/governance-charter.html",
       "permanent": true
     },
     {
-      "source": "/Readiness Hub - Homepage Prototype (DRAFT v0.1).html",
+      "source": "/Readiness Hub - Homepage Prototype \\(DRAFT v0.1\\).html",
       "destination": "/",
       "permanent": true
     }
