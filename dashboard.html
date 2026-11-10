@@ -53,9 +53,9 @@
   .txtbtn{background:none;border:none;color:#9e2a2b;font-size:12.5px;font-weight:600;cursor:pointer;padding:0;margin-right:14px}
   .foot{background:var(--navy);color:#cdddec;padding:22px 40px;font-size:12.5px;line-height:1.7}.foot b{color:#fff}
   @media(max-width:820px){.grid{grid-template-columns:1fr;padding:20px}.courses{grid-template-columns:1fr}.hero{padding:24px 20px}.foot{padding:20px}}
-</style></head>
+</style><style data-navfix>nav{max-width:100%;overflow-x:auto;scrollbar-width:none}nav::-webkit-scrollbar{display:none}</style>
+</head>
 <body><div class="wrap">
-  <div class="protobar">PROTOTYPE / DRAFT v0.1 — your progress is saved in this browser</div>
   <div class="topbar"><div class="topin">
     <a href="hub-home.html"><img src="owh-logo.png" alt="Operation Whole Health"></a>
     <nav><a href="hub-home.html">Home</a><a href="hub-standard.html">The Standard</a><a href="hub-learn.html">Learn</a><a href="hub-medicines.html">Medicines</a><a href="hub-research.html">Research</a><a href="hub-studies.html">Studies</a><a href="hub-directory.html">Directory</a><a href="hub-involved.html" class="btn">Get involved</a><span id="owh-chip"></span></nav>
@@ -69,7 +69,7 @@
   <div class="grid" id="grid"></div>
 
   <div class="foot">
-    <p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Your Dashboard — prototype, DRAFT v0.1. Progress and profile are stored locally in your browser; no health information is collected. In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p>
+    <p><b>Operation Whole Health</b> — Patriot-founded 501(c)(3). Your Dashboard — draft v0.1, pending physician review. Progress and profile are stored locally in your browser; no health information is collected. In crisis? Veterans Crisis Line: dial <b>988</b>, then press <b>1</b>.</p>
   </div>
 </div>
 
@@ -117,7 +117,7 @@ OWH.ready.then(function(){
   html += ORDER.map(checklist).join("");
   html += '<div class="card"><span class="eyebrow">Following</span><h2>Studies you\'re tracking</h2>'+fHtml+'</div>';
   html += '<div class="card"><span class="eyebrow">Recent</span><h2>Your activity</h2>'+aHtml+'</div>';
-  html += '<div class="card full"><span class="eyebrow">Account</span><h2>'+esc(p.name)+'</h2><div class="acct">'+(p.email?esc(p.email)+' · ':'')+'Member since '+esc(since)+' · <b>local prototype profile</b></div>'
+  html += '<div class="card full"><span class="eyebrow">Account</span><h2>'+esc(p.name)+'</h2><div class="acct">'+(p.email?esc(p.email)+' · ':'')+'Member since '+esc(since)+' · <b>saved on this device</b></div>'
     +'<div class="linkrow"><a class="qlink" href="hub-learn.html">Learn</a><a class="qlink" href="hub-studies.html">Studies</a><a class="qlink" href="hub-medicines.html">Medicines</a><a class="qlink" href="protocol-common-outcomes.html">The Protocol</a></div>'
     +'<div style="margin-top:14px"><button class="txtbtn" id="logout">Log out</button><button class="txtbtn" id="reset">Reset my progress</button></div></div>';
   document.getElementById("grid").innerHTML = html;
